@@ -1,0 +1,24 @@
+<x-dropdown>
+    <x-dropdown.trigger>
+        <x-button>Website</x-button>
+    </x-dropdown.trigger>
+    <x-dropdown.content>
+        <x-dropdown.link
+            href="https://google.com"
+        >
+            Google
+        </x-dropdown.link>
+        <x-dropdown.link
+            href="https://github.com"
+            target="_blank"
+        >
+            Github
+        </x-dropdown.link>
+        <x-dropdown.link
+            href="https://koding.in"
+            target="_blank"
+        >
+            KodingIn
+        </x-dropdown.link>
+    </x-dropdown.content>
+</x-dropdown>
