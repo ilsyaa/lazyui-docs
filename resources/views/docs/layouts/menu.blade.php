@@ -49,6 +49,12 @@
                 <x-slot:title>Dropdown</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('overlay.dialog') }}"
+                href="{{ route('overlay.dialog') }}"
+            >
+                <x-slot:title>Dialog</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('overlay.sheet') }}"
                 href="{{ route('overlay.sheet') }}"
             >
