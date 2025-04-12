@@ -14,7 +14,7 @@
     <button
         @click="expanded = ! expanded"
         type="button"
-        class="group text-[11px] font-semibold text-cat-500 hover:text-cat-800 dark:hover:text-cat-50 select-none mb-3 transition-colors duration-300 ease-out inline-flex items-center px-1"
+        class="group text-[11px] font-semibold text-cat-500/70 hover:text-cat-800 dark:hover:text-cat-50 select-none mb-3 transition-colors duration-300 ease-out inline-flex items-center px-1  -translate-x-1.5"
         :aria-expanded="expanded"
     >
         <svg class="size-3 ms-auto transition-transform ease-in-out opacity-0 group-hover:opacity-100" x-bind:class="expanded ? 'rotate-90' : ''" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M289.9 256l-17 17L113 433l-17 17L62.1 416l17-17 143-143L79 113l-17-17L96 62.1l17 17L273 239l17 17z"/></svg>
