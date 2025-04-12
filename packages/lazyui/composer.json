@@ -1,0 +1,25 @@
+{
+    "name": "kodingin/lazyui",
+    "description": "Yapping",
+    "license": "MIT",
+    "type": "library",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Kodingin\\LazyUI\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ilsya"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kodingin\\LazyUI\\LazyServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
