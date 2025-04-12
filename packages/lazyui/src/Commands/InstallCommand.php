@@ -30,12 +30,13 @@ class InstallCommand extends Command implements PromptsForMissingInput
         $this->publishAssets();
 
         $this->newLine();
-        $this->components->info('LazyUI installed successfully ✅');
+        $this->components->success('LazyUI installed successfully');
         $this->components->bulletList([
             'resources/css/lazy',
             'resources/js/lazy',
             'public/assets/lazy',
         ]);
+        $this->newLine();
     }
 
     protected function publishAssets(): void

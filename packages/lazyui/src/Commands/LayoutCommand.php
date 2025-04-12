@@ -34,23 +34,39 @@ class LayoutCommand extends Command implements PromptsForMissingInput
     {
         $path = str()->slug($this->argument('path'));
 
-        $this->generateLayouts($path);
-        $this->generateRoute($path);
+        $layout = $this->generateLayouts($path);
+        $route = $this->generateRoute($path);
 
         $this->newLine();
-        $this->components->info("✅ Successfully created layout for '{$path}'.");
+        $list = [];
+        if ($layout) {
+            $this->components->success("Layout created");
+            $list[] = "resources/views/{$path}";
+        } else {
+            $this->components->info("Layout skipped.");
+        }
+
+        if ($route) {
+            $this->components->success("Route file created and linked in routes/web.php");
+            $list[] = "routes/{$path}.php";
+        } else {
+            $this->components->info("Route skipped.");
+        }
+        if(count($list) > 0) {
+            $this->components->bulletList($list);
+        }
+        $this->newLine();
     }
 
-    protected function generateLayouts(string $path): void
+    protected function generateLayouts(string $path): bool
     {
         $sourceDir = __DIR__ . '/../../stubs/layouts';
         $destDir = resource_path("views/{$path}/layouts");
 
         // Check if folder already exists
         if (File::isDirectory($destDir)) {
-            if (! $this->confirm("The layout folder '{$destDir}' already exists. Overwrite?", false)) {
-                $this->components->warn("Skipped layout generation.");
-                return;
+            if (! $this->confirm("The layout '{$path}' already exists. Overwrite?", false)) {
+                return false;
             }
         } else {
             File::makeDirectory($destDir, 0777, true, true);
@@ -68,14 +84,13 @@ class LayoutCommand extends Command implements PromptsForMissingInput
             File::put($destination, $content);
         }
 
-        $this->components->info("🧩 Layout files generated in resources/views/{$path}");
+        return true;
     }
 
-    protected function generateRoute(string $path): void
+    protected function generateRoute(string $path): bool
     {
         if (! $this->confirm("Create a new route file for '{$path}'? (routes/{$path}.php)", false)) {
-            $this->components->warn("Skipped route generation.");
-            return;
+            return false;
         }
 
         $routePath = base_path("routes/{$path}.php");
@@ -83,7 +98,7 @@ class LayoutCommand extends Command implements PromptsForMissingInput
 
         if (File::exists($routePath)) {
             if (! $this->confirm("The route file '{$routePath}' already exists. Overwrite?", false)) {
-                return;
+                return false;
             }
         }
 
@@ -93,7 +108,7 @@ class LayoutCommand extends Command implements PromptsForMissingInput
         $webContent = str_replace('[path]', $path, File::get(__DIR__ . '/../../stubs/web.php'));
         File::append(base_path('routes/web.php'), $webContent);
 
-        $this->components->info("📌 Route file created and linked in routes/web.php");
+        return true;
     }
 
     protected function promptForMissingArguments(InputInterface $input, OutputInterface $output): void
