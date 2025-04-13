@@ -60,10 +60,11 @@ class InstallCommand extends Command implements PromptsForMissingInput
 
     protected function copyFiles(): void
     {
-        $stubs = realpath(__DIR__ . '/../../stubs');
-
-        File::copyDirectory("$stubs/resources/css", resource_path('css/lazy'));
-        File::copyDirectory("$stubs/resources/js", resource_path('js/lazy'));
-        File::copyDirectory("$stubs/assets-vendor", public_path('assets/lazy'));
+        File::copyDirectory(__DIR__ . "/../../resources/css", resource_path('css/lazy'));
+        File::copy(__DIR__ . "/../../resources/js/app.js", resource_path('js/lazy/app.js'));
+        if(!File::isDirectory(resource_path('js/lazy/plugins'))) {
+            File::makeDirectory(resource_path('js/lazy/plugins'), 0777, true);
+        }
+        File::copyDirectory(__DIR__ . "/../../public/assets-lazy", public_path('assets/lazy'));
     }
 }

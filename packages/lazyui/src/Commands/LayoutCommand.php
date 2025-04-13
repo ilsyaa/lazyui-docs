@@ -60,7 +60,7 @@ class LayoutCommand extends Command implements PromptsForMissingInput
 
     protected function generateLayouts(string $path): bool
     {
-        $sourceDir = __DIR__ . '/../../stubs/layouts';
+        $sourceDir = __DIR__ . '/../../resources/views/layouts';
         $destDir = resource_path("views/{$path}/layouts");
 
         // Check if folder already exists
@@ -94,7 +94,7 @@ class LayoutCommand extends Command implements PromptsForMissingInput
         }
 
         $routePath = base_path("routes/{$path}.php");
-        $stubRouteContent = str_replace('[path]', $path, File::get(__DIR__ . '/../../stubs/routes.php'));
+        $stubRouteContent = str_replace('[path]', $path, File::get(__DIR__ . '/../../routes/routes.php'));
 
         if (File::exists($routePath)) {
             if (! $this->confirm("The route file '{$routePath}' already exists. Overwrite?", false)) {
@@ -105,7 +105,7 @@ class LayoutCommand extends Command implements PromptsForMissingInput
         File::put($routePath, $stubRouteContent);
 
         // Append to web.php
-        $webContent = str_replace('[path]', $path, File::get(__DIR__ . '/../../stubs/web.php'));
+        $webContent = str_replace('[path]', $path, File::get(__DIR__ . '/../../routes/web.php'));
         File::append(base_path('routes/web.php'), $webContent);
 
         return true;
