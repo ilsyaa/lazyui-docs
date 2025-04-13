@@ -17,7 +17,7 @@
         <x-slot:icon>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M32 80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H80c-26.5 0-48-21.5-48-48V80zm0 256c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H80c-26.5 0-48-21.5-48-48V336zM336 32h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H336c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48z"/><path fill="currentColor" class="fa-primary" d="M408 296c0-13.3-10.7-24-24-24s-24 10.7-24 24v64H296c-13.3 0-24 10.7-24 24s10.7 24 24 24h64v64c0 13.3 10.7 24 24 24s24-10.7 24-24V408h64c13.3 0 24-10.7 24-24s-10.7-24-24-24H408V296z"/></svg>
         </x-slot:icon>
-        <x-slot:title>Panel Generator</x-slot:title>
+        <x-slot:title>Make Panel</x-slot:title>
     </x-nav.item>
 
 </x-nav.section>
@@ -43,6 +43,12 @@
                 href="{{ route('display.card') }}"
             >
                 <x-slot:title>Card</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.nav') }}"
+                href="{{ route('display.nav') }}"
+            >
+                <x-slot:title>Nav Item</x-slot:title>
             </x-nav.sub-item>
         </x-slot:sub>
     </x-nav.item-collapse>

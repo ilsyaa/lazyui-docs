@@ -27,4 +27,5 @@ Route::group([
 ], function () {
     Route::get('button', fn() => view('docs.display.button.index'))->name('display.button');
     Route::get('card', fn() => view('docs.display.card.index'))->name('display.card');
+    Route::get('nav', fn() => view('docs.display.nav.index'))->name('display.nav');
 });

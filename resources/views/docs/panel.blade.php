@@ -34,8 +34,8 @@
             </div>
             <div class="mb-5 flex flex-col gap-3">
                 <div class="text-sm">You can edit the panel navigation menu in <code class="bg-cat-200 dark:bg-cat-750">resources/views/[path]/menu.blade.php</code></div>
-                <pre class="text-[0.9rem]"><code class="language-bash">php artisan lazy:panel name</code></pre>
-                <div class="text-sm">All item navigation components are here: <a href="" class="underline">Navigation Component</a></div>
+                {{-- <pre class="text-[0.9rem]"><code class="language-bash">php artisan lazy:panel name</code></pre> --}}
+                <div class="text-sm">All item navigation components are here: <a href="{{ route('display.nav') }}" class="underline">Navigation Component</a></div>
             </div>
         </div>
 
