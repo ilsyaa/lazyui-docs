@@ -10,6 +10,10 @@ Route::get('/installation', function () {
     return view('docs.installation');
 })->name('installation');
 
+Route::get('/panel', function () {
+    return view('docs.panel');
+})->name('panel');
+
 Route::group([
     'prefix' => 'overlay'
 ], function () {
