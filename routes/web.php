@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/installation', function () {
+    return view('docs.installation');
+})->name('installation');
+
 Route::group([
     'prefix' => 'overlay'
 ], function () {
