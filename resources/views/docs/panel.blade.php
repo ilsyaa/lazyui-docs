@@ -16,7 +16,7 @@
             </div>
             <div class="mb-5">
                 <div class="text-sm mb-3">Install Panel by running the following command in your Laravel project directory:</div>
-                <pre class="text-[0.9rem]"><code class="language-bash">php artisan lazy:panel path</code></pre>
+                <pre class="text-[0.9rem]"><code class="language-bash">php artisan lazy:panel [path]</code></pre>
             </div>
             <div class="mb-5 flex flex-col gap-3">
                 <div class="text-sm">example:</div>

@@ -6,6 +6,17 @@
         <div class="flex flex-col gap-5">
             <x-card>
                 <div class="p-6 flex flex-col gap-5">
+                    <div>
+                        <div class="text-xl font-semibold">Sheet</div>
+                        <div class="text-cat-500 text-sm">Displays a callout for user attention.</div>
+                    </div>
+                    <div class="text-sm">Before you can use this component, you need to run this command to publish the component to <code>resources/views/components</code>.</div>
+                    <pre class="text-[0.9rem]"><code class="language-">php artisan lazy:component sheet</code></pre>
+                </div>
+            </x-card>
+
+            <x-card>
+                <div class="p-6 flex flex-col gap-5">
                     <div class="text-xl font-semibold">Basic</div>
                     <div x-data="{ tab: 'preview' }">
                         <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
