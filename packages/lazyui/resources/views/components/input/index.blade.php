@@ -1,82 +1,11 @@
-@extends('docs.layouts.app')
+@props([
+    'type' => 'text',
+])
 
-@section('content')
-    <div class="lazy-container-sm">
-
-        <div class="flex flex-col gap-5">
-            <x-card>
-                <div class="p-6 flex flex-col gap-5">
-                    <div class="text-xl font-semibold">Basic</div>
-                    <div x-data="{ tab: 'preview' }">
-                        <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
-                            <button type="button" x-on:click="tab = 'preview'" :class="{ 'active': tab === 'preview' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Preview</button>
-                            <button type="button" x-on:click="tab = 'code'" :class="{ 'active': tab === 'code' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Code</button>
-                        </div>
-
-                        <div>
-                            <div x-show="tab === 'preview'">
-                                <div class="rounded-xl px-3 py-6 bg-cat-200/50 dark:bg-cat-750/30">
-                                    <div class="flex flex-wrap gap-3 justify-center max-w-xs mx-auto">
-                                        @include('docs.input.input.default')
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div x-show="tab === 'code'" x-cloak>
-                                @php
-                                    $file = resource_path('views/docs/input/input/default.blade.php');
-                                    $content = file_exists($file) ? file_get_contents($file) : 'File not found';
-                                @endphp
-                                <pre class="text-[0.9rem]"><code class="language-html">{{ $content }}</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </x-card>
-
-            <x-card>
-                <div class="p-6 flex flex-col gap-5">
-                    <div class="text-xl font-semibold">Attributes</div>
-                    <div x-data="{ tab: 'preview' }">
-                        <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
-                            <button type="button" x-on:click="tab = 'preview'" :class="{ 'active': tab === 'preview' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Preview</button>
-                            <button type="button" x-on:click="tab = 'code'" :class="{ 'active': tab === 'code' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Code</button>
-                        </div>
-
-                        <div>
-                            <div x-show="tab === 'preview'">
-                                <div class="rounded-xl px-3 py-6 bg-cat-200/50 dark:bg-cat-750/30">
-                                    <div class="flex flex-wrap gap-3 justify-center max-w-xs mx-auto">
-                                        @include('docs.input.input.attr')
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div x-show="tab === 'code'" x-cloak>
-                                @php
-                                    $file = resource_path('views/docs/input/input/attr.blade.php');
-                                    $content = file_exists($file) ? file_get_contents($file) : 'File not found';
-                                @endphp
-                                <pre class="text-[0.9rem]"><code class="language-html">{{ $content }}</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </x-card>
-        </div>
-
-    </div>
-@endsection
-
-@push('head')
-    <link rel="stylesheet" href="{{ asset('assets/lazy/highlight/lazy.css') }}">
-@endpush
-
-@push('body')
-    <script src="{{ asset('assets/lazy/highlight/highlight.min.js') }}"></script>
-    <script src="{{ asset('assets/lazy/highlight/lazy.plugin.js') }}"></script>
-    <script>
-        hljs.addPlugin(new HljsLazyPlugin());
-        hljs.highlightAll();
-    </script>
-@endpush
+<input
+    type="{{ $type }}"
+    {{
+        $attributes
+            ->twMerge('appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none scheme-light dark:scheme-dark block w-full px-3 py-2.5 text-sm rounded-md placeholder:text-cat-500 focus:ring-[1.7px] focus:outline-none focus:ring-cat-700 dark:focus:ring-cat-200 focus:border-transparent transition duration-150 ease-in-out bg-white dark:bg-cat-700/10 border border-cat-300 dark:border-cat-700/50 file:border-0 file:bg-transparent file:px-1 file:rounded file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50')
+    }}
+/>
