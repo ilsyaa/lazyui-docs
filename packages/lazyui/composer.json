@@ -17,7 +17,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Kodingin\\LazyUI\\": "src/"
+            "LazyUI\\": "src/"
         }
     },
     "authors": [
@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Kodingin\\LazyUI\\LazyServiceProvider"
+                "LazyUI\\LazyServiceProvider"
             ]
         }
     },

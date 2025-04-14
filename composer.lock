@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4da5142581b21e531a822ec65b3edd50",
+    "content-hash": "da9cc34a2577225ddcc66de5e72b48af",
     "packages": [
         {
             "name": "brick/math",
@@ -1198,41 +1198,6 @@
             "time": "2025-02-03T10:55:03+00:00"
         },
         {
-            "name": "kodingin/lazyui",
-            "version": "dev-docs",
-            "dist": {
-                "type": "path",
-                "url": "./packages/lazyui",
-                "reference": "11a1bb6b01f7a61e5af49b3fa2f1c1e04c6a4c5d"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Kodingin\\LazyUI\\LazyServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Kodingin\\LazyUI\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "ilsya"
-                }
-            ],
-            "description": "Yapping",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
-        },
-        {
             "name": "laravel/framework",
             "version": "v12.8.1",
             "source": {
@@ -1632,6 +1597,59 @@
                 "source": "https://github.com/laravel/tinker/tree/v2.10.1"
             },
             "time": "2025-01-27T14:24:01+00:00"
+        },
+        {
+            "name": "lazyexe/lazyui",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./packages/lazyui",
+                "reference": "36e3b8b3c5c1de35ab234958044b74bb2bf6f8e2"
+            },
+            "require": {
+                "gehrisandro/tailwind-merge-laravel": "^1.3",
+                "livewire/livewire": "^3.6|dev-main",
+                "php": "^8.1|^8.2|^8.3|^8.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LazyUI\\LazyServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LazyUI\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ilsyaa",
+                    "email": "ilham@koding.in",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Yapping",
+            "homepage": "https://github.com/lazyexe/lazyui",
+            "keywords": [
+                "admin",
+                "dashboard",
+                "datatables",
+                "kodingin",
+                "laravel",
+                "livewire",
+                "tables",
+                "tailwind"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "league/commonmark",
@@ -2186,16 +2204,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.6.2",
+            "version": "v3.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "8f8914731f5eb43b6bb145d87c8d5a9edfc89313"
+                "reference": "56aa1bb63a46e06181c56fa64717a7287e19115e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/8f8914731f5eb43b6bb145d87c8d5a9edfc89313",
-                "reference": "8f8914731f5eb43b6bb145d87c8d5a9edfc89313",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/56aa1bb63a46e06181c56fa64717a7287e19115e",
+                "reference": "56aa1bb63a46e06181c56fa64717a7287e19115e",
                 "shasum": ""
             },
             "require": {
@@ -2250,7 +2268,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.6.2"
+                "source": "https://github.com/livewire/livewire/tree/v3.6.3"
             },
             "funding": [
                 {
@@ -2258,7 +2276,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-12T20:24:15+00:00"
+            "time": "2025-04-12T22:26:52+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -8321,7 +8339,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "kodingin/lazyui": 20
+        "lazyexe/lazyui": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
