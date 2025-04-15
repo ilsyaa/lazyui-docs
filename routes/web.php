@@ -22,6 +22,7 @@ Route::group([], function () {
 
 Route::group([], function () {
     Route::get('input', fn() => view('docs.input.input.index'))->name('input.input');
+    Route::get('label', fn() => view('docs.input.label.index'))->name('input.label');
     Route::get('textarea', fn() => view('docs.input.textarea.index'))->name('input.textarea');
 });
 

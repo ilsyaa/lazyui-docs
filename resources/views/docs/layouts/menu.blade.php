@@ -68,6 +68,12 @@
                 <x-slot:title>Input</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.label') }}"
+                href="{{ route('input.label') }}"
+            >
+                <x-slot:title>Label</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('input.textarea') }}"
                 href="{{ route('input.textarea') }}"
             >
