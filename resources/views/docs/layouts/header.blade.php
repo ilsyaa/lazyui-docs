@@ -29,7 +29,7 @@
             </div>
             <div class="flex gap-1 items-center">
                 <x-button
-                    href="https://github.com/kodinginn/lazy-ui"
+                    href="https://github.com/lazyexe/lazyui"
                     variant="ghost"
                     size="icon"
                     class="rounded-full"

@@ -1,6 +1,6 @@
 {
     "name": "lazyexe/lazyui",
-    "description": "Yapping",
+    "description": "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
     "keywords": [
         "kodingin",
         "livewire",
@@ -8,6 +8,11 @@
         "tables",
         "laravel",
         "tailwind",
+        "lazy",
+        "ui",
+        "lazyui",
+        "lazycode",
+        "lazyexe",
         "admin",
         "dashboard"
     ],

@@ -1604,7 +1604,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/lazyui",
-                "reference": "36e3b8b3c5c1de35ab234958044b74bb2bf6f8e2"
+                "reference": "a477078814c5c497b2186ca64ae86e62887987a0"
             },
             "require": {
                 "gehrisandro/tailwind-merge-laravel": "^1.3",
@@ -1634,7 +1634,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Yapping",
+            "description": "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
             "homepage": "https://github.com/lazyexe/lazyui",
             "keywords": [
                 "admin",
@@ -1642,9 +1642,14 @@
                 "datatables",
                 "kodingin",
                 "laravel",
+                "lazy",
+                "lazycode",
+                "lazyexe",
+                "lazyui",
                 "livewire",
                 "tables",
-                "tailwind"
+                "tailwind",
+                "ui"
             ],
             "transport-options": {
                 "symlink": true,

@@ -135,7 +135,7 @@
     </x-nav.item>
 
     <x-nav.item
-        href="https://github.com/kodinginn/lazy-ui"
+        href="https://github.com/lazyexe/lazyui"
         target="_blank"
     >
         <x-slot:icon>
