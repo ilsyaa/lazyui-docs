@@ -62,6 +62,18 @@
         <x-slot:title>Input</x-slot:title>
         <x-slot:sub>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.autocomplete') }}"
+                href="{{ route('input.autocomplete') }}"
+            >
+                <x-slot:title>Autocomplete</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.checkbox') }}"
+                href="{{ route('input.checkbox') }}"
+            >
+                <x-slot:title>Checkbox</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('input.input') }}"
                 href="{{ route('input.input') }}"
             >
@@ -72,6 +84,24 @@
                 href="{{ route('input.label') }}"
             >
                 <x-slot:title>Label</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.radio') }}"
+                href="{{ route('input.radio') }}"
+            >
+                <x-slot:title>Radio</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.select') }}"
+                href="{{ route('input.select') }}"
+            >
+                <x-slot:title>Select</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.switch') }}"
+                href="{{ route('input.switch') }}"
+            >
+                <x-slot:title>Switch</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
                 is-active="{{ request()->routeIs('input.textarea') }}"

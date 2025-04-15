@@ -21,8 +21,13 @@ Route::group([], function () {
 });
 
 Route::group([], function () {
+    Route::get('autocomplete', fn() => view('docs.input.autocomplete.index'))->name('input.autocomplete');
+    Route::get('checkbox', fn() => view('docs.input.checkbox.index'))->name('input.checkbox');
     Route::get('input', fn() => view('docs.input.input.index'))->name('input.input');
     Route::get('label', fn() => view('docs.input.label.index'))->name('input.label');
+    Route::get('radio', fn() => view('docs.input.radio.index'))->name('input.radio');
+    Route::get('select', fn() => view('docs.input.select.index'))->name('input.select');
+    Route::get('switch', fn() => view('docs.input.switch.index'))->name('input.switch');
     Route::get('textarea', fn() => view('docs.input.textarea.index'))->name('input.textarea');
 });
 
