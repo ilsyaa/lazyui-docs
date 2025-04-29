@@ -1,5 +1,6 @@
 @props([
     'url' => null,
+    'displayIcon' => false
 ])
 
 <div
@@ -81,21 +82,26 @@
     </select>
 
     <div class="w-full">
-        <input
-            x-bind:class="{'ring-2 ring-cat-700 dark:ring-cat-200': _isOpen}"
-            x-bind:value="getSelected('label')"
-            x-ref="toggle"
-            class="cursor-auto appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none scheme-light dark:scheme-dark block w-full px-3 py-2.5 text-sm rounded-md placeholder:text-cat-500 focus:ring-[1.7px] focus:outline-none focus:ring-cat-700 dark:focus:ring-cat-200 focus:border-transparent transition duration-150 ease-in-out bg-white dark:bg-cat-700/10 border border-cat-300 dark:border-cat-700/50 file:border-0 file:bg-transparent file:px-1 file:rounded file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50"
-            readonly
-            x-on:focus="$nextTick(() => {
-                const el = $event.target;
-                const val = el.value;
-                el.value = '';
-                el.value = val;
-            })"
-            {{ $attributes->except(['name']) }}
-            x-on:click="toggle()"
-        />
+        <div class="relative">
+            <input
+                x-bind:class="{'ring-2 ring-cat-700 dark:ring-cat-200': _isOpen, 'pl-9' : (@js($displayIcon) && getSelected('icon'))}"
+                x-bind:value="getSelected('label')"
+                x-ref="toggle"
+                class="cursor-auto appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none scheme-light dark:scheme-dark block w-full px-3 py-2.5 text-sm rounded-md placeholder:text-cat-500 focus:ring-[1.7px] focus:outline-none focus:ring-cat-700 dark:focus:ring-cat-200 focus:border-transparent transition duration-150 ease-in-out bg-white dark:bg-cat-700/10 border border-cat-300 dark:border-cat-700/50 file:border-0 file:bg-transparent file:px-1 file:rounded file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50"
+                readonly
+                x-on:focus="$nextTick(() => {
+                    const el = $event.target;
+                    const val = el.value;
+                    el.value = '';
+                    el.value = val;
+                })"
+                {{ $attributes->except(['name']) }}
+                x-on:click="toggle()"
+            />
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none {{ $displayIcon ? '' : 'hidden' }}">
+                <span x-html="getSelected('icon') || ''" class="[&_svg]:size-4 [&_img]:w-5 [&_img]:object-cover [&_img]:object-center"></span>
+            </div>
+        </div>
         <div
             x-ref="dropdown"
             x-show="_isOpen"
@@ -117,14 +123,20 @@
             <ul class="[&::-webkit-scrollbar]:!w-1 overflow-y-auto max-h-60 flex flex-col gap-y-1 p-1">
                 <template x-for="opt of getFilteredOptions()" :key="opt.index">
                     <li
-                        :class="{
-                            'bg-cat-300/50 dark:bg-cat-700/30': getSelected('index') === opt.index
-                        }"
+                        :class="{ 'bg-cat-300/50 dark:bg-cat-700/30': getSelected('index') === opt.index, 'pointer-events-none opacity-50': opt.disabled }"
                         class="px-2.5 py-2 rounded-lg text-sm w-full cursor-pointer hover:bg-cat-300/30 dark:hover:bg-cat-700/15 select-none"
                         x-on:click="setSelected(opt); _isOpen = false;"
                         role="option"
                     >
-                        <div x-text="opt.label"></div>
+                        <div class="flex items-center gap-x-2">
+                            <template x-if="opt.icon">
+                                <span x-html="opt.icon" class="[&_svg]:size-4 [&_img]:w-5 [&_img]:object-cover [&_img]:object-center"></span>
+                            </template>
+                            <span x-text="opt.label" class="flex-1"></span>
+                        </div>
+                        <template x-if="opt.description">
+                            <span class="text-xs text-cat-500" x-text="opt.description"></span>
+                        </template>
                     </li>
                 </template>
                 <template x-if="_isLoading">

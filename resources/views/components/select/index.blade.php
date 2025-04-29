@@ -1,5 +1,6 @@
 @props([
-    'options' => []
+    'options' => [],
+    'displayIcon' => false
 ])
 
 <div
@@ -13,16 +14,18 @@
                 const currentValue = this.$refs.selectOrigin.value;
                 const querySelectOptions = Array.from(this.$refs.selectOrigin.querySelectorAll('option'));
                 const hasMatchingOption = querySelectOptions.some(option => option.value === currentValue);
-                if (querySelectOptions.length > 1) {
+                if (querySelectOptions.length > 0) {
                     this._options = querySelectOptions.map((option, i) => ({
                         index: i,
-                        value: option.value,
-                        html: option.innerHTML,
-                        selected: hasMatchingOption ? option.value === currentValue : option.hasAttribute('selected')
+                        value: option.getAttribute('value') || (option.querySelector('div[data-label]')?.innerText || option.text),
+                        label: option.querySelector('div[data-label]')?.innerText || option.text,
+                        icon: option.querySelector('div[data-icon]')?.innerHTML || '',
+                        description: option.querySelector('div[data-description]')?.innerText || '',
+                        selected: hasMatchingOption ? option.value === currentValue : option.hasAttribute('selected'),
+                        disabled: option.hasAttribute('disabled')
                     }));
                 }
             });
-
 
             this.$watch('_options', (value) => {
                 this.$refs.selectOrigin.value = value.find((option) => option.selected).value;
@@ -65,7 +68,7 @@
             if (this._search.trim() === '') {
                 return this._options;
             }
-            return this._options.filter(option => option.html.toLowerCase().includes(this._search.toLowerCase()));
+            return this._options.filter(option => option.label.toLowerCase().includes(this._search.toLowerCase()));
         },
     }"
     class="relative w-full"
@@ -77,21 +80,26 @@
     </select>
 
     <div class="w-full">
-        <input
-            x-bind:class="{'ring-2 ring-cat-700 dark:ring-cat-200': _isOpen}"
-            x-bind:value="getSelected('html')"
-            x-ref="toggle"
-            class="cursor-auto appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none scheme-light dark:scheme-dark block w-full px-3 py-2.5 text-sm rounded-md placeholder:text-cat-500 focus:ring-[1.7px] focus:outline-none focus:ring-cat-700 dark:focus:ring-cat-200 focus:border-transparent transition duration-150 ease-in-out bg-white dark:bg-cat-700/10 border border-cat-300 dark:border-cat-700/50 file:border-0 file:bg-transparent file:px-1 file:rounded file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50"
-            readonly
-            x-on:focus="$nextTick(() => {
-                const el = $event.target;
-                const val = el.value;
-                el.value = '';
-                el.value = val;
-            })"
-            {{ $attributes->except(['x-model', 'wire:model', 'name']) }}
-            x-on:click="toggle()"
-        />
+        <div class="relative">
+            <input
+                x-bind:class="{'ring-2 ring-cat-700 dark:ring-cat-200': _isOpen, 'pl-9' : (@js($displayIcon) && getSelected('icon'))}"
+                x-bind:value="getSelected('label')"
+                x-ref="toggle"
+                class="cursor-auto appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none scheme-light dark:scheme-dark block w-full px-3 py-2.5 text-sm rounded-md placeholder:text-cat-500 focus:ring-[1.7px] focus:outline-none focus:ring-cat-700 dark:focus:ring-cat-200 focus:border-transparent transition duration-150 ease-in-out bg-white dark:bg-cat-700/10 border border-cat-300 dark:border-cat-700/50 disabled:cursor-not-allowed disabled:opacity-50"
+                readonly
+                x-on:focus="$nextTick(() => {
+                    const el = $event.target;
+                    const val = el.value;
+                    el.value = '';
+                    el.value = val;
+                })"
+                {{ $attributes->except(['x-model', 'wire:model', 'name']) }}
+                x-on:click="toggle()"
+            />
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none {{ $displayIcon ? '' : 'hidden' }}">
+                <span x-html="getSelected('icon') || ''" class="[&_svg]:size-4 [&_img]:w-5 [&_img]:object-cover [&_img]:object-center"></span>
+            </div>
+        </div>
         <div
             x-ref="dropdown"
             x-show="_isOpen"
@@ -104,7 +112,7 @@
             x-transition:leave-start="opacity-100 scale-100"
             x-transition:leave-end="opacity-0 scale-95"
             role="listbox"
-            class="z-[61] bg-white/90 rounded-md dark:bg-cat-800/90 backdrop-blur w-full shadow"
+            class="z-[61] bg-white/90 rounded-md dark:bg-cat-800/90 lazy-gradient backdrop-blur w-full shadow"
             x-on:click.outside="_isOpen = false"
         >
             <div class="p-1 pb-0">
@@ -113,14 +121,20 @@
             <ul class="[&::-webkit-scrollbar]:!w-1 overflow-y-auto max-h-60 flex flex-col gap-y-1 p-1">
                 <template x-for="opt of getFilteredOptions()" :key="opt.index">
                     <li
-                        :class="{
-                            'bg-cat-300/50 dark:bg-cat-700/30': getSelected('index') === opt.index
-                        }"
+                        :class="{ 'bg-cat-300/50 dark:bg-cat-700/30': getSelected('index') === opt.index, 'pointer-events-none opacity-50': opt.disabled }"
                         class="px-2.5 py-2 rounded-lg text-sm w-full cursor-pointer hover:bg-cat-300/30 dark:hover:bg-cat-700/15 select-none"
                         x-on:click="setSelected(opt.index); _isOpen = false;"
                         role="option"
                     >
-                        <div x-text="opt.html"></div>
+                        <div class="flex items-center gap-x-2">
+                            <template x-if="opt.icon">
+                                <span x-html="opt.icon" class="[&_svg]:size-4 [&_img]:w-5 [&_img]:object-cover [&_img]:object-center"></span>
+                            </template>
+                            <span x-text="opt.label" class="flex-1"></span>
+                        </div>
+                        <template x-if="opt.description">
+                            <span class="text-xs text-cat-500" x-text="opt.description"></span>
+                        </template>
                     </li>
                 </template>
                 <template x-if="getFilteredOptions().length === 0">
