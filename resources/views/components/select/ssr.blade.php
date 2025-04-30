@@ -114,7 +114,7 @@
             x-transition:leave-start="opacity-100 scale-100"
             x-transition:leave-end="opacity-0 scale-95"
             role="listbox"
-            class="z-[61] bg-white/90 rounded-md dark:bg-cat-800/90 backdrop-blur w-full shadow"
+            class="z-[61] bg-white/90 rounded-md dark:bg-cat-800/90 backdrop-blur w-full shadow lazy-gradient"
             x-on:click.outside="_isOpen = false"
         >
             <div class="p-1 pb-0">

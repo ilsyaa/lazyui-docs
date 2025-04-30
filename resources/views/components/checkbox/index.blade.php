@@ -14,9 +14,9 @@
     type="checkbox"
     {{
         $attributes
-            ->twMerge(
+            ->twMerge([
                 "peer block relative cursor-pointer size-[1.1rem] m-0.5 bg-transparent border-cat-400 dark:border-cat-500 rounded !ring-offset-transparent focus:ring-transparent disabled:cursor-not-allowed disabled:opacity-50 before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:size-[1.9rem] disabled:before:bg-transparent",
                 $variantClasses[$variant] ?? $variantClasses['default']
-            )
+            ])
     }}
 />

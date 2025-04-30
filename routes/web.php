@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,6 +28,7 @@ Route::group([], function () {
     Route::get('label', fn() => view('docs.input.label.index'))->name('input.label');
     Route::get('radio', fn() => view('docs.input.radio.index'))->name('input.radio');
     Route::get('select', fn() => view('docs.input.select.index'))->name('input.select');
+    Route::get('select-multiple', fn() => view('docs.input.select-multiple.index'))->name('input.select.multiple');
     Route::get('switch', fn() => view('docs.input.switch.index'))->name('input.switch');
     Route::get('textarea', fn() => view('docs.input.textarea.index'))->name('input.textarea');
 });

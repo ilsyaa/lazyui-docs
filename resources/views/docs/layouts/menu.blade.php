@@ -98,6 +98,12 @@
                 <x-slot:title>Select</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.select.multiple') }}"
+                href="{{ route('input.select.multiple') }}"
+            >
+                <x-slot:title>Select Multiple</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('input.switch') }}"
                 href="{{ route('input.switch') }}"
             >
