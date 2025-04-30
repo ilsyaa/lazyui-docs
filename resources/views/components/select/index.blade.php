@@ -1,78 +1,11 @@
 @props([
-    'options' => [],
     'displayIcon' => false
 ])
 
 <div
-    x-data="{
-        _isOpen: false,
-        _options: @js($options),
-        _search: '',
-
-        init() {
-            this.$nextTick(() => {
-                const currentValue = this.$refs.selectOrigin.value;
-                const querySelectOptions = Array.from(this.$refs.selectOrigin.querySelectorAll('option'));
-                const hasMatchingOption = querySelectOptions.some(option => option.value === currentValue);
-                if (querySelectOptions.length > 0) {
-                    this._options = querySelectOptions.map((option, i) => ({
-                        index: i,
-                        value: option.getAttribute('value') || (option.querySelector('div[data-label]')?.innerText || option.text),
-                        label: option.querySelector('div[data-label]')?.innerText || option.text,
-                        icon: option.querySelector('div[data-icon]')?.innerHTML || '',
-                        description: option.querySelector('div[data-description]')?.innerText || '',
-                        selected: hasMatchingOption ? option.value === currentValue : option.hasAttribute('selected'),
-                        disabled: option.hasAttribute('disabled')
-                    }));
-                }
-            });
-
-            this.$watch('_options', (value) => {
-                this.$refs.selectOrigin.value = value.find((option) => option.selected).value;
-                this.$refs.selectOrigin.dispatchEvent(new Event('change', { bubbles: true }));
-            });
-
-            this.$watch('_isOpen', (value) => {
-                if (value) {
-                    if(window.matchMedia('(min-width: 768px)').matches) {
-                        this.$nextTick(() => {
-                            this.$refs.search?.focus();
-                        });
-                    }
-                    this._search = '';
-                }
-            });
-        },
-
-        toggle() {
-            this._isOpen = !this._isOpen;
-        },
-
-        getSelected(key = null) {
-            const selectedOption = this._options.find(option => option.selected);
-            if (key) {
-                return selectedOption ? selectedOption[key] : '';
-            } else {
-                return selectedOption;
-            }
-        },
-
-        setSelected(index) {
-            this._options = this._options.map((option, i) => ({
-                ...option,
-                selected: i === index
-            }));
-        },
-
-        getFilteredOptions() {
-            if (this._search.trim() === '') {
-                return this._options;
-            }
-            return this._options.filter(option => option.label.toLowerCase().includes(this._search.toLowerCase()));
-        },
-    }"
+    x-data="lazySelectBasic()"
     class="relative w-full"
-    x-on:keydown.escape.prevent="_isOpen = false"
+    x-on:keydown.escape.prevent="close()"
     x-on:keydown.enter.prevent="toggle()"
 >
     <select class="sr-only" tabindex="-1" aria-hidden="true" x-ref="selectOrigin" {{ $attributes->only(['x-model', 'wire:model', 'name']) }}>
@@ -113,17 +46,17 @@
             x-transition:leave-end="opacity-0 scale-95"
             role="listbox"
             class="z-[61] bg-white/90 rounded-md dark:bg-cat-800/90 lazy-gradient backdrop-blur w-full shadow"
-            x-on:click.outside="_isOpen = false"
+            x-on:click.outside="close()"
         >
             <div class="p-1 pb-0">
                 <input type="text" x-ref="search" placeholder="Start typing to search..." class="px-2 w-full rounded-md border-transparent bg-transparent focus:ring-0 focus-within:ring-0 text-sm" x-model="_search" />
             </div>
             <ul class="[&::-webkit-scrollbar]:!w-1 overflow-y-auto max-h-60 flex flex-col gap-y-1 p-1">
-                <template x-for="opt of getFilteredOptions()" :key="opt.index">
+                <template x-for="opt of getFilteredOptions()" :key="opt.value">
                     <li
-                        :class="{ 'bg-cat-300/50 dark:bg-cat-700/30': getSelected('index') === opt.index, 'pointer-events-none opacity-50': opt.disabled }"
+                        :class="{ 'bg-cat-300/50 dark:bg-cat-700/30': getSelected('value') === opt.value, 'pointer-events-none opacity-50': opt.disabled }"
                         class="px-2.5 py-2 rounded-lg text-sm w-full cursor-pointer hover:bg-cat-300/30 dark:hover:bg-cat-700/15 select-none"
-                        x-on:click="setSelected(opt.index); _isOpen = false;"
+                        x-on:click="setSelected(opt); close()"
                         role="option"
                     >
                         <div class="flex items-center gap-x-2">
