@@ -15,9 +15,20 @@
         href="{{ route('panel') }}"
     >
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M32 80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H80c-26.5 0-48-21.5-48-48V80zm0 256c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H80c-26.5 0-48-21.5-48-48V336zM336 32h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H336c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48z"/><path fill="currentColor" class="fa-primary" d="M408 296c0-13.3-10.7-24-24-24s-24 10.7-24 24v64H296c-13.3 0-24 10.7-24 24s10.7 24 24 24h64v64c0 13.3 10.7 24 24 24s24-10.7 24-24V408h64c13.3 0 24-10.7 24-24s-10.7-24-24-24H408V296z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M96 96a32 32 0 1 0 0 64 32 32 0 1 0 0-64zM448 480c35.3 0 64-28.7 64-64V224L0 224V416c0 35.3 28.7 64 64 64l384 0z"/><path fill="currentColor" class="fa-primary" d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V224H0V96zm64 32a32 32 0 1 0 64 0 32 32 0 1 0 -64 0zm120-24c-13.3 0-24 10.7-24 24s10.7 24 24 24H424c13.3 0 24-10.7 24-24s-10.7-24-24-24H184z"/></svg>
         </x-slot:icon>
-        <x-slot:title>Make Panel</x-slot:title>
+        <x-slot:title>Dashboard Layout</x-slot:title>
+    </x-nav.item>
+
+    <x-nav.item
+        is-active=""
+        href=""
+        disabled
+    >
+        <x-slot:icon>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384v38.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7H64c-35.3 0-64-28.7-64-64V64z"/><path fill="currentColor" class="fa-primary" d="M384 160L224 0V128c0 17.7 14.3 32 32 32H384zm48 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288zm16-208v48h48c8.8 0 16 7.2 16 16s-7.2 16-16 16H448v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V384H368c-8.8 0-16-7.2-16-16s7.2-16 16-16h48V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>
+        </x-slot:icon>
+        <x-slot:title>Page Template</x-slot:title>
     </x-nav.item>
 
 </x-nav.section>

@@ -3,24 +3,24 @@
 @section('content')
     <div class="lazy-container-sm">
         <div class="mb-10">
-            <div class="text-3xl font-bold">Installation</div>
-            <div class="text-sm text-cat-500">How to install dependencies and structure your app.</div>
+            <div class="text-3xl font-bold">Layout</div>
+            <div class="text-sm text-cat-500">create dashboard layout with command.</div>
         </div>
 
         <div class="mb-10">
             <div class="mb-5">
                 <div class="mb-5">
-                    <div class="text-xl font-bold mb-3">Create Panel</div>
+                    <div class="text-xl font-bold mb-3">Create Layout</div>
                     <div class="w-full h-px border-b border-cat-200 dark:border-cat-750"></div>
                 </div>
             </div>
             <div class="mb-5">
-                <div class="text-sm mb-3">Install Panel by running the following command in your Laravel project directory:</div>
-                <pre class="text-[0.9rem]"><code class="language-bash">php artisan lazy:panel [path]</code></pre>
+                <div class="text-sm mb-3">Generate layout by running the following command in your Laravel project directory:</div>
+                <pre class="text-[0.9rem]"><code class="language-bash">php artisan lazy:layout [path]</code></pre>
             </div>
             <div class="mb-5 flex flex-col gap-3">
                 <div class="text-sm">example:</div>
-                <pre class="text-[0.9rem]"><code class="language-bash">php artisan lazy:panel admin</code></pre>
+                <pre class="text-[0.9rem]"><code class="language-bash">php artisan lazy:layout admin</code></pre>
                 <div class="text-sm">This command will create a file containing the panel template layout located in <code class="bg-cat-200 dark:bg-cat-750">resources/views/admin</code>.</div>
             </div>
         </div>

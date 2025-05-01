@@ -11,7 +11,7 @@ Route::get('/installation', function () {
     return view('docs.installation');
 })->name('installation');
 
-Route::get('/panel', function () {
+Route::get('/layout', function () {
     return view('docs.panel');
 })->name('panel');
 
