@@ -139,6 +139,7 @@
                 <div class="p-6 flex flex-col gap-3">
                     <div class="text-xl font-semibold">Using Ajax</div>
                     <div class="text-sm max-w-2xl text-cat-500">To set the default value in select ajax is a little different, you can see it below. <br>For select ajax it doesn't support wire:model and x-model for now.</div>
+                    <a target="_blank" href="https://github.com/ilsyaa/lazyui-docs/blob/master/routes/api.php" class="underline text-sm">Example API Backend</a>
                     <div x-data="{ tab: 'preview' }">
                         <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
                             <button type="button" x-on:click="tab = 'preview'" :class="{ 'active': tab === 'preview' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Preview</button>

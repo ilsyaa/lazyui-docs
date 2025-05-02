@@ -1,5 +1,5 @@
 export default function (Alpine) {
-    Alpine.data('lazySelectBasic', () => ({
+    Alpine.data('lazySelect', () => ({
         _isOpen: false,
         _options: [],
         _search: '',
@@ -122,7 +122,6 @@ export default function (Alpine) {
                                 this._options = data.map((option) => {
                                     if(!uniqueValues.includes(option.value)) {
                                         uniqueValues.push(option.value);
-                                        this._selected = option.selected ? option : [];
                                         return option;
                                     } else {
                                         console.warn('[LazyComponent] duplicate option.\nSELECT[NAME]: ' + this.$refs.selectOrigin.name + '\nSELECT[VALUE]: ' + option.value);
@@ -244,6 +243,114 @@ export default function (Alpine) {
                 this._search = '';
                 this.$refs.search.value = '';
                 this.$refs.search.focus();
+            },
+
+            removeSelected(opt) {
+                this._selected = this._selected.filter(option => option.value !== opt.value);
+            },
+
+            removeLastSelected() {
+                if (this._search === '' && this._selected.length > 0) {
+                    this._selected.pop();
+                }
+            },
+
+            getFilteredOptions() {
+                let options = this._options.map((option) => ({
+                    ...option,
+                    selected: this._selected.find(selected => selected.value === option.value) ? true : false
+                }));
+                if (this._search.trim() === '') {
+                    return options;
+                }
+                return options.filter(option => option.label.toLowerCase().includes(this._search.toLowerCase()));
+            },
+        }
+    ));
+
+    Alpine.data('lazySelectMultipleSsr', ({ max, url }) => (
+        {
+            _isOpen: false,
+            _options: [],
+            _selected: [],
+            _search: '',
+            _max: max,
+            _url: url,
+            _isLoading: false,
+
+            init() {
+                this.$watch('_selected', (value) => {
+                    let optionElement = '';
+                    value.map((option) => {
+                        optionElement += `<option value="${option.value}" selected>${option.label}</option>`;
+                    });
+                    this.$refs.selectOrigin.innerHTML = optionElement;
+                    this.$refs.selectOrigin.dispatchEvent(new Event('change', { bubbles: true }));
+                });
+
+                this.$watch('_search', (value) => {
+                    if (this._search.trim() === '') {
+                        this._options = [];
+                        return;
+                    }
+                    this._isLoading = true;
+                    clearTimeout(this._debounceTimer);
+                    this._debounceTimer = setTimeout(() => {
+                        let uniqueValues = [];
+                        fetch(this._url + '?search=' + value)
+                            .then(response => response.json())
+                            .then(data => {
+                                this._isLoading = false;
+                                this._options = data.map((option) => {
+                                    if(!uniqueValues.includes(option.value)) {
+                                        uniqueValues.push(option.value);
+                                        return option;
+                                    } else {
+                                        console.warn('[LazyComponent] duplicate option.\nSELECT[NAME]: ' + this.$refs.selectOrigin.name + '\nSELECT[VALUE]: ' + option.value);
+                                        return null;
+                                    }
+                                }).filter(option => option !== null);
+                            }).catch(error => {
+                                this._isLoading = false;
+                                console.error('Error fetching data:', error);
+                                this._options = [];
+                            });
+                    }, 500);
+                });
+            },
+
+            open() {
+                this._isOpen = true;
+                this.$refs.search.value = '';
+                this.$refs.search.focus();
+                this._search = '';
+            },
+
+            toggle() {
+                this._isOpen = !this._isOpen;
+                this.$refs.search.value = '';
+                this.$refs.search.blur();
+                this._search = '';
+            },
+
+            close() {
+                this.$refs.search.value = '';
+                this.$refs.search.blur();
+                this._search = '';
+                this._isOpen = false;
+            },
+
+            toggleSelected(opt) {
+                if(this._selected.find(option => option.value === opt.value)) {
+                    this.removeSelected(opt);
+                } else {
+                    if(this._max !=0 && this._selected.length >= this._max) return;
+                    this._selected.push({ value: opt.value, label: opt.label });
+                }
+            },
+
+            setSelected(opt) {
+                this._selected = opt
             },
 
             removeSelected(opt) {

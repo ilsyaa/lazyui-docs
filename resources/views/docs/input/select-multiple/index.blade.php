@@ -75,6 +75,39 @@
                 </div>
             </x-card>
 
+            <x-card>
+                <div class="p-6 flex flex-col gap-3">
+                    <div class="text-xl font-semibold">Using Ajax</div>
+                    <div class="text-sm max-w-2xl text-cat-500">To set the default value in select ajax is a little different, you can see it below. <br>For select ajax it doesn't support wire:model and x-model for now.</div>
+                    <a target="_blank" href="https://github.com/ilsyaa/lazyui-docs/blob/master/routes/api.php" class="underline text-sm">Example API Backend</a>
+                    <div x-data="{ tab: 'preview' }">
+                        <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
+                            <button type="button" x-on:click="tab = 'preview'" :class="{ 'active': tab === 'preview' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Preview</button>
+                            <button type="button" x-on:click="tab = 'code'" :class="{ 'active': tab === 'code' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Code</button>
+                        </div>
+
+                        <div>
+                            <div x-show="tab === 'preview'">
+                                <div class="rounded-xl px-3 py-6 bg-cat-200 dark:bg-cat-750">
+                                    <div class="flex flex-wrap gap-3 justify-center max-w-xs mx-auto">
+                                        @include('docs.input.select-multiple.ssr')
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div x-show="tab === 'code'" x-cloak>
+                                @php
+                                    $file = resource_path('views/docs/input/select-multiple/ssr.blade.php');
+                                    $content = file_exists($file) ? file_get_contents($file) : 'File not found';
+                                @endphp
+                                <pre class="text-[0.9rem]"><code class="language-html">{{ $content }}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </x-card>
+
         </div>
     </div>
 @endsection

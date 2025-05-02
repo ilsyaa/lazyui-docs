@@ -3,7 +3,7 @@
 ])
 
 <div
-    x-data="lazySelectBasic()"
+    x-data="lazySelect()"
     class="relative w-full"
     x-on:keydown.escape.prevent="close()"
     x-on:keydown.enter.prevent="toggle()"
