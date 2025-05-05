@@ -155,6 +155,12 @@
             >
                 <x-slot:title>Sheet</x-slot:title>
             </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('overlay.toast') }}"
+                href="{{ route('overlay.toast') }}"
+            >
+                <x-slot:title>Toast</x-slot:title>
+            </x-nav.sub-item>
         </x-slot:sub>
     </x-nav.item-collapse>
 

@@ -31,5 +31,6 @@
     </div>
     @livewireScripts
     @stack('body')
+    <x-toast placement="top-right" />
 </body>
 </html>

@@ -34,6 +34,17 @@
     --color-cat-800: oklch(0.21 0.01 286);
     --color-cat-900: oklch(0.14 0.00 286); */
 
+    --animate-fade-in-bounce: fade-in-bounce 0.3s ease-in-out;
+    @keyframes fade-in-bounce {
+        0% {
+            opacity: 0;
+            scale: 1.3;
+        }
+        100% {
+            opacity: 1;
+            scale: 1;
+        }
+    }
 }
 
 @plugin "@tailwindcss/forms";

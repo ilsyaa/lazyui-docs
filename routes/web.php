@@ -19,6 +19,9 @@ Route::group([], function () {
     Route::get('dialog', fn() => view('docs.overlay.dialog.index'))->name('overlay.dialog');
     Route::get('dropdown', fn() => view('docs.overlay.dropdown.index'))->name('overlay.dropdown');
     Route::get('sheet', fn() => view('docs.overlay.sheet.index'))->name('overlay.sheet');
+    Route::get('toast', function() {
+        return view('docs.overlay.toast.index');
+    })->name('overlay.toast');
 });
 
 Route::group([], function () {
