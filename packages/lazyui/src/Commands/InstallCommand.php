@@ -106,6 +106,7 @@ class InstallCommand extends Command implements PromptsForMissingInput
     {
         $this->call('lazy:component', ['name' => 'button', '--silent' => true]);
         $this->call('lazy:component', ['name' => 'dropdown', '--silent' => true]);
+        $this->call('lazy:component', ['name' => 'nav', '--silent' => true]);
         $this->call('lazy:component', ['name' => 'sheet', '--silent' => true]);
     }
 }
