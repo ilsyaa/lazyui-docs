@@ -18,7 +18,7 @@
 <div
     {{
         $attributes
-            ->twMerge([ 'fixed block w-full z-[99] sm:max-w-2xs transition-all duration-300 ease-out', $classPlacement[$placement] ?? $classPlacement['top-right'] ])
+            ->twMerge(['fixed w-full z-[99] sm:max-w-2xs', $classPlacement[$placement] ?? $classPlacement['top-right'] ])
     }}
     data-lazy-toast='@json(["placement" => $placement, "max" => $max, "duration" => $duration])'
     aria-label="LazyToast Notification"

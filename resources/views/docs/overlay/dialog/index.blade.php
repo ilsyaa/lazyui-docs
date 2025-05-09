@@ -10,7 +10,7 @@
                         <div class="text-xl font-semibold">Dialog</div>
                         <div class="text-cat-500 text-sm">A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.</div>
                     </div>
-                    <div class="text-sm">Before you can use this component, you need to run this command to publish the component to <code>resources/views/components</code>.</div>
+                    <div class="text-sm">Before you can use this component, you need to run this command to publish the component to <code class="break-words">resources/views/components</code>.</div>
                     <pre class="text-[0.9rem]"><code class="language-">php artisan lazy:component dialog</code></pre>
                 </div>
             </x-card>

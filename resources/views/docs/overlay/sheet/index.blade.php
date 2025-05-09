@@ -10,7 +10,7 @@
                         <div class="text-xl font-semibold">Sheet</div>
                         <div class="text-cat-500 text-sm">Displays a callout for user attention.</div>
                     </div>
-                    <div class="text-sm">Before you can use this component, you need to run this command to publish the component to <code>resources/views/components</code>.</div>
+                    <div class="text-sm">Before you can use this component, you need to run this command to publish the component to <code class="break-words">resources/views/components</code>.</div>
                     <pre class="text-[0.9rem]"><code class="language-">php artisan lazy:component sheet</code></pre>
                 </div>
             </x-card>
