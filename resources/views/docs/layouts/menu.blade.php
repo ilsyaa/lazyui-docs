@@ -44,6 +44,12 @@
         <x-slot:title>Display</x-slot:title>
         <x-slot:sub>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.breadcrumb') }}"
+                href="{{ route('display.breadcrumb') }}"
+            >
+                <x-slot:title>Breadcrumb</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('display.button') }}"
                 href="{{ route('display.button') }}"
             >
