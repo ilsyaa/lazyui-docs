@@ -79,6 +79,12 @@
                 <x-slot:title>Autocomplete</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.autocomplete.multiple') }}"
+                href="{{ route('input.autocomplete.multiple') }}"
+            >
+                <x-slot:title>Autocomplete Multiple</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('input.checkbox') }}"
                 href="{{ route('input.checkbox') }}"
             >

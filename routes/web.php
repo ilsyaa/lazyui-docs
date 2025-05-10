@@ -26,6 +26,7 @@ Route::group([], function () {
 
 Route::group([], function () {
     Route::get('autocomplete', fn() => view('docs.input.autocomplete.index'))->name('input.autocomplete');
+    Route::get('autocomplete-multiple', fn() => view('docs.input.autocomplete-multiple.index'))->name('input.autocomplete.multiple');
     Route::get('checkbox', fn() => view('docs.input.checkbox.index'))->name('input.checkbox');
     Route::get('input', fn() => view('docs.input.input.index'))->name('input.input');
     Route::get('label', fn() => view('docs.input.label.index'))->name('input.label');
@@ -41,3 +42,5 @@ Route::group([], function () {
     Route::get('card', fn() => view('docs.display.card.index'))->name('display.card');
     Route::get('nav', fn() => view('docs.display.nav.index'))->name('display.nav');
 });
+
+Route::get('test-livewire', fn() => view('docs.livewire'))->name('test-livewire');
