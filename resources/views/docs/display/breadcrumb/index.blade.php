@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-xl font-semibold">Breadcrumb</div>
+                    <div class="text-2xl font-semibold">Breadcrumb</div>
                     <div class="text-cat-500 text-sm">A breadcrumb component.</div>
                 </div>
                 <div>
@@ -20,7 +20,6 @@
             <section>
                 <div class="mb-5">
                     <div class="text-xl font-semibold">Usage</div>
-                    {{-- <div class="text-cat-500 text-sm"></div> --}}
                 </div>
                 <div x-data="{ tab: 'preview' }">
                     <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
@@ -51,7 +50,6 @@
             <section>
                 <div class="mb-5">
                     <div class="text-xl font-semibold">Collapsed</div>
-                    {{-- <div class="text-cat-500 text-sm"></div> --}}
                 </div>
                 <div x-data="{ tab: 'preview' }">
                     <div class="flex items-center justify-start text-sm mb-5 text-cat-500">

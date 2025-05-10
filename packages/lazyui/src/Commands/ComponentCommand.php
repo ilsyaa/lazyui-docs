@@ -23,11 +23,13 @@ class ComponentCommand extends Command implements PromptsForMissingInput
 
     protected $availableComponents  = [
         'autocomplete',
+        'breadcrumb',
         'button',
         'card',
         'checkbox',
         'dialog',
         'dropdown',
+        'form',
         'input',
         'label',
         'nav',
