@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,7 @@ Route::group([], function () {
     Route::get('autocomplete', fn() => view('docs.input.autocomplete.index'))->name('input.autocomplete');
     Route::get('autocomplete-multiple', fn() => view('docs.input.autocomplete-multiple.index'))->name('input.autocomplete.multiple');
     Route::get('checkbox', fn() => view('docs.input.checkbox.index'))->name('input.checkbox');
+    Route::get('form', fn() => view('docs.input.form.index'))->name('input.form');
     Route::get('input', fn() => view('docs.input.input.index'))->name('input.input');
     Route::get('label', fn() => view('docs.input.label.index'))->name('input.label');
     Route::get('radio', fn() => view('docs.input.radio.index'))->name('input.radio');
@@ -44,3 +46,15 @@ Route::group([], function () {
 });
 
 Route::get('test-livewire', fn() => view('docs.livewire'))->name('test-livewire');
+
+Route::post('form-url', function (Request $request) {
+    if(!$request->ajax()) abort(404);
+
+    $request->validate([
+        'name' => 'required',
+    ]);
+
+    return response()->json([
+        'message' => 'Success submitted.',
+    ], 200);
+})->name('form-backend');
