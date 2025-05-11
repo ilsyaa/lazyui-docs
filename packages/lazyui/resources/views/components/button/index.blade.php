@@ -14,7 +14,7 @@
         'accent' => 'bg-accent-500 text-white shadow-sm hover:bg-accent-600',
         'outline' => 'border shadow-xs border-cat-300 dark:border-cat-700 shadow-sm',
         'secondary' => 'bg-cat-300 dark:bg-cat-700 text-cat-900 dark:text-white shadow-sm',
-        'ghost' => 'hover:bg-cat-300 dark:hover:bg-cat-700 text-cat-900 dark:text-white',
+        'ghost' => 'hover:bg-cat-300/20 dark:hover:bg-cat-700/20 text-cat-900 dark:text-white',
         'link' => 'text-cat-900 dark:text-white underline-offset-4 hover:underline',
     ];
 
