@@ -1,4 +1,4 @@
-<x-select.multiple name="language[]">
+<x-select.multiple name="language[]" max="3">
     <option selected value="php">PHP</option>
     <option selected value="js">JavaScript</option>
     <option value="java">Java</option>
