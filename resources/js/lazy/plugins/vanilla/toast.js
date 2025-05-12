@@ -30,7 +30,7 @@ class Toast {
         const id = `toast-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`;
         const div = document.createElement('div');
         div.id = id;
-        div.className = 'absolute w-full break-words wrap-anywhere select-none sm:p-0 p-2';
+        div.className = 'absolute w-full break-words wrap-anywhere select-none';
         div.append(this.#renderToastHTML(options));
         this.wrapper.append(div);
         this.toasts.unshift({
