@@ -16,7 +16,10 @@
                     </div>
                 </div>
                 <div>
-                    <div class="text-sm mb-3">add this code in your <code class="break-words">app.blade.php</code> layout which is located at <code class="break-words">resources/views/[path]/layouts/app.blade.php</code></div>
+                    <div class="text-sm mb-3">
+                        Add this code right before the closing <code>&lt;/body&gt;</code> tag in your
+                        <code class="break-words">resources/views/[path]/layouts/app.blade.php</code> layout file.
+                    </div>
                     <div class="rounded-xl bg-white dark:bg-cat-800 border border-dashed border-cat-300 dark:border-cat-700">
                         <pre class="text-[0.9rem]"><code class="language-html">&lt;x-toast /&gt;</code></pre>
                     </div>

@@ -3,33 +3,35 @@
 @section('content')
     <div class="lazy-container-sm">
 
-        <div class="flex flex-col gap-5">
-            <x-card>
-                <div class="p-6 flex flex-col gap-5">
-                    <div>
-                        <div class="text-xl font-semibold">Dropdown</div>
-                        <div class="text-cat-500 text-sm">Displays a menu to the user — such as a set of actions or functions — triggered by a button.</div>
-                    </div>
-                    <div class="text-sm">Before you can use this component, you need to run this command to publish the component to <code class="break-words">resources/views/components</code>.</div>
-                    <pre class="text-[0.9rem]"><code class="language-">php artisan lazy:component dropdown</code></pre>
+        <div class="flex flex-col gap-10">
+            <section>
+                <div class="mb-5">
+                    <div class="text-2xl font-semibold">Dropdown</div>
+                    <div class="text-cat-500 text-sm">Displays a menu to the user — such as a set of actions or functions — triggered by a button.</div>
                 </div>
-            </x-card>
+                <div>
+                    <div class="text-sm mb-3">Before you can use this component, you need to run this command to publish the component to <code class="break-words">resources/views/components</code>.</div>
+                    <div class="rounded-xl bg-white dark:bg-cat-800 border border-dashed border-cat-300 dark:border-cat-700">
+                        <pre class="text-[0.9rem]"><code class="language-">php artisan lazy:component dropdown</code></pre>
+                    </div>
+                </div>
+            </section>
 
-            <x-card>
-                <div class="p-6 flex flex-col gap-5">
-                    <div class="text-xl font-semibold">Basic</div>
-                    <div x-data="{ tab: 'preview' }">
-                        <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
-                            <button type="button" x-on:click="tab = 'preview'" :class="{ 'active': tab === 'preview' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Preview</button>
-                            <button type="button" x-on:click="tab = 'code'" :class="{ 'active': tab === 'code' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Code</button>
-                        </div>
+            <section>
+                <div class="mb-5">
+                    <div class="text-xl font-semibold">Usage</div>
+                </div>
+                <div x-data="{ tab: 'preview' }">
+                    <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
+                        <button type="button" x-on:click="tab = 'preview'" :class="{ 'active': tab === 'preview' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Preview</button>
+                        <button type="button" x-on:click="tab = 'code'" :class="{ 'active': tab === 'code' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Code</button>
+                    </div>
 
-                        <div>
+                    <div>
+                        <div class="rounded-xl bg-white dark:bg-cat-800 border border-dashed border-cat-300 dark:border-cat-700">
                             <div x-show="tab === 'preview'">
-                                <div class="rounded-xl px-3 py-6 bg-cat-200 dark:bg-cat-750">
-                                    <div class="flex flex-wrap gap-3 justify-center">
-                                        @include('docs.overlay.dropdown.basic')
-                                    </div>
+                                <div class="flex flex-wrap gap-3 justify-center px-3 py-10 max-w-xs mx-auto">
+                                    @include('docs.overlay.dropdown.basic')
                                 </div>
                             </div>
 
@@ -38,28 +40,28 @@
                                     $file = resource_path('views/docs/overlay/dropdown/basic.blade.php');
                                     $content = file_exists($file) ? file_get_contents($file) : 'File not found';
                                 @endphp
-                                <pre class="text-[0.9rem]"><code class="language-html">{{ $content }}</code></pre>
+                                <pre class="text-[0.9rem] p-0"><code class="language-html">{{ $content }}</code></pre>
                             </div>
                         </div>
                     </div>
                 </div>
-            </x-card>
+            </section>
 
-            <x-card>
-                <div class="p-6 flex flex-col gap-5">
+            <section>
+                <div class="mb-5">
                     <div class="text-xl font-semibold">Link</div>
-                    <div x-data="{ tab: 'preview' }">
-                        <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
-                            <button type="button" x-on:click="tab = 'preview'" :class="{ 'active': tab === 'preview' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Preview</button>
-                            <button type="button" x-on:click="tab = 'code'" :class="{ 'active': tab === 'code' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Code</button>
-                        </div>
+                </div>
+                <div x-data="{ tab: 'preview' }">
+                    <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
+                        <button type="button" x-on:click="tab = 'preview'" :class="{ 'active': tab === 'preview' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Preview</button>
+                        <button type="button" x-on:click="tab = 'code'" :class="{ 'active': tab === 'code' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Code</button>
+                    </div>
 
-                        <div>
+                    <div>
+                        <div class="rounded-xl bg-white dark:bg-cat-800 border border-dashed border-cat-300 dark:border-cat-700">
                             <div x-show="tab === 'preview'">
-                                <div class="rounded-xl px-3 py-6 bg-cat-200 dark:bg-cat-750">
-                                    <div class="flex flex-wrap gap-3 justify-center">
-                                        @include('docs.overlay.dropdown.link')
-                                    </div>
+                                <div class="flex flex-wrap gap-3 justify-center px-3 py-10 max-w-xs mx-auto">
+                                    @include('docs.overlay.dropdown.link')
                                 </div>
                             </div>
 
@@ -68,28 +70,28 @@
                                     $file = resource_path('views/docs/overlay/dropdown/link.blade.php');
                                     $content = file_exists($file) ? file_get_contents($file) : 'File not found';
                                 @endphp
-                                <pre class="text-[0.9rem]"><code class="language-html">{{ $content }}</code></pre>
+                                <pre class="text-[0.9rem] p-0"><code class="language-html">{{ $content }}</code></pre>
                             </div>
                         </div>
                     </div>
                 </div>
-            </x-card>
+            </section>
 
-            <x-card>
-                <div class="p-6 flex flex-col gap-5">
+            <section>
+                <div class="mb-5">
                     <div class="text-xl font-semibold">With Icon</div>
-                    <div x-data="{ tab: 'preview' }">
-                        <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
-                            <button type="button" x-on:click="tab = 'preview'" :class="{ 'active': tab === 'preview' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Preview</button>
-                            <button type="button" x-on:click="tab = 'code'" :class="{ 'active': tab === 'code' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Code</button>
-                        </div>
+                </div>
+                <div x-data="{ tab: 'preview' }">
+                    <div class="flex items-center justify-start text-sm mb-5 text-cat-500">
+                        <button type="button" x-on:click="tab = 'preview'" :class="{ 'active': tab === 'preview' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Preview</button>
+                        <button type="button" x-on:click="tab = 'code'" :class="{ 'active': tab === 'code' }" class="px-3 py-1.5 border-b-2 border-transparent [&.active]:text-cat-800 [&.active]:dark:text-white [&.active]:border-cat-800 [&.active]:dark:border-white cursor-pointer">Code</button>
+                    </div>
 
-                        <div>
+                    <div>
+                        <div class="rounded-xl bg-white dark:bg-cat-800 border border-dashed border-cat-300 dark:border-cat-700">
                             <div x-show="tab === 'preview'">
-                                <div class="rounded-xl px-3 py-6 bg-cat-200 dark:bg-cat-750">
-                                    <div class="flex flex-wrap gap-3 justify-center">
-                                        @include('docs.overlay.dropdown.icon')
-                                    </div>
+                                <div class="flex flex-wrap gap-3 justify-center px-3 py-10 max-w-xs mx-auto">
+                                    @include('docs.overlay.dropdown.icon')
                                 </div>
                             </div>
 
@@ -98,17 +100,12 @@
                                     $file = resource_path('views/docs/overlay/dropdown/icon.blade.php');
                                     $content = file_exists($file) ? file_get_contents($file) : 'File not found';
                                 @endphp
-                                <pre class="text-[0.9rem]"><code class="language-html">{{ $content }}</code></pre>
+                                <pre class="text-[0.9rem] p-0"><code class="language-html">{{ $content }}</code></pre>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="text-xs">Add class="size-4 mr-2" to each svg</div>
-                        <div class="text-xs">Svgs : <a class="underline" target="_blank" href="https://awesomesvg.vercel.app/">https://awesomesvg.vercel.app</a></div>
-                    </div>
                 </div>
-            </x-card>
-
+            </section>
         </div>
 
     </div>

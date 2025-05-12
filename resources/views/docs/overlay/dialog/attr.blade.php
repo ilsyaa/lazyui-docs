@@ -27,7 +27,7 @@
         console.log(e.detail);
     })
 
-    // open sheet on javascript
+    // open dialog on javascript
     document.addEventListener('alpine:initialized', () => {
         Alpine.store('dialog').open('idDialog');
     })
