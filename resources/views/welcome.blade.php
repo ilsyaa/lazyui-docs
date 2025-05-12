@@ -48,7 +48,7 @@
             <div
                 class="absolute -inset-px opacity-70 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:-inset-1 transition-all duration-1000 animate-gradient-x bg-[length:300%_300%] bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E]">
             </div>
-            <x-button href="{{ route('installation') }}" class="py-5 z-1">
+            <x-button href="{{ route('installation') }}" class="py-5 z-1" >
                 <svg class="size-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <defs>
                         <style>
@@ -65,8 +65,7 @@
                 Install LazyUI
             </x-button>
         </div>
-        <a href="https://github.com/ilsyaa/lazyui" class="text-xs font-medium text-cat-500 hover:underline">Version
-            1.0</a>
+        <a href="https://github.com/ilsyaa/lazyui" class="text-xs font-medium text-cat-500 hover:underline">Version 1.0</a>
     </div>
 
     <div class="absolute bottom-5 md:right-5 md:translate-x-0 right-1/2 translate-x-1/2">
