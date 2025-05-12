@@ -42,7 +42,7 @@
             <span class="text-4xl font-bold">LazyUI</span>
             <span class="text-sm">for Laravel</span>
         </div>
-        <div class="text-sm max-w-md text-center text-cat-700 dark:text-cat-400">Beautifully designed components that
+        <div class="text-sm max-w-md text-center text-cat-700 dark:text-cat-400 px-3">Beautifully designed components that
             you can copy and paste into your apps. Accessible. Customizable. Open Source.</div>
         <div class="relative inline-flex group">
             <div
