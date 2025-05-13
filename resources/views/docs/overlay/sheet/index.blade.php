@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-2xl font-semibold">Sheet</div>
+                    <div class="text-3xl font-bold">Sheet</div>
                     <div class="text-cat-500 text-sm">Displays a callout for user attention.</div>
                 </div>
                 <div>

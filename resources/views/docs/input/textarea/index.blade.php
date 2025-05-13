@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-2xl font-semibold">Textarea</div>
+                    <div class="text-3xl font-bold">Textarea</div>
                     <div class="text-cat-500 text-sm">Displays a form textarea or a component that looks like a textarea.</div>
                 </div>
                 <div>

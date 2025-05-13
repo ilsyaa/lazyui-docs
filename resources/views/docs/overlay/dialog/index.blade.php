@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-2xl font-semibold">Dialog</div>
+                    <div class="text-3xl font-bold">Dialog</div>
                     <div class="text-cat-500 text-sm">A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.</div>
                 </div>
                 <div>

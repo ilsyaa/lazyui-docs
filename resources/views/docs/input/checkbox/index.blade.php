@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-2xl font-semibold">Checkbox</div>
+                    <div class="text-3xl font-bold">Checkbox</div>
                     <div class="text-cat-500 text-sm">A control that allows the user to toggle between checked and not checked.</div>
                 </div>
                 <div>

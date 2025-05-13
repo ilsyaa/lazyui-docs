@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-xl font-semibold">Autocomplete Multiple</div>
+                    <div class="text-3xl font-bold">Autocomplete Multiple</div>
                     <div class="text-cat-500 text-sm">AutoComplete is an input component that provides real-time suggestions when being typed.</div>
                 </div>
                 <div>

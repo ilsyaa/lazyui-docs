@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-2xl font-semibold">Select Multiple</div>
+                    <div class="text-3xl font-bold">Select Multiple</div>
                     <div class="text-cat-500 text-sm">A component to select multiple options.</div>
                 </div>
                 <div>

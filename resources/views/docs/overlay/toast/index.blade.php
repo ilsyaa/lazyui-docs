@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-xl font-semibold">Toast</div>
+                    <div class="text-3xl font-bold">Toast</div>
                     <div class="text-cat-500 text-sm">A toast notification that can be used to show a message. Click a button below to show the toast notification.</div>
                 </div>
                 <div class="mb-5">

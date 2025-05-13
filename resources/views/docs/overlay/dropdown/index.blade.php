@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-2xl font-semibold">Dropdown</div>
+                    <div class="text-3xl font-bold">Dropdown</div>
                     <div class="text-cat-500 text-sm">Displays a menu to the user — such as a set of actions or functions — triggered by a button.</div>
                 </div>
                 <div>

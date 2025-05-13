@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-2xl font-semibold">Button</div>
+                    <div class="text-3xl font-bold">Button</div>
                     <div class="text-cat-500 text-sm">Displays a button.</div>
                 </div>
                 <div>

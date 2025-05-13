@@ -156,6 +156,12 @@
         <x-slot:title>Overlay</x-slot:title>
         <x-slot:sub>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('overlay.alert') }}"
+                href="{{ route('overlay.alert') }}"
+            >
+                <x-slot:title>Alert</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('overlay.dropdown') }}"
                 href="{{ route('overlay.dropdown') }}"
             >
@@ -168,6 +174,12 @@
                 <x-slot:title>Dialog</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('overlay.popover') }}"
+                href="{{ route('overlay.popover') }}"
+            >
+                <x-slot:title>Popover</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('overlay.sheet') }}"
                 href="{{ route('overlay.sheet') }}"
             >
@@ -178,6 +190,12 @@
                 href="{{ route('overlay.toast') }}"
             >
                 <x-slot:title>Toast</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('overlay.tooltip') }}"
+                href="{{ route('overlay.tooltip') }}"
+            >
+                <x-slot:title>Tooltip</x-slot:title>
             </x-nav.sub-item>
         </x-slot:sub>
     </x-nav.item-collapse>

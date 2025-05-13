@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-xl font-semibold">Form</div>
+                    <div class="text-3xl font-bold">Form</div>
                     <div class="text-cat-500 text-sm">A form component.</div>
                 </div>
                 <div>

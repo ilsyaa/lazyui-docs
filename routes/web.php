@@ -17,12 +17,15 @@ Route::get('/layout', function () {
 })->name('panel');
 
 Route::group([], function () {
+    Route::get('alert', fn() => view('docs.overlay.alert.index'))->name('overlay.alert');
     Route::get('dialog', fn() => view('docs.overlay.dialog.index'))->name('overlay.dialog');
     Route::get('dropdown', fn() => view('docs.overlay.dropdown.index'))->name('overlay.dropdown');
+    Route::get('popover', fn() => view('docs.overlay.popover.index'))->name('overlay.popover');
     Route::get('sheet', fn() => view('docs.overlay.sheet.index'))->name('overlay.sheet');
     Route::get('toast', function() {
         return view('docs.overlay.toast.index');
     })->name('overlay.toast');
+    Route::get('tooltip', fn() => view('docs.overlay.tooltip.index'))->name('overlay.tooltip');
 });
 
 Route::group([], function () {

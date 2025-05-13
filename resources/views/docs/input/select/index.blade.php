@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-2xl font-semibold">Select</div>
+                    <div class="text-3xl font-bold">Select</div>
                     <div class="text-cat-500 text-sm">A control that allows the user to select one or more options from a list of options.</div>
                 </div>
                 <div>

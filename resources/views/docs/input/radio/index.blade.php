@@ -6,7 +6,7 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-2xl font-semibold">Radio Group</div>
+                    <div class="text-3xl font-bold">Radio Group</div>
                     <div class="text-cat-500 text-sm">A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.</div>
                 </div>
                 <div>
