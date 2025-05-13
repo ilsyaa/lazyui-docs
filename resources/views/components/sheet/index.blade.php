@@ -56,15 +56,15 @@
         ])
         x-on:click="$store.sheet.close(@js($id))"
         x-show="$store.sheet.isOpen(@js($id))"
-        x-transition.opacity
+        x-transition.opacity.duration.600ms
     ></div>
 
     <div
         x-show="$store.sheet.isOpen(@js($id))"
-        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700"
         x-transition:enter-start="{{ $transitionClasses[$placement]['enter'] }}"
         x-transition:enter-end="{{ $transitionClasses[$placement]['enterTo'] }}"
-        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700"
         x-transition:leave-start="{{ $transitionClasses[$placement]['leave'] }}"
         x-transition:leave-end="{{ $transitionClasses[$placement]['leaveTo'] }}"
         @class([
