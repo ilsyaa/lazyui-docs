@@ -1,29 +1,30 @@
 @props([
-    'placement' => 'bottom',
+    'placement' => 'top',
     'offset' => 8,
-    'noscroll' => false,
     'trigger' => 'click',
     'class' => ''
 ])
 
-
 <div x-data="{
     _isOpen: false,
-    _isHovered: false,
-    _timer: null,
+    _delay: 200,
+    _openTimeout: null,
+    _closeTimeout: null,
+
     open() {
-        this._isHovered = true;
-        this._isOpen = true;
-        if (this._timer) clearTimeout(this._timer);
+        clearTimeout(this._closeTimeout);
+        this._openTimeout = setTimeout(() => {
+            this._isOpen = true;
+        }, this._delay);
     },
+
     close() {
-        this._isHovered = false;
-        this._timer = setTimeout(() => {
-            if (!this._isHovered) {
-                this._isOpen = false;
-            }
-        }, 500);
+        clearTimeout(this._openTimeout);
+        this._closeTimeout = setTimeout(() => {
+            this._isOpen = false;
+        }, this._delay);
     },
+
     toggle() {
         this._isOpen = !this._isOpen;
     }
@@ -31,10 +32,10 @@
     <div
         x-ref="button"
         @if ($trigger == 'hover')
-        x-on:mouseenter="open()"
-        x-on:mouseleave="close()"
+            x-on:mouseenter="open()"
+            x-on:mouseleave="close()"
         @else
-        x-on:click="toggle()"
+            x-on:click="toggle()"
         @endif
     >
         {{ $toggle }}
@@ -42,18 +43,17 @@
 
     <div
         x-show="_isOpen"
-        x-transition:enter="transition ease-out duration-100"
-        x-transition:leave="transition ease-in duration-75"
-        x-transition:enter-start="transform opacity-0 scale-75"
-        x-transition:enter-end="transform opacity-100 scale-100"
-        x-transition:leave-start="transform opacity-100 scale-100"
-        x-transition:leave-end="transform opacity-0 scale-75"
-        @if ($noscroll) x-trap.inert.noscroll="_isOpen" @endif
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95"
         @if ($trigger === 'hover')
-        x-on:mouseenter="open()"
-        x-on:mouseleave="close()"
+            x-on:mouseenter="open()"
+            x-on:mouseleave="close()"
         @else
-        x-on:click.outside="_isOpen = false"
+            x-on:click.outside="_isOpen = false"
         @endif
         @keydown.escape.window="_isOpen = false"
         x-anchor.{{ $placement }}.offset.{{ $offset }}.ref="$refs.button"
@@ -70,4 +70,3 @@
         {{ $content }}
     </div>
 </div>
-
