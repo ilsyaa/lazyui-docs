@@ -15,6 +15,7 @@
         "vite": "^6.3.4"
     },
     "dependencies": {
-        "simplebar": "^6.3.0"
+        "simplebar": "^6.3.0",
+        "tippy.js": "^6.3.7"
     }
 }

@@ -3,7 +3,7 @@
 
 @import "./utils.css";
 @import "./layout.css";
-@import "./simplebar.css";
+@import "./external.css";
 
 @custom-variant dark (&:where([theme-mode=dark], [theme-mode=dark] *));
 @custom-variant ripple (span span);
