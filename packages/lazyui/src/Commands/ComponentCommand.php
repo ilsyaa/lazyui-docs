@@ -22,7 +22,10 @@ class ComponentCommand extends Command implements PromptsForMissingInput
         {--silent : Silent mode.}';
 
     protected $availableComponents  = [
+        'alert',
+        'accordion',
         'autocomplete',
+        'badge',
         'breadcrumb',
         'button',
         'card',
@@ -37,8 +40,10 @@ class ComponentCommand extends Command implements PromptsForMissingInput
         'select',
         'sheet',
         'switch',
+        'tabs',
         'textarea',
         'toast',
+        'tooltip',
     ];
 
     /**
