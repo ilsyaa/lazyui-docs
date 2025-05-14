@@ -74,12 +74,6 @@
                 <x-slot:title>Card</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
-                is-active="{{ request()->routeIs('display.table') }}"
-                href="{{ route('display.table') }}"
-            >
-                <x-slot:title>Table</x-slot:title>
-            </x-nav.sub-item>
-            <x-nav.sub-item
                 is-active="{{ request()->routeIs('display.tabs') }}"
                 href="{{ route('display.tabs') }}"
             >
@@ -228,33 +222,33 @@
 
 <x-nav.section label="OTHER">
 
-    <x-nav.item disabled >
+    <x-nav.item >
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M99.5 144.8L367.2 412.5c17.5-12.5 32.8-27.8 45.3-45.3L144.8 99.5C127.3 112 112 127.3 99.5 144.8z"/><path fill="currentColor" class="fa-primary" d="M256 64a192 192 0 1 1 0 384 192 192 0 1 1 0-384zm0 448A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0,0,640,512"><path d="M0 416c0 53 43 96 96 96l448 0c53 0 96-43 96-96s-43-96-96-96L96 320c-53 0-96 43-96 96zm160 0a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm192 0a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm192 0a32 32 0 1 1 -64 0 32 32 0 1 1 64 0z" fill="currentColor" style="opacity: 0.4;"></path><path d="M96 0C78.3 0 64 14.3 64 32l0 192c0 17.7 14.3 32 32 32l192 0c17.7 0 32-14.3 32-32l0-192c0-17.7-14.3-32-32-32L96 0zM416 64c-17.7 0-32 14.3-32 32l0 128c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32L416 64z" fill="currentColor" style="opacity: 1;"></path></svg>
         </x-slot:icon>
-        <x-slot:title>Disabled</x-slot:title>
+        <x-slot:title>Package suggestions</x-slot:title>
     </x-nav.item>
 
     <x-nav.item>
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M50.7 58.5C58.9 42.3 75.5 32 93.7 32H192L160 160H0L50.7 58.5zM288 160v96c0 17.7-14.3 32-32 32H192c-17.7 0-32-14.3-32-32V160H288zm0 0L256 32h98.3c18.2 0 34.8 10.3 42.9 26.5L448 160H288z"/><path fill="currentColor" class="fa-primary" d="M160 160H0V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V160H288v96c0 17.7-14.3 32-32 32H192c-17.7 0-32-14.3-32-32V160z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0,0,448,512"><path d="M0 160l160 0L192 32 93.7 32C75.5 32 58.9 42.3 50.7 58.5L0 160zm160 0l128 0 0 96c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-96zM256 32l32 128 160 0L397.3 58.5C389.1 42.3 372.5 32 354.3 32L256 32z" fill="currentColor" style="opacity: 0.4;"></path><path d="M160 160L0 160 0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-256-160 0 0 96c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-96z" fill="currentColor" style="opacity: 1;"></path></svg>
         </x-slot:icon>
-        <x-slot:title>Item Caption</x-slot:title>
-        <x-slot:description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, cupiditate!</x-slot:description>
+        <x-slot:title>NPM Packages</x-slot:title>
+        <x-slot:description>Default packages installed in lazyui</x-slot:description>
     </x-nav.item>
 
     <x-nav.item
-        href="https://awesomesvg.vercel.app/"
+        href="https://lazysvg.vercel.app/"
         target="_blank"
     >
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M64 140.7c15.3-3 28.2-7.9 41.2-12.8c21.2-8 42.5-15.9 74-15.9c31.4 0 53 8 74.6 16c21.6 8 43.3 16 74.7 16c20.4 0 35.6-3 55.5-9.3v208c-19.9 6.3-35.1 9.3-55.5 9.3c-31.4 0-53.1-8-74.7-16c-21.6-8-43.3-16-74.6-16c-20.6 0-36.6 3.6-51.2 8.2v64c14.6-4.6 30.6-8.2 51.2-8.2c31.4 0 53 8 74.6 16c21.6 8 43.3 16 74.7 16s50-6.8 93.3-22.5c7.8-2.9 16.5-6 26.2-9.5V48c-9.7 3.5-18.4 6.6-26.2 9.5C378.6 73.2 360 80 328.5 80s-53.1-8-74.7-16c-21.6-8-43.3-16-74.6-16c-31.5 0-52.8 8-74 15.9c-13 4.9-25.9 9.7-41.2 12.8v64z"/><path fill="currentColor" class="fa-primary" d="M64 76.7V64c0-17.7-14.3-32-32-32S0 46.3 0 64V448c0 17.7 14.3 32 32 32s32-14.3 32-32V140.7v-64z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0,0,512,512"><path d="M96 96l0 352 373.6 0c14.6 0 26.4-11.8 26.4-26.4c0-3.7-.8-7.3-2.3-10.7L432 272l61.7-138.9c1.5-3.4 2.3-7 2.3-10.7c0-14.6-11.8-26.4-26.4-26.4L96 96z" fill="currentColor" style="opacity: 0.4;"></path><path d="M96 93c12.2-9.5 20-24.3 20-41C116 23.3 92.7 0 64 0S12 23.3 12 52c0 16.7 7.8 31.5 20 41l0 419 64 0L96 93z" fill="currentColor" style="opacity: 1;"></path></svg>
         </x-slot:icon>
         <x-slot:title>Font Svgs</x-slot:title>
     </x-nav.item>
 
     <x-nav.item
-        href="https://github.com/lazyexe/lazyui"
+        href="https://github.com/ilsyaa/lazyui"
         target="_blank"
     >
         <x-slot:icon>
