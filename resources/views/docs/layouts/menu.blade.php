@@ -44,6 +44,18 @@
         <x-slot:title>Display</x-slot:title>
         <x-slot:sub>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.accordion') }}"
+                href="{{ route('display.accordion') }}"
+            >
+                <x-slot:title>Accordion</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.badge') }}"
+                href="{{ route('display.badge') }}"
+            >
+                <x-slot:title>Badge</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('display.breadcrumb') }}"
                 href="{{ route('display.breadcrumb') }}"
             >
@@ -60,6 +72,18 @@
                 href="{{ route('display.card') }}"
             >
                 <x-slot:title>Card</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.table') }}"
+                href="{{ route('display.table') }}"
+            >
+                <x-slot:title>Table</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.tabs') }}"
+                href="{{ route('display.tabs') }}"
+            >
+                <x-slot:title>Tabs</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
                 is-active="{{ request()->routeIs('display.nav') }}"

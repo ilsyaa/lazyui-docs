@@ -43,9 +43,13 @@ Route::group([], function () {
 });
 
 Route::group([], function () {
+    Route::get('accordion', fn() => view('docs.display.accordion.index'))->name('display.accordion');
+    Route::get('badge', fn() => view('docs.display.badge.index'))->name('display.badge');
     Route::get('breadcrumb', fn() => view('docs.display.breadcrumb.index'))->name('display.breadcrumb');
     Route::get('button', fn() => view('docs.display.button.index'))->name('display.button');
     Route::get('card', fn() => view('docs.display.card.index'))->name('display.card');
+    Route::get('tabs', fn() => view('docs.display.tabs.index'))->name('display.tabs');
+    Route::get('table', fn() => view('docs.display.table.index'))->name('display.table');
     Route::get('nav', fn() => view('docs.display.nav.index'))->name('display.nav');
 });
 
