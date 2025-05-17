@@ -44,6 +44,7 @@ Route::group([], function () {
 
 Route::group([], function () {
     Route::get('accordion', fn() => view('docs.display.accordion.index'))->name('display.accordion');
+    Route::get('avatar', fn() => view('docs.display.avatar.index'))->name('display.avatar');
     Route::get('badge', fn() => view('docs.display.badge.index'))->name('display.badge');
     Route::get('breadcrumb', fn() => view('docs.display.breadcrumb.index'))->name('display.breadcrumb');
     Route::get('button', fn() => view('docs.display.button.index'))->name('display.button');
@@ -52,6 +53,9 @@ Route::group([], function () {
     Route::get('table', fn() => view('docs.display.table.index'))->name('display.table');
     Route::get('nav', fn() => view('docs.display.nav.index'))->name('display.nav');
 });
+
+// Route::group([], function () {
+// });
 
 Route::get('test-livewire', fn() => view('docs.livewire'))->name('test-livewire');
 

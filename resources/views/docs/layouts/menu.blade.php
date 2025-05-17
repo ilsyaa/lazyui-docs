@@ -50,6 +50,12 @@
                 <x-slot:title>Accordion</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.avatar') }}"
+                href="{{ route('display.avatar') }}"
+            >
+                <x-slot:title>Avatar</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('display.badge') }}"
                 href="{{ route('display.badge') }}"
             >

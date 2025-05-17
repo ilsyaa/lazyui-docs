@@ -24,6 +24,7 @@ class ComponentCommand extends Command implements PromptsForMissingInput
     protected $availableComponents  = [
         'alert',
         'accordion',
+        'avatar',
         'autocomplete',
         'badge',
         'breadcrumb',
