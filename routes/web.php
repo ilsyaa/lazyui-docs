@@ -54,8 +54,9 @@ Route::group([], function () {
     Route::get('nav', fn() => view('docs.display.nav.index'))->name('display.nav');
 });
 
-// Route::group([], function () {
-// });
+Route::group([], function () {
+    Route::get('color-dashboard', fn() => view('docs.style.dashboard.index'))->name('style.dashboard');
+});
 
 Route::get('test-livewire', fn() => view('docs.livewire'))->name('test-livewire');
 

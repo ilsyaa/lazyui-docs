@@ -1,13 +1,3 @@
-@import "./theme-accent.css";
-@import "./theme-font.css";
-
-@import "./utils.css";
-@import "./layout.css";
-@import "./external.css";
-
-@custom-variant dark (&:where([theme-mode=dark], [theme-mode=dark] *));
-@custom-variant ripple (span span);
-
 @theme {
     --color-cat-50: oklch(0.99 0.0011 197.14);
     --color-cat-100: oklch(0.98 0.0017 247.84);
@@ -21,6 +11,3 @@
     --color-cat-800: oklch(0.26 0.0213 248.65);
     --color-cat-900: oklch(0.22 0.0165 252.5);
 }
-
-@plugin "@tailwindcss/forms";
-@plugin "tailwindcss-motion";
