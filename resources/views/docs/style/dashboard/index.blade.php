@@ -111,14 +111,10 @@
 @endsection
 
 @push('head')
-    <link rel="stylesheet" href="{{ asset('assets/lazy/highlight/lazy.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/lazy/vendor/highlight/lazy.css') }}">
 @endpush
 
 @push('body')
-    <script src="{{ asset('assets/lazy/highlight/highlight.min.js') }}"></script>
-    <script src="{{ asset('assets/lazy/highlight/lazy.plugin.js') }}"></script>
-    <script>
-        hljs.addPlugin(new HljsLazyPlugin());
-        hljs.highlightAll();
-    </script>
+    <script src="{{ asset('assets/lazy/vendor/highlight/highlight.min.js') }}"></script>
+    <script src="{{ asset('assets/lazy/vendor/highlight/lazy.js') }}"></script>
 @endpush

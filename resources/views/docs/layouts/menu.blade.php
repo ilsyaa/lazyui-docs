@@ -224,6 +224,23 @@
         </x-slot:sub>
     </x-nav.item-collapse>
 
+    <x-nav.item-collapse
+        is-active="{{ request()->routeIs('external*') }}"
+    >
+        <x-slot:icon>
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0,0,512,512"><path d="M153.7 85.8c-12.5 12.5-12.5 32.8 0 45.3l79.7 79.7c12.5 12.5 32.8 12.5 45.3 0L358.3 131c12.5-12.5 12.5-32.8 0-45.3L284.3 11.7C276.5 3.9 266.2 0 256 0s-20.5 3.9-28.3 11.7L153.7 85.8zm0 295.2c-12.5 12.5-12.5 32.8 0 45.3l74.1 74.1c7.8 7.8 18 11.7 28.3 11.7s20.5-3.9 28.3-11.7l74.1-74.1c6.2-6.2 9.4-14.4 9.4-22.6s-3.1-16.4-9.4-22.6l-79.7-79.7c-12.5-12.5-32.8-12.5-45.3 0L153.7 381z" fill="currentColor" style="opacity: 0.4;"></path><path d="M131 153.7c-12.5-12.5-32.8-12.5-45.3 0L11.7 227.7c-15.6 15.6-15.6 40.9 0 56.6l74.1 74.1c12.5 12.5 32.8 12.5 45.3 0l79.7-79.7c12.5-12.5 12.5-32.8 0-45.3L131 153.7zM381 358.3c12.5 12.5 32.8 12.5 45.3 0l74.1-74.1c15.6-15.6 15.6-40.9 0-56.6l-74.1-74.1c-12.5-12.5-32.8-12.5-45.3 0l-79.7 79.7c-12.5 12.5-12.5 32.8 0 45.3L381 358.3z" fill="currentColor" style="opacity: 1;"></path></svg>
+        </x-slot:icon>
+        <x-slot:title>External</x-slot:title>
+        <x-slot:sub>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('external.apexcharts') }}"
+                href="{{ route('external.apexcharts') }}"
+            >
+                <x-slot:title>Apexcharts</x-slot:title>
+            </x-nav.sub-item>
+        </x-slot:sub>
+    </x-nav.item-collapse>
+
 </x-nav.section>
 
 <x-nav.section label="STYLE">

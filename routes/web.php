@@ -55,6 +55,12 @@ Route::group([], function () {
 });
 
 Route::group([], function () {
+    Route::get('apexcharts', fn() => view('docs.external.apexcharts.index'))->name('external.apexcharts');
+    Route::get('datatable', fn() => view('docs.external.datatable.index'))->name('external.datatable');
+    Route::get('tinymce', fn() => view('docs.external.tinymce.index'))->name('external.tinymce');
+});
+
+Route::group([], function () {
     Route::get('color-dashboard', fn() => view('docs.style.dashboard.index'))->name('style.dashboard');
 });
 
