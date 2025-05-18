@@ -9,7 +9,7 @@
     x-on:keydown.escape.prevent="close()"
     x-on:keydown.enter.prevent="toggle()"
 >
-    <select class="sr-only" tabindex="-1" aria-hidden="true" x-ref="selectOrigin" {{ $attributes->only(['x-model', 'wire:model', 'name']) }}>
+    <select class="sr-only" tabindex="-1" x-ref="selectOrigin" {{ $attributes }} x-on:focus="open()">
         {{ $slot }}
     </select>
 
@@ -27,7 +27,6 @@
                     el.value = '';
                     el.value = val;
                 })"
-                {{ $attributes->except(['x-model', 'wire:model', 'name']) }}
                 x-on:click="toggle()"
             />
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none {{ $displayIcon ? '' : 'hidden' }}">
