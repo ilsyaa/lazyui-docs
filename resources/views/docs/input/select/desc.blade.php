@@ -1,4 +1,4 @@
-<x-select name="role">
+<x-select name="role" :search-input="false">
     <x-select.option value="seperadmin">
         <x-slot:label>Super Admin</x-slot:label>
         <x-slot:description>Super admin access</x-slot:description>
