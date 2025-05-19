@@ -13,20 +13,7 @@
         </div>
 
         <div class="lazy-header-icon">
-            <div x-data>
-                <x-button
-                    variant="ghost"
-                    size="icon"
-                    class="rounded-full md:hidden"
-                    x-on:click="$dialog.toggle('dialog-search')"
-                >
-                    <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M208 64a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm0 352A208 208 0 1 0 208 0a208 208 0 1 0 0 416z"/><path fill="currentColor" class="fa-primary" d="M330.7 376L457.4 502.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L376 330.7C363.3 348 348 363.3 330.7 376z"/></svg>
-                </x-button>
-                <button type="button" x-on:click="$dialog.toggle('dialog-search')" class="lazy-header-search-button">
-                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M208 64a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm0 352A208 208 0 1 0 208 0a208 208 0 1 0 0 416z"/><path fill="currentColor" class="fa-primary" d="M330.7 376L457.4 502.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L376 330.7C363.3 348 348 363.3 330.7 376z"/></svg>
-                    <span class="shortcut">⌘K</span>
-                </button>
-            </div>
+            <div x-data></div>
             <div class="flex gap-1 items-center">
                 <x-button
                     href="https://github.com/ilsyaa/lazyui"
