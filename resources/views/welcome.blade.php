@@ -11,7 +11,7 @@
         window.localStorageKey = 'lazy-settings';
         window.eventKey = 'lazy-appearance-change';
     </script>
-    <script src="{{ asset('assets/lazy/theme.js?v=2') }}"></script>
+    <script src="{{ asset('assets/lazy/theme.js?v=15') }}"></script>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     @livewireStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -65,7 +65,7 @@
                 Install LazyUI
             </x-button>
         </div>
-        <a href="https://github.com/ilsyaa/lazyui" class="text-xs font-medium text-cat-500 hover:underline">Version 1.0</a>
+        <a href="https://github.com/ilsyaa/lazyui" class="text-xs font-medium text-cat-500 hover:underline">Version 1.0.2</a>
     </div>
 
     <div class="absolute bottom-5 md:right-5 md:translate-x-0 right-1/2 translate-x-1/2">
