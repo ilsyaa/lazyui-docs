@@ -1,4 +1,4 @@
-<x-form id="lazy" method="POST" action="{{ route('form-backend') }}" class="w-full">
+<x-form id="form-lazy" method="POST" action="{{ route('form-backend') }}" class="w-full">
     @csrf
     @method('POST')
     <div class="flex flex-col gap-3">
@@ -12,8 +12,12 @@
 
 <script>
     document.addEventListener('form', ({ detail }) => {
-        // if success reset form
-        if(detail.ok) {
+        // ignore other forms
+        if(detail.id != 'form-lazy') return;
+
+        // if success
+        if(detail?.ok) {
+            // reset form
             detail.element.target.reset();
         }
 

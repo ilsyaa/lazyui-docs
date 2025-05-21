@@ -81,6 +81,44 @@
 
             <section>
                 <div class="mb-5">
+                    <div class="text-xl font-semibold">Form Attributes</div>
+                    {{-- <div class="text-cat-500 text-sm"></div> --}}
+                </div>
+                <div>
+                    <div class="relative overflow-hidden rounded-md border border-cat-200 dark:border-cat-750">
+                        <div class="overflow-x-auto max-w-full">
+                            <table class="min-w-full divide-y divide-cat-200 dark:divide-cat-750">
+                                <thead class="bg-cat-200 dark:bg-cat-750 font-semibold text-cat-800 dark:text-white">
+                                    <tr>
+                                        <th scope="col" class="py-3.5 pl-4 pr-3 sm:pl-6 text-left text-sm">Attribute</th>
+                                        <th scope="col" class="py-3.5 px-3 text-left text-sm">Values</th>
+                                        <th scope="col" class="py-3.5 px-3 text-left text-sm">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody x-data class="divide-y divide-cat-200 dark:divide-cat-750 bg-white dark:bg-cat-800 text-sm font-medium text-cat-800 dark:text-white">
+                                    <tr>
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 sm:pl-6">:toast</td>
+                                        <td class="whitespace-nowrap py-4 px-3">true | false (default: true)</td>
+                                        <td class="whitespace-nowrap py-4 px-3">Show or hide toast message (loading, success, error)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 sm:pl-6">toastErrors</td>
+                                        <td class="whitespace-nowrap py-4 px-3">summary | detailed (default: summary)</td>
+                                        <td class="whitespace-nowrap py-4 px-3">
+                                            Specifies the format for displaying errors as toasts. <br />
+                                            <strong>summary</strong>: shows only the first error from each field. <br />
+                                            <strong>detailed</strong>: shows all errors from each field in order.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="mb-5">
                     <div class="text-xl font-semibold">Example Backend</div>
                     {{-- <div class="text-cat-500 text-sm"></div> --}}
                 </div>
