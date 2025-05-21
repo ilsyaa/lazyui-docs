@@ -77,3 +77,20 @@ Route::post('form-url', function (Request $request) {
         'message' => 'Success submitted.',
     ], 200);
 })->name('form-backend');
+
+Route::post('ai', function (Request $request) {
+    if(!$request->ajax()) abort(404);
+    $res = Http::post('https://luminai.my.id/', [
+        'prompt' => 'Kamu adalah ai tinymce, text editor yang siap membantu apapun. jika ada tag pre berikan class tambanan format class="language-{code}" code sesuai apa isinya.',
+        'content' => $request->input('request.prompt'),
+        'user' => 'tinymce1'
+    ]);
+    if ($res->failed()) {
+        return response()->json([
+            'message' => 'Failed submitted.',
+        ], 500);
+    }
+    return response()->json([
+        'response' => $res->json()['result']
+    ], 200);
+})->name('ai');

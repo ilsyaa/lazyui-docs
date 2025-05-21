@@ -238,6 +238,12 @@
             >
                 <x-slot:title>Apexcharts</x-slot:title>
             </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('external.tinymce') }}"
+                href="{{ route('external.tinymce') }}"
+            >
+                <x-slot:title>TinyMCE</x-slot:title>
+            </x-nav.sub-item>
         </x-slot:sub>
     </x-nav.item-collapse>
 
