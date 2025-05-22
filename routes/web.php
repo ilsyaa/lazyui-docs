@@ -64,6 +64,10 @@ Route::group([], function () {
     Route::get('color-dashboard', fn() => view('docs.style.dashboard.index'))->name('style.dashboard');
 });
 
+Route::group([], function () {
+    Route::get('packages-installed', fn() => view('docs.other.packages-installed.index'))->name('other.packages-installed');
+});
+
 Route::get('test-livewire', fn() => view('docs.livewire'))->name('test-livewire');
 
 Route::post('form-url', function (Request $request) {
