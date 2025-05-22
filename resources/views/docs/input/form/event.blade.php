@@ -1,4 +1,4 @@
-<x-form id="form-lazy" method="POST" action="{{ route('form-backend') }}" class="w-full">
+<x-form id="form-lazy" action="{{ route('form-backend') }}" class="w-full">
     @csrf
     @method('POST')
     <div class="flex flex-col gap-3">
