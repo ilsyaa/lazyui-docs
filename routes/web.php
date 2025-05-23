@@ -38,6 +38,7 @@ Route::group([], function () {
     Route::get('radio', fn() => view('docs.input.radio.index'))->name('input.radio');
     Route::get('select', fn() => view('docs.input.select.index'))->name('input.select');
     Route::get('select-multiple', fn() => view('docs.input.select-multiple.index'))->name('input.select.multiple');
+    Route::get('slider', fn() => view('docs.input.slider.index'))->name('input.slider');
     Route::get('switch', fn() => view('docs.input.switch.index'))->name('input.switch');
     Route::get('textarea', fn() => view('docs.input.textarea.index'))->name('input.textarea');
 });
@@ -52,6 +53,7 @@ Route::group([], function () {
     Route::get('tabs', fn() => view('docs.display.tabs.index'))->name('display.tabs');
     Route::get('table', fn() => view('docs.display.table.index'))->name('display.table');
     Route::get('nav', fn() => view('docs.display.nav.index'))->name('display.nav');
+    Route::get('widget', fn() => view('docs.display.widget.index'))->name('display.widget');
 });
 
 Route::group([], function () {

@@ -91,6 +91,12 @@
             >
                 <x-slot:title>Nav Item</x-slot:title>
             </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.widget') }}"
+                href="{{ route('display.widget') }}"
+            >
+                <x-slot:title>Widget</x-slot:title>
+            </x-nav.sub-item>
         </x-slot:sub>
     </x-nav.item-collapse>
 
@@ -155,6 +161,12 @@
                 href="{{ route('input.select.multiple') }}"
             >
                 <x-slot:title>Select Multiple</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.slider') }}"
+                href="{{ route('input.slider') }}"
+            >
+                <x-slot:title>Slider</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
                 is-active="{{ request()->routeIs('input.switch') }}"
