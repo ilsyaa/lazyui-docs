@@ -127,6 +127,12 @@
                 <x-slot:title>Checkbox</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.fileupload') }}"
+                href="{{ route('input.fileupload') }}"
+            >
+                <x-slot:title>File Upload</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('input.form') }}"
                 href="{{ route('input.form') }}"
             >

@@ -32,6 +32,7 @@ Route::group([], function () {
     Route::get('autocomplete', fn() => view('docs.input.autocomplete.index'))->name('input.autocomplete');
     Route::get('autocomplete-multiple', fn() => view('docs.input.autocomplete-multiple.index'))->name('input.autocomplete.multiple');
     Route::get('checkbox', fn() => view('docs.input.checkbox.index'))->name('input.checkbox');
+    Route::get('fileupload', fn() => view('docs.input.fileupload.index'))->name('input.fileupload');
     Route::get('form', fn() => view('docs.input.form.index'))->name('input.form');
     Route::get('input', fn() => view('docs.input.input.index'))->name('input.input');
     Route::get('label', fn() => view('docs.input.label.index'))->name('input.label');
@@ -100,3 +101,16 @@ Route::post('ai', function (Request $request) {
         'response' => $res->json()['result']
     ], 200);
 })->name('ai');
+
+// Route::post('form-files', function (Request $request) {
+//     // if(!$request->ajax()) abort(404);
+//     if($request->hasFile('example')) {
+//         $data = [];
+//         foreach ($request->file('example') as $file) {
+//             $data[] = [
+//                 'name' => $file->getClientOriginalName(),
+//             ];
+//         }
+//         dd($data);
+//     }
+// })->name('form-files');

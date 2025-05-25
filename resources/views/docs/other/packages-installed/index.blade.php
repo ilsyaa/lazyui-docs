@@ -29,6 +29,7 @@
                 </div>
                 <x-card class="p-5">
                     <ul class="list-disc list-inside flex flex-col gap-1">
+                        <li><a class="hover:underline" href="https://pqina.nl/filepond" target="_blank">filepond</a></li>
                         <li><a class="hover:underline" href="https://docs.rombo.co/tailwind" target="_blank">tailwindcss-motion</a></li>
                         <li><a class="hover:underline" href="https://github.com/tailwindlabs/tailwindcss-forms" target="_blank">@tailwindcss/forms</a></li>
                         <li><a class="hover:underline" href="https://github.com/Grsmto/simplebar" target="_blank">simplebar</a></li>
