@@ -34,6 +34,7 @@ Route::group([], function () {
     Route::get('checkbox', fn() => view('docs.input.checkbox.index'))->name('input.checkbox');
     Route::get('fileupload', fn() => view('docs.input.fileupload.index'))->name('input.fileupload');
     Route::get('form', fn() => view('docs.input.form.index'))->name('input.form');
+    Route::get('form-group', fn() => view('docs.input.form-group.index'))->name('input.form-group');
     Route::get('input', fn() => view('docs.input.input.index'))->name('input.input');
     Route::get('label', fn() => view('docs.input.label.index'))->name('input.label');
     Route::get('radio', fn() => view('docs.input.radio.index'))->name('input.radio');
@@ -73,18 +74,6 @@ Route::group([], function () {
 
 Route::get('test-livewire', fn() => view('docs.livewire'))->name('test-livewire');
 
-Route::post('form-url', function (Request $request) {
-    if(!$request->ajax()) abort(404);
-
-    $request->validate([
-        'name' => 'required',
-    ]);
-
-    return response()->json([
-        'message' => 'Success submitted.',
-    ], 200);
-})->name('form-backend');
-
 Route::post('ai', function (Request $request) {
     if(!$request->ajax()) abort(404);
     $res = Http::post('https://luminai.my.id/', [
@@ -102,15 +91,79 @@ Route::post('ai', function (Request $request) {
     ], 200);
 })->name('ai');
 
-// Route::post('form-files', function (Request $request) {
-//     // if(!$request->ajax()) abort(404);
-//     if($request->hasFile('example')) {
-//         $data = [];
-//         foreach ($request->file('example') as $file) {
-//             $data[] = [
-//                 'name' => $file->getClientOriginalName(),
-//             ];
-//         }
-//         dd($data);
-//     }
-// })->name('form-files');
+Route::post('form-url', function (Request $request) {
+    if(!$request->ajax()) abort(404);
+
+    $request->validate([
+        'name' => 'required',
+    ]);
+
+    return response()->json([
+        'message' => 'Success submitted.',
+    ], 200);
+})->name('form-backend');
+
+Route::post('form-files', function (Request $request) {
+    if(!$request->ajax()) abort(404);
+
+    // dd($request->all());
+    return response()->json([
+        'message' => 'Success submitted.',
+    ], 200);
+})->name('form-files');
+
+
+Route::post('form-example-store', function (Request $request) {
+    if(!$request->ajax()) abort(404);
+
+    $request->validate([
+        'name' => 'nullable',
+        'image' => 'nullable|image',
+    ]);
+
+    try {
+        // $table = new Model();
+        // $table->name = $request->input('name');
+        // if($request->hasFile('image')) {
+        //     $table->image = $request->file('image')->store('docs');
+        // }
+        // $table->save();
+
+        return response()->json([
+            'message' => 'Create Success.',
+        ]);
+    } catch (\Throwable $th) {
+        return response()->json([
+            'message' => $th->getMessage(),
+        ], 500);
+    }
+})->name('form-example-store');
+
+Route::post('form-example-update/{id}', function (Request $request, $id) {
+    if(!$request->ajax()) abort(404);
+
+    $request->validate([
+        'name' => 'nullable',
+        'image' => 'nullable|image',
+    ]);
+
+    try {
+        // $table = Model::find($id);
+        // $table->name = $request->input('name');
+        // if($request->hasFile('image')) {
+        //     $table->image = $request->file('image')->store('example');
+        // }
+        // $table->save();
+
+        return response()->json([
+            'message' => 'Update Success.',
+            // 'data' => [
+            //     'existing_image' => 'example/doge.png'
+            // ]
+        ]);
+    } catch (\Throwable $th) {
+        return response()->json([
+            'message' => $th->getMessage(),
+        ], 500);
+    }
+})->name('form-example-update');

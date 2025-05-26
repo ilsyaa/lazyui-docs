@@ -1,4 +1,4 @@
 <x-fileupload
-    name="example"
+    name="image"
     accept="image/*"
 />

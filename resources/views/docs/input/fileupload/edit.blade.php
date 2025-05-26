@@ -1,11 +1,10 @@
 <x-fileupload
-    name="example"
+    name="image"
     multiple
     max="4"
     :existingFiles="[
-        'docs/doge.png',
-        'docs/laravel.jpg',
-        'docs/lambo.webp'
+        'example/doge.png',
+        'example/lambo.webp'
     ]"
-    base_url="{{ asset('assets') }}"
+    base_url="{{ asset('storage') }}"
 />

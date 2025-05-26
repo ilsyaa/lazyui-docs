@@ -1,1 +1,1 @@
-<x-fileupload name="example" />
+<x-fileupload id="image" name="image" />

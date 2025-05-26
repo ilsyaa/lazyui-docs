@@ -139,6 +139,12 @@
                 <x-slot:title>Form</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.form-group') }}"
+                href="{{ route('input.form-group') }}"
+            >
+                <x-slot:title>Form Group</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('input.input') }}"
                 href="{{ route('input.input') }}"
             >

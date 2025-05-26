@@ -1,5 +1,5 @@
 <x-fileupload
-    name="example"
+    name="image"
     multiple
     max="3"
 />
