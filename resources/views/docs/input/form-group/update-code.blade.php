@@ -31,7 +31,7 @@
             if(detail?.ok) {
                 const inputImage = window.filepondInstances.find((item) => item.id == 'image'); // find id image
                 if(inputImage) {
-                    // sync existing files from the response data
+                    // sync existing files from the response data after success submit
                     // This step is required when implementing existing files.
                     // If you skip it, the backend will re-upload the image on every form submit, even if the image hasn't changed.
                     inputImage.syncExistingFiles(detail.data.data.existing_image);

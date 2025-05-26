@@ -144,21 +144,31 @@ Route::post('form-example-update/{id}', function (Request $request, $id) {
 
     $request->validate([
         'name' => 'nullable',
-        'image' => 'nullable|image',
+        // 'image' => 'nullable|array',
+        // 'image.*' => 'nullable|image',
+        // 'existing_image' => 'nullable|array',
     ]);
 
     try {
         // $table = Model::find($id);
         // $table->name = $request->input('name');
+
+        // $images = [];
+        // $missingImages = array_diff($table->image, $request->input('existing_image', []));
+        // $existingImages = array_intersect($table->image, $request->input('existing_image', []));
         // if($request->hasFile('image')) {
-        //     $table->image = $request->file('image')->store('example');
+        //     foreach ($request->file('image') as $image) {
+        //         $images[] = $image->store('example');
+        //     }
         // }
+        // $table->image = array_merge($existingImages, $images);
+
         // $table->save();
 
         return response()->json([
             'message' => 'Update Success.',
             // 'data' => [
-            //     'existing_image' => 'example/doge.png'
+            //     'existing_image' => $table->image
             // ]
         ]);
     } catch (\Throwable $th) {

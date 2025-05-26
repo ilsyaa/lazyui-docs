@@ -100,6 +100,18 @@
                 @endphp
                 <pre class="text-[0.9rem] p-0"><code class="language-php">{{ $content }}</code></pre>
             </section>
+
+            <section>
+                <div class="mb-5">
+                    <div class="text-xl font-semibold">Form Edit Multiple Upload (Backend)</div>
+                    <div class="text-cat-500 text-sm">Example implementation of a edit (update) action in the backend</div>
+                </div>
+                @php
+                    $file = resource_path('views/docs/input/form-group/update-multiple-backend.blade.php');
+                    $content = file_exists($file) ? file_get_contents($file) : 'File not found';
+                @endphp
+                <pre class="text-[0.9rem] p-0"><code class="language-php">{{ $content }}</code></pre>
+            </section>
         </div>
 
     </div>

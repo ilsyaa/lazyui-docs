@@ -13,7 +13,7 @@
                 accept="image/*"
             />
         </div>
-        <x-button type="submit">Submit</x-button>
+        <x-button type="submit">Create</x-button>
     </div>
 </x-form>
 

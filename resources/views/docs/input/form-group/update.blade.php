@@ -17,7 +17,7 @@
                 base_url="{{ asset('storage') }}"
             />
         </div>
-        <x-button type="submit">Submit</x-button>
+        <x-button type="submit">Save changes</x-button>
     </div>
 </x-form>
 
