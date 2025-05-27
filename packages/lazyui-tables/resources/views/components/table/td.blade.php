@@ -1,4 +1,4 @@
-@aware([ 'row', 'rowIndex', 'tableName', 'primaryKey','isTailwind','isBootstrap'])
+@aware([ 'row', 'rowIndex', 'tableName', 'primaryKey' ])
 @props(['column', 'colIndex'])
 
 @php
@@ -14,15 +14,10 @@
         {{
             $attributes->merge($customAttributes)
                 ->class([
-                    'px-6 py-4 whitespace-nowrap text-sm font-medium dark:text-white' => $isTailwind && ($customAttributes['default'] ?? true),
-                    'hidden' =>  $isTailwind && $column && $column->shouldCollapseAlways(),
-                    'hidden md:table-cell' => $isTailwind && $column && $column->shouldCollapseOnMobile(),
-                    'hidden lg:table-cell' => $isTailwind && $column && $column->shouldCollapseOnTablet(),
-                    '' => $isBootstrap && ($customAttributes['default'] ?? true),
-                    'd-none' => $isBootstrap && $column && $column->shouldCollapseAlways(),
-                    'd-none d-md-table-cell' => $isBootstrap && $column && $column->shouldCollapseOnMobile(),
-                    'd-none d-lg-table-cell' => $isBootstrap && $column && $column->shouldCollapseOnTablet(),
-                    'laravel-livewire-tables-cursor' => $isBootstrap && $column && $column->isClickable(),
+                    'px-6 py-4 whitespace-nowrap text-sm font-medium dark:text-white' => ($customAttributes['default'] ?? true),
+                    'hidden' => $column && $column->shouldCollapseAlways(),
+                    'hidden md:table-cell' => $column && $column->shouldCollapseOnMobile(),
+                    'hidden lg:table-cell' => $column && $column->shouldCollapseOnTablet(),
                 ])
                 ->except(['default','default-styling','default-colors'])
         }}

@@ -257,6 +257,12 @@
                 <x-slot:title>Apexcharts</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('external.datatable') }}"
+                href="{{ route('external.datatable') }}"
+            >
+                <x-slot:title>Datatables</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('external.filepond') }}"
                 href="{{ route('external.filepond') }}"
             >

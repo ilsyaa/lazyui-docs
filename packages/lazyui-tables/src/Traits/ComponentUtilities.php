@@ -37,7 +37,7 @@ trait ComponentUtilities
     {
         // Sets the Theme - tailwind/bootstrap
         if (! isset($this->theme) || is_null($this->theme)) {
-            $this->setTheme(config('livewire-tables.theme', 'tailwind'));
+            $this->setTheme('tailwind');
         }
         $this->generateDataTableFingerprint();
 

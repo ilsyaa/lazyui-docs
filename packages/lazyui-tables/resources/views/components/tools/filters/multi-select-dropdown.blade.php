@@ -1,11 +1,8 @@
 <div>
-    <x-livewire-tables::tools.filter-label :$filter :$filterLayout :$tableName :$isTailwind :$isBootstrap4 :$isBootstrap5 :$isBootstrap />
-
-    @if ($isTailwind)
+    <x-livewire-tables::tools.filter-label :$filter :$filterLayout :$tableName />
     <div class="rounded-md shadow-sm">
-    @endif
         <select multiple
-            {!! $filter->getWireMethod('filterComponents.'.$filter->getKey()) !!} {{ 
+            {!! $filter->getWireMethod('filterComponents.'.$filter->getKey()) !!} {{
                 $filterInputAttributes->merge([
                     'wire:key' => $filter->generateWireKey($tableName, 'multiselectdropdown'),
                 ])
@@ -15,7 +12,7 @@
                     'form-control' => $isBootstrap4 && ($filterInputAttributes['default-styling'] ?? true),
                     'form-select' => $isBootstrap5 && ($filterInputAttributes['default-styling'] ?? true),
                 ])
-                ->except(['default-styling','default-colors']) 
+                ->except(['default-styling','default-colors'])
             }}>
         @if ($filter->getFirstOption() !== '')
             <option @if($filter->isEmpty($this)) selected @endif value="all">{{ $filter->getFirstOption()}}</option>
@@ -32,7 +29,5 @@
                 @endif
             @endforeach
         </select>
-    @if ($isTailwind)
     </div>
-    @endif
 </div>

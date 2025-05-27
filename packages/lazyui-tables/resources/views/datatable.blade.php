@@ -1,10 +1,6 @@
 @php($tableName = $this->getTableName)
 @php($tableId = $this->getTableId)
 @php($primaryKey = $this->getPrimaryKey)
-@php($isTailwind = $this->isTailwind)
-@php($isBootstrap = $this->isBootstrap)
-@php($isBootstrap4 = $this->isBootstrap4)
-@php($isBootstrap5 = $this->isBootstrap5)
 @php($localisationPath = $this->getLocalisationPath)
 
 <div>
@@ -17,7 +13,7 @@
                 $this->getParametersForConfigurableArea('before-wrapper')
             )
 
-            <x-livewire-tables::wrapper :tableName="$tableName" :$primaryKey :$isTailwind :$isBootstrap :$isBootstrap4 :$isBootstrap5 :$localisationPath>
+            <x-livewire-tables::wrapper :tableName="$tableName" :$primaryKey :$localisationPath>
                 @if($this->hasActions && !$this->showActionsInToolbar)
                     <x-livewire-tables::includes.actions/>
                 @endif
@@ -133,7 +129,7 @@
                     @else
                         <x-livewire-tables::table.empty />
                     @endif
-                    
+
 
                     @if ($this->footerIsEnabled() && $this->hasColumnsWithFooter())
                         <x-slot name="tfoot">

@@ -1,4 +1,4 @@
-@aware(['tableName','isTailwind', 'isBootstrap'])
+@aware(['tableName' ])
 @php
     $customAttributes = $this->hasBulkActionsThAttributes ? $this->getBulkActionsThAttributes : $this->getAllThAttributes($this->getBulkActionsColumn())['customAttributes'];
     $bulkActionsThCheckboxAttributes = $this->getBulkActionsThCheckboxAttributes();
@@ -10,10 +10,7 @@
             x-data="{newSelectCount: 0, indeterminateCheckbox: false, bulkActionHeaderChecked: false}"
             x-init="$watch('selectedItems', value => indeterminateCheckbox = (value.length > 0 && value.length < paginationTotalItemCount))"
             x-cloak x-show="currentlyReorderingStatus !== true"
-            @class([
-                'inline-flex rounded-md shadow-sm' => $isTailwind,
-                'form-check' => $isBootstrap,
-            ])
+            class="inline-flex rounded-md shadow-sm"
         >
             <input
                 x-init="$watch('indeterminateCheckbox', value => $el.indeterminate = value); $watch('selectedItems', value => newSelectCount = value.length);"
@@ -22,9 +19,8 @@
                 :checked="selectedItems.length == paginationTotalItemCount"
                 {{
                     $attributes->merge($bulkActionsThCheckboxAttributes)->class([
-                        'border-gray-300 text-indigo-600 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-900 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:focus:bg-gray-600' => $isTailwind && (($bulkActionsThCheckboxAttributes['default'] ?? true) || ($bulkActionsThCheckboxAttributes['default-colors'] ?? true)),
-                        'rounded shadow-sm transition duration-150 ease-in-out focus:ring focus:ring-opacity-50 ' => $isTailwind && (($bulkActionsThCheckboxAttributes['default'] ?? true) || ($bulkActionsThCheckboxAttributes['default-styling'] ?? true)),
-                        'form-check-input' => $isBootstrap && ($bulkActionsThCheckboxAttributes['default'] ?? true),
+                        'border-gray-300 text-indigo-600 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-900 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:focus:bg-gray-600' => (($bulkActionsThCheckboxAttributes['default'] ?? true) || ($bulkActionsThCheckboxAttributes['default-colors'] ?? true)),
+                        'rounded shadow-sm transition duration-150 ease-in-out focus:ring focus:ring-opacity-50 ' => (($bulkActionsThCheckboxAttributes['default'] ?? true) || ($bulkActionsThCheckboxAttributes['default-styling'] ?? true)),
                     ])->except(['default','default-styling','default-colors'])
                 }}
             />

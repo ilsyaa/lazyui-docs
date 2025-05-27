@@ -1,31 +1,19 @@
-@aware([ 'tableName','isTailwind','isBootstrap','isBootstrap4','isBootstrap5', 'localisationPath'])
+@aware([ 'tableName', 'localisationPath' ])
 @props([])
 
-<div 
-                @class([
-                    'ml-0 ml-md-2 mb-3 mb-md-0' => $isBootstrap4,
-                    'ms-0 ms-md-2 mb-3 mb-md-0' => $isBootstrap5 && $this->searchIsEnabled(),
-                    'mb-3 mb-md-0' => $isBootstrap5 && !$this->searchIsEnabled(),
-                ])
->
+<div>
     <div
         @if ($this->isFilterLayoutPopover())
             x-data="{ filterPopoverOpen: false }"
             x-on:keydown.escape.stop="if (!this.childElementOpen) { filterPopoverOpen = false }"
             x-on:mousedown.away="if (!this.childElementOpen) { filterPopoverOpen = false }"
         @endif
-        @class([
-            'btn-group d-block d-md-inline' => $isBootstrap,
-            'relative block md:inline-block text-left' => $isTailwind,
-        ])
+        class="relative block md:inline-block text-left"
     >
         <div>
             <button
                 type="button"
-                @class([
-                    'btn dropdown-toggle d-block w-100 d-md-inline' => $isBootstrap,
-                    'inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600' => $isTailwind,
-                ])
+                class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600"
                 @if ($this->isFilterLayoutPopover()) x-on:click="filterPopoverOpen = !filterPopoverOpen"
                     aria-haspopup="true"
                     x-bind:aria-expanded="filterPopoverOpen"
@@ -44,9 +32,7 @@
                     </span>
                 @endif
 
-                @if($isTailwind)
-                    <x-heroicon-o-funnel class="-mr-1 ml-2 h-5 w-5" />
-                @else
+                <x-heroicon-o-funnel class="-mr-1 ml-2 h-5 w-5" />
                 <span @class([
                     'caret' => $isBootstrap,
                 ])></span>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "824956ccf4513069b0e927954a99df8d",
+    "content-hash": "2a33dd6383af2b85f8df5d10ad3e4ec3",
     "packages": [
         {
             "name": "brick/math",
@@ -1249,6 +1249,98 @@
                 "tables",
                 "tailwind",
                 "ui"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "ilsyaa/lazyui-tables",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./packages/lazyui-tables",
+                "reference": "cc627f5d81ef7ea94a38963bd400670f2dace2b7"
+            },
+            "require": {
+                "illuminate/contracts": "^10.0|^11.0|^12.0",
+                "illuminate/support": "^10.0|^11.0|^12.0",
+                "livewire/livewire": "^3.0|dev-main",
+                "php": "^8.1|^8.2|^8.3|^8.4"
+            },
+            "require-dev": {
+                "brianium/paratest": "^5.0|^6.0|^7.0|^8.0|^9.0",
+                "ext-sqlite3": "*",
+                "larastan/larastan": "^2.6|^3.0",
+                "laravel/pint": "^1.10",
+                "monolog/monolog": "*",
+                "nunomaduro/collision": "^6.0|^7.0|^8.0|^9.0",
+                "orchestra/testbench": "^7.0|^8.0|^9.0|^10.0",
+                "phpunit/phpunit": "^9.0|^10.0|^11.0|^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rappasoft\\LaravelLivewireTables\\LaravelLivewireTablesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rappasoft\\LaravelLivewireTables\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Rappasoft\\LaravelLivewireTables\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "psalm": [
+                    "vendor/bin/psalm"
+                ],
+                "test": [
+                    "vendor/bin/phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "vendor/bin/phpunit --coverage-html coverage"
+                ],
+                "format": [
+                    "vendor/bin/pint"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Rappa",
+                    "email": "rappa819@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Joe McElwee",
+                    "email": "joe@lowerrocklabs.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ilsyaa",
+                    "email": "ilham@koding.in",
+                    "role": "Frontend Developer"
+                }
+            ],
+            "description": "A dynamic table component for Laravel Livewire",
+            "homepage": "https://github.com/ilsyaa/lazyui-tables",
+            "keywords": [
+                "datatables",
+                "ilsyaa",
+                "laravel",
+                "lazyui",
+                "livewire",
+                "rappasoft",
+                "tables"
             ],
             "transport-options": {
                 "symlink": true,
@@ -8429,6 +8521,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "ilsyaa/lazyui-tables": 20,
         "ilsyaa/lazyui": 20
     },
     "prefer-stable": true,

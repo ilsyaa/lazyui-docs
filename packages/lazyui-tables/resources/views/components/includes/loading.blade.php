@@ -1,4 +1,4 @@
-@aware(['tableName','isTailwind','isBootstrap'])
+@aware(['tableName' ])
 @props(['colCount' => 1])
 
 @php
@@ -10,16 +10,14 @@
 <tr wire:key="{{ $tableName }}-loader" wire:loading.class.remove="hidden d-none" {{
     $attributes->merge($loaderRow)
         ->class([
-            'hidden w-full text-center place-items-center align-middle' => $isTailwind && ($loaderRow['default'] ?? true),
-            'd-none w-100 text-center align-items-center' => $isBootstrap && ($loaderRow['default'] ?? true),
+            'hidden w-full text-center place-items-center align-middle' => ($loaderRow['default'] ?? true),
         ])
         ->except(['default','default-styling','default-colors'])
 }}>
     <td colspan="{{ $colCount }}" wire:key="{{ $tableName }}-loader-column" {{
         $attributes->merge($loaderCell)
             ->class([
-                'py-4' => $isTailwind && ($loaderCell['default'] ?? true),
-                'py-4' => $isBootstrap && ($loaderCell['default'] ?? true),
+                'py-4' => ($loaderCell['default'] ?? true),
             ])
             ->except(['default','default-styling','default-colors', 'colspan','wire:key'])
     }}>
@@ -30,8 +28,7 @@
                 <div class="lds-hourglass"{{
                         $attributes->merge($loaderIcon)
                             ->class([
-                                'lds-hourglass' => $isTailwind && ($loaderIcon['default'] ?? true),
-                                'lds-hourglass' => $isBootstrap && ($loaderIcon['default'] ?? true),
+                                'lds-hourglass' => ($loaderIcon['default'] ?? true),
                             ])
                             ->except(['default','default-styling','default-colors'])
                 }}></div>

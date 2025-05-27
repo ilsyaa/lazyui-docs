@@ -1,12 +1,9 @@
-@aware(['isTailwind', 'isBootstrap'])
 @php($actionWrapperAttributes = $this->getActionWrapperAttributes())
 <div {{ $attributes
             ->merge($this->actionWrapperAttributes)
             ->class([
-                'flex flex-cols py-2 space-x-2' => $isTailwind && ($actionWrapperAttributes['default-styling'] ?? true),
-                '' => $isTailwind && ($actionWrapperAttributes['default-colors'] ?? true),
-                'd-flex flex-cols py-2 space-x-2' => $isBootstrap && ($this->actionWrapperAttributes['default-styling'] ?? true),
-                '' => $isBootstrap && ($actionWrapperAttributes['default-colors'] ?? true),
+                'flex flex-cols py-2 space-x-2' => ($actionWrapperAttributes['default-styling'] ?? true),
+                '' => ($actionWrapperAttributes['default-colors'] ?? true),
                 'justify-start' => $this->getActionsPosition === 'left',
                 'justify-center' => $this->getActionsPosition === 'center',
                 'justify-end' => $this->getActionsPosition === 'right',

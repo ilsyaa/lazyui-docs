@@ -1,4 +1,4 @@
-@aware([ 'tableName', 'isTailwind', 'isBootstrap', 'localisationPath'])
+@aware([ 'tableName', 'localisationPath' ])
 
 @if ($this->bulkActionsAreEnabled() && $this->hasBulkActions())
     @php
@@ -10,9 +10,7 @@
     <x-livewire-tables::table.tr.plain
         x-cloak x-show="selectedItems.length > 0 && !currentlyReorderingStatus"
         wire:key="{{ $tableName }}-bulk-select-message"
-        @class([
-            'bg-indigo-50 dark:bg-gray-900 dark:text-white' => $isTailwind,
-        ])
+        class="bg-indigo-50 dark:bg-gray-900 dark:text-white"
     >
         <x-livewire-tables::table.td.plain :colspan="$colspan">
             <template x-if="selectedItems.length == paginationTotalItemCount || selectAllStatus">
@@ -27,11 +25,10 @@
                         x-on:click="clearSelected"
                         wire:loading.attr="disabled"
                         type="button"
-                        {{ 
+                        {{
                             $this->getBulkActionsRowButtonAttributesBag->class([
-                                'ml-1 underline text-sm leading-5 font-medium focus:outline-none focus:underline transition duration-150 ease-in-out' => $isTailwind && ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true),
-                                'text-blue-600 text-gray-700 focus:text-gray-800 dark:text-white dark:hover:text-gray-400' => $isTailwind && ($this->getBulkActionsRowButtonAttributes['default-colors'] ?? true),
-                                'btn btn-primary btn-sm' => $isBootstrap && ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true)
+                                'ml-1 underline text-sm leading-5 font-medium focus:outline-none focus:underline transition duration-150 ease-in-out' => ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true),
+                                'text-blue-600 text-gray-700 focus:text-gray-800 dark:text-white dark:hover:text-gray-400' => ($this->getBulkActionsRowButtonAttributes['default-colors'] ?? true),
                             ])
                         }}
                     >
@@ -53,11 +50,10 @@
                         x-on:click="selectAllOnPage()"
                         wire:loading.attr="disabled"
                         type="button"
-                        {{ 
+                        {{
                             $this->getBulkActionsRowButtonAttributesBag->class([
-                                'ml-1 underline text-sm leading-5 font-medium focus:outline-none focus:underline transition duration-150 ease-in-out' => $isTailwind && ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true),
-                                'text-blue-600 text-gray-700 focus:text-gray-800 dark:text-white dark:hover:text-gray-400' => $isTailwind && ($this->getBulkActionsRowButtonAttributes['default-colors'] ?? true),
-                                'btn btn-primary btn-sm' => $isBootstrap && ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true)
+                                'ml-1 underline text-sm leading-5 font-medium focus:outline-none focus:underline transition duration-150 ease-in-out' => ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true),
+                                'text-blue-600 text-gray-700 focus:text-gray-800 dark:text-white dark:hover:text-gray-400' => ($this->getBulkActionsRowButtonAttributes['default-colors'] ?? true),
                             ])
                         }}
 
@@ -68,11 +64,10 @@
                         x-on:click="setAllSelected()"
                         wire:loading.attr="disabled"
                         type="button"
-                        {{ 
+                        {{
                             $this->getBulkActionsRowButtonAttributesBag->class([
-                                'ml-1 underline text-sm leading-5 font-medium focus:outline-none focus:underline transition duration-150 ease-in-out' => $isTailwind && ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true),
-                                'text-blue-600 text-gray-700 focus:text-gray-800 dark:text-white dark:hover:text-gray-400' => $isTailwind && ($this->getBulkActionsRowButtonAttributes['default-colors'] ?? true),
-                                'btn btn-primary btn-sm' => $isBootstrap && ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true)
+                                'ml-1 underline text-sm leading-5 font-medium focus:outline-none focus:underline transition duration-150 ease-in-out' => ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true),
+                                'text-blue-600 text-gray-700 focus:text-gray-800 dark:text-white dark:hover:text-gray-400' => ($this->getBulkActionsRowButtonAttributes['default-colors'] ?? true),
                             ])
                         }}
                     >
@@ -83,11 +78,10 @@
                         x-on:click="clearSelected"
                         wire:loading.attr="disabled"
                         type="button"
-                        {{ 
+                        {{
                             $this->getBulkActionsRowButtonAttributesBag->class([
-                                'ml-1 underline text-sm leading-5 font-medium focus:outline-none focus:underline transition duration-150 ease-in-out' => $isTailwind && ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true),
-                                'text-blue-600 text-gray-700 focus:text-gray-800 dark:text-white dark:hover:text-gray-400' => $isTailwind && ($this->getBulkActionsRowButtonAttributes['default-colors'] ?? true),
-                                'btn btn-primary btn-sm' => $isBootstrap && ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true)
+                                'ml-1 underline text-sm leading-5 font-medium focus:outline-none focus:underline transition duration-150 ease-in-out' => ($this->getBulkActionsRowButtonAttributes['default-styling'] ?? true),
+                                'text-blue-600 text-gray-700 focus:text-gray-800 dark:text-white dark:hover:text-gray-400' => ($this->getBulkActionsRowButtonAttributes['default-colors'] ?? true),
                             ])
                         }}
                     >

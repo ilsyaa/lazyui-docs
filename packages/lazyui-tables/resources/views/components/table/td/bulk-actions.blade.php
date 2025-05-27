@@ -1,4 +1,4 @@
-@aware([ 'tableName','primaryKey', 'isTailwind', 'isBootstrap', 'isBootstrap4', 'isBootstrap5'])
+@aware([ 'tableName','primaryKey' ])
 @props(['row', 'rowIndex'])
 
 @php
@@ -8,12 +8,9 @@
 
 @if ($this->showBulkActionsSections())
     <x-livewire-tables::table.td.plain wire:key="{{ $tableName }}-tbody-td-bulk-actions-td-{{ $row->{$primaryKey} }}" :displayMinimisedOnReorder="true"  :customAttributes=$tdAttributes>
-        <div @class([
-            'inline-flex rounded-md shadow-sm' => $isTailwind,
-            'form-check' => $isBootstrap5,
-        ])>
-            <x-livewire-tables::forms.checkbox 
-                wire:key="{{ $tableName . 'selectedItems-'.$row->{$primaryKey} }}" 
+        <div class="inline-flex rounded-md shadow-sm">
+            <x-livewire-tables::forms.checkbox
+                wire:key="{{ $tableName . 'selectedItems-'.$row->{$primaryKey} }}"
                 value="{{ $row->{$primaryKey} }}"
                 :checkboxAttributes=$tdCheckboxAttributes
             />
