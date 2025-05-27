@@ -7,7 +7,7 @@
         </div>
         <div>
             <x-label for="image-edit">Image</x-label>
-            <x-fileupload
+            <x-filepond
                 id="image-edit"
                 name="image"
                 accept="image/*"

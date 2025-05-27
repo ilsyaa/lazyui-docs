@@ -6,13 +6,13 @@
         <div class="flex flex-col gap-10">
             <section>
                 <div class="mb-5">
-                    <div class="text-3xl font-bold">File Upload</div>
+                    <div class="text-3xl font-bold">FilePond</div>
                     <div class="text-cat-500 text-sm">File upload component.</div>
                 </div>
                 <div>
                     <div class="text-sm mb-3">Before you can use this component, you need to run this command to publish the component to <code class="break-words">resources/views/components</code>.</div>
                     <div class="rounded-xl bg-white dark:bg-cat-800 border border-dashed border-cat-300 dark:border-cat-700">
-                        <pre class="text-[0.9rem]"><code class="language-">php artisan lazy:component fileupload</code></pre>
+                        <pre class="text-[0.9rem]"><code class="language-">php artisan lazy:component filepond</code></pre>
                     </div>
                 </div>
             </section>
@@ -31,13 +31,13 @@
                         <div class="rounded-xl bg-white dark:bg-cat-800 border border-dashed border-cat-300 dark:border-cat-700">
                             <div x-show="tab === 'preview'">
                                 <div class="flex flex-wrap gap-3 justify-center px-3 py-10 max-w-lg mx-auto">
-                                    @include('docs.input.fileupload.basic')
+                                    @include('docs.external.filepond.basic')
                                 </div>
                             </div>
 
                             <div x-show="tab === 'code'" x-cloak>
                                 @php
-                                    $file = resource_path('views/docs/input/fileupload/basic.blade.php');
+                                    $file = resource_path('views/docs/external/filepond/basic.blade.php');
                                     $content = file_exists($file) ? file_get_contents($file) : 'File not found';
                                 @endphp
                                 <pre class="text-[0.9rem] p-0"><code class="language-html">{{ $content }}</code></pre>
@@ -61,13 +61,13 @@
                         <div class="rounded-xl bg-white dark:bg-cat-800 border border-dashed border-cat-300 dark:border-cat-700">
                             <div x-show="tab === 'preview'">
                                 <div class="flex flex-wrap gap-3 justify-center px-3 py-10 max-w-lg mx-auto">
-                                    @include('docs.input.fileupload.accept')
+                                    @include('docs.external.filepond.accept')
                                 </div>
                             </div>
 
                             <div x-show="tab === 'code'" x-cloak>
                                 @php
-                                    $file = resource_path('views/docs/input/fileupload/accept.blade.php');
+                                    $file = resource_path('views/docs/external/filepond/accept.blade.php');
                                     $content = file_exists($file) ? file_get_contents($file) : 'File not found';
                                 @endphp
                                 <pre class="text-[0.9rem] p-0"><code class="language-html">{{ $content }}</code></pre>
@@ -91,13 +91,13 @@
                         <div class="rounded-xl bg-white dark:bg-cat-800 border border-dashed border-cat-300 dark:border-cat-700">
                             <div x-show="tab === 'preview'">
                                 <div class="flex flex-wrap gap-3 justify-center px-3 py-10 max-w-lg mx-auto">
-                                    @include('docs.input.fileupload.multiple')
+                                    @include('docs.external.filepond.multiple')
                                 </div>
                             </div>
 
                             <div x-show="tab === 'code'" x-cloak>
                                 @php
-                                    $file = resource_path('views/docs/input/fileupload/multiple.blade.php');
+                                    $file = resource_path('views/docs/external/filepond/multiple.blade.php');
                                     $content = file_exists($file) ? file_get_contents($file) : 'File not found';
                                 @endphp
                                 <pre class="text-[0.9rem] p-0"><code class="language-html">{{ $content }}</code></pre>
@@ -122,13 +122,13 @@
                         <div class="rounded-xl bg-white dark:bg-cat-800 border border-dashed border-cat-300 dark:border-cat-700">
                             <div x-show="tab === 'preview'">
                                 <div class="flex flex-wrap gap-3 justify-center px-3 py-10 max-w-lg mx-auto">
-                                    @include('docs.input.fileupload.edit')
+                                    @include('docs.external.filepond.edit')
                                 </div>
                             </div>
 
                             <div x-show="tab === 'code'" x-cloak>
                                 @php
-                                    $file = resource_path('views/docs/input/fileupload/edit.blade.php');
+                                    $file = resource_path('views/docs/external/filepond/edit.blade.php');
                                     $content = file_exists($file) ? file_get_contents($file) : 'File not found';
                                 @endphp
                                 <pre class="text-[0.9rem] p-0"><code class="language-html">{{ $content }}</code></pre>

@@ -32,7 +32,6 @@ Route::group([], function () {
     Route::get('autocomplete', fn() => view('docs.input.autocomplete.index'))->name('input.autocomplete');
     Route::get('autocomplete-multiple', fn() => view('docs.input.autocomplete-multiple.index'))->name('input.autocomplete.multiple');
     Route::get('checkbox', fn() => view('docs.input.checkbox.index'))->name('input.checkbox');
-    Route::get('fileupload', fn() => view('docs.input.fileupload.index'))->name('input.fileupload');
     Route::get('form', fn() => view('docs.input.form.index'))->name('input.form');
     Route::get('form-group', fn() => view('docs.input.form-group.index'))->name('input.form-group');
     Route::get('input', fn() => view('docs.input.input.index'))->name('input.input');
@@ -61,6 +60,7 @@ Route::group([], function () {
 Route::group([], function () {
     Route::get('apexcharts', fn() => view('docs.external.apexcharts.index'))->name('external.apexcharts');
     Route::get('datatable', fn() => view('docs.external.datatable.index'))->name('external.datatable');
+    Route::get('filepond', fn() => view('docs.external.filepond.index'))->name('external.filepond');
     Route::get('tinymce', fn() => view('docs.external.tinymce.index'))->name('external.tinymce');
 });
 

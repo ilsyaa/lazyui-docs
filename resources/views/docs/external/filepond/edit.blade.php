@@ -1,4 +1,4 @@
-<x-fileupload
+<x-filepond
     name="image"
     multiple
     max="4"

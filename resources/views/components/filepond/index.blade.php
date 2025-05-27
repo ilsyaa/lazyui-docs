@@ -17,9 +17,9 @@
 </div>
 
 @pushOnce('body')
-    <script src="https://unpkg.com/filepond-plugin-file-validate-type@1.2.9/dist/filepond-plugin-file-validate-type.min.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script src="{{ asset('assets/lazy/vendor/filepond/filepond-plugin-file-validate-type.min.js') }}"></script>
+    <script src="{{ asset('assets/lazy/vendor/filepond/filepond-plugin-image-preview.min.js') }}"></script>
+    <script src="{{ asset('assets/lazy/vendor/filepond/filepond.min.js') }}"></script>
     <script>
         window.filepondInstances = [];
         FilePond.registerPlugin(FilePondPluginImagePreview);
