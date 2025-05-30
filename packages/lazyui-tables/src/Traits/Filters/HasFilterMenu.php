@@ -14,7 +14,7 @@ trait HasFilterMenu
         HasFilterMenuStyling;
 
     #[Locked]
-    public string $filterLayout = 'popover';
+    public string $filterLayout = 'slide-down';
 
     // Entangled in JS
     public bool $filterSlideDownDefaultVisible = false;

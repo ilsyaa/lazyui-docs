@@ -1,10 +1,12 @@
 @aware(['tableName','primaryKey'])
 @props(['checkboxAttributes'])
-<input x-cloak
+
+<input
+    x-cloak
     {{
         $attributes->merge($checkboxAttributes)->class([
-            'border-gray-300 text-indigo-600 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-900 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:focus:bg-gray-600' => ($checkboxAttributes['default-colors'] ?? ($checkboxAttributes['default'] ?? true)),
-            'rounded shadow-sm transition duration-150 ease-in-out focus:ring focus:ring-opacity-50' => ($checkboxAttributes['default-styling'] ?? ($checkboxAttributes['default'] ?? true)),
+            'checked:bg-accent-500 checked:border-accent-500 indeterminate:!border-accent-500 indeterminate:bg-accent-500 hover:before:bg-accent-500/10 before:focus-visible:bg-accent-500/10' => ($checkboxAttributes['default-colors'] ?? ($checkboxAttributes['default'] ?? true)),
+            'peer block relative cursor-pointer size-[1rem] m-0.5 bg-transparent border-cat-400 dark:border-cat-500 rounded !ring-offset-transparent focus:ring-transparent disabled:cursor-not-allowed disabled:opacity-50 before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:size-[1.9rem] disabled:before:bg-transparent' => ($checkboxAttributes['default-styling'] ?? ($checkboxAttributes['default'] ?? true)),
         ])->except(['default','default-styling','default-colors'])
     }}
 />

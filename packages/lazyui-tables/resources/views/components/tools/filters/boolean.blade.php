@@ -22,7 +22,7 @@
         >
 
             <span class="sr-only">{{ __($localisationPath.'Remove filter option') }}</span>
-            <x-heroicon-m-x-mark class="h-6 w-6" />
+            {{-- <x-heroicon-m-x-mark class="h-6 w-6" /> --}}
         </button>
     </template>
 </div>

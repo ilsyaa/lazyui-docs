@@ -13,7 +13,7 @@
             value="{{ $filter->getDateString(isset($this->appliedFilters[$filterKey]) ? $this->appliedFilters[$filterKey] : '') }}"
             wire:key="{{ $filter->generateWireKey($tableName, 'dateRange') }}"
             id="{{ $tableName }}-filter-dateRange-{{ $filterKey }}"
-            class="w-full inline-block align-middle border-gray-300 rounded-md shadow-sm transition duration-150 ease-in-out focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-800 dark:text-white dark:border-gray-600"
+            class="w-full inline-block align-middle border-cat-300 rounded-md shadow-sm transition duration-150 ease-in-out focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-cat-800 dark:text-white dark:border-cat-600"
             @if($filter->hasConfig('placeholder')) placeholder="{{ $filter->getConfig('placeholder') }}" @endif
         />
     </div>

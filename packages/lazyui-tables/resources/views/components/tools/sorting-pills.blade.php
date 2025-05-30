@@ -2,8 +2,8 @@
 
 <div>
     @if ($this->sortingPillsAreEnabled() && $this->hasSorts())
-        <div class="mb-4 px-4 md:p-0" x-cloak x-show="!currentlyReorderingStatus">
-            <small class="text-gray-700 dark:text-white">{{ __($localisationPath.'Applied Sorting') }}:</small>
+        <div class="border border-dashed border-cat-300 dark:border-cat-750 inline-flex items-center flex-wrap gap-1 py-1 px-2 rounded-lg mb-3" x-cloak x-show="!currentlyReorderingStatus">
+            <small class="text-cat-800 dark:text-white">{{ __($localisationPath.'Applied Sorting') }}:</small>
 
             @foreach($this->getSorts() as $columnSelectName => $direction)
                 @php($column = $this->getColumnBySelectName($columnSelectName) ?? $this->getColumnBySlug($columnSelectName))
@@ -17,8 +17,8 @@
                     {{
                         $attributes->merge($this->getSortingPillsItemAttributes())
                         ->class([
-                            'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 capitalize' => $this->getSortingPillsItemAttributes()['default-styling'],
-                            'bg-indigo-100 text-indigo-800 dark:bg-indigo-200 dark:text-indigo-900' => $this->getSortingPillsItemAttributes()['default-colors'],
+                            'inline-flex items-center gap-x-1 px-2 py-1 rounded-lg text-xs font-medium leading-4 capitalize' => $this->getSortingPillsItemAttributes()['default-styling'],
+                            'bg-cat-300/50 dark:bg-cat-750' => $this->getSortingPillsItemAttributes()['default-colors'],
                         ])
                         ->except(['default-styling', 'default-colors'])
                     }}
@@ -31,28 +31,30 @@
                         {{
                             $attributes->merge($this->getSortingPillsClearSortButtonAttributes())
                             ->class([
-                                'flex-shrink-0 ml-0.5 h-4 w-4 rounded-full inline-flex items-center justify-center focus:outline-none' => $this->getSortingPillsClearSortButtonAttributes()['default-styling'],
-                                'text-indigo-400 hover:bg-indigo-200 hover:text-indigo-500 focus:bg-indigo-500 focus:text-white' => $this->getSortingPillsClearSortButtonAttributes()['default-colors'],
+                                'flex-shrink-0 size-3.5 rounded-full inline-flex items-center justify-center focus:outline-none cursor-pointer' => $this->getSortingPillsClearSortButtonAttributes()['default-styling'],
+                                'text-cat-200 bg-cat-500 dark:bg-cat-700 hover:text-cat-300' => $this->getSortingPillsClearSortButtonAttributes()['default-colors'],
                             ])
                             ->except(['default-styling', 'default-colors'])
                         }}
                     >
                         <span class="sr-only">{{ __($localisationPath.'Remove sort option') }}</span>
-                        <x-heroicon-m-x-mark class="h-3 w-3" />
+                        <svg class="h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                            <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+                        </svg>
                     </button>
                 </span>
             @endforeach
 
             <button
                 wire:click.prevent="clearSorts"
-                class="focus:outline-none active:outline-none"
+                class="focus:outline-none active:outline-none cursor-pointer"
             >
                 <span
                     {{
                         $attributes->merge($this->getSortingPillsClearAllButtonAttributes())
                         ->class([
-                            'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium' => $this->getSortingPillsClearAllButtonAttributes()['default-styling'],
-                            'bg-gray-100 text-gray-800 dark:bg-gray-200 dark:text-gray-900' => $this->getSortingPillsClearAllButtonAttributes()['default-colors'],
+                            'inline-flex items-center gap-x-1 px-2 py-1 rounded-lg text-xs font-medium leading-4 capitalize' => $this->getSortingPillsClearAllButtonAttributes()['default-styling'],
+                            'bg-red-400/15 dark:bg-red-400/10 text-red-500' => $this->getSortingPillsClearAllButtonAttributes()['default-colors'],
                         ])
                         ->except(['default-styling', 'default-colors'])
                     }}

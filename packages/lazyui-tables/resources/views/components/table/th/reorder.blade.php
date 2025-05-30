@@ -7,7 +7,7 @@
         $attributes->merge($customThAttributes)
             ->class([
                 'table-cell px-6 py-3 text-left text-xs font-medium whitespace-nowrap uppercase tracking-wider' => (($customThAttributes['default-styling'] ?? true) || ($customThAttributes['default'] ?? true)),
-                'text-gray-500 dark:bg-gray-800 dark:text-gray-400' => (($customThAttributes['default-colors'] ?? true) || ($customThAttributes['default'] ?? true)),
+                '' => (($customThAttributes['default-colors'] ?? true) || ($customThAttributes['default'] ?? true)),
             ])
             ->except(['default','default-styling','default-colors'])
     }}

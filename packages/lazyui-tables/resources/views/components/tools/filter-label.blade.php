@@ -12,8 +12,8 @@
     <label for="{{ $for ?? $tableName.'-filter-'.$filter->getKey() }}" {{
             $attributes->merge($customLabelAttributes)->merge($filterLabelAttributes)
                 ->class([
-                    'block text-sm font-medium leading-5' => ($filterLabelAttributes['default-styling'] ?? ($filterLabelAttributes['default'] ?? true)),
-                    'text-gray-700 dark:text-white' => ($filterLabelAttributes['default-colors'] ?? ($filterLabelAttributes['default'] ?? true)),
+                    'block text-xs font-medium leading-5' => ($filterLabelAttributes['default-styling'] ?? ($filterLabelAttributes['default'] ?? true)),
+                    'text-cat-800 dark:text-white' => ($filterLabelAttributes['default-colors'] ?? ($filterLabelAttributes['default'] ?? true)),
                 ])
                 ->except(['default', 'default-colors', 'default-styling'])
         }}

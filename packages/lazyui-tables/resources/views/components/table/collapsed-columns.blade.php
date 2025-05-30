@@ -3,7 +3,8 @@
 
 @if ($this->collapsingColumnsAreEnabled && $this->hasCollapsedColumns)
     @php($customAttributes = $this->getTrAttributes($row, $rowIndex))
-    <tr x-data
+    <tr
+        x-data
         @toggle-row-content.window="($event.detail.tableName === '{{ $tableName }}' && $event.detail.row === {{ $rowIndex }}) ? $el.classList.toggle('hidden') : null"
         {{
             $attributes->merge([
@@ -12,8 +13,7 @@
                 ])
                 ->merge($customAttributes)
                 ->class([
-                    'hidden bg-white dark:bg-gray-700 dark:text-white rappasoft-striped-row' => (($customAttributes['default'] ?? true) && $rowIndex % 2 === 0),
-                    'hidden bg-gray-50 dark:bg-gray-800 dark:text-white rappasoft-striped-row' => (($customAttributes['default'] ?? true) && $rowIndex % 2 !== 0),
+                    'hidden bg-cat-200 dark:bg-cat-750/50 dark:text-white rappasoft-striped-row' => ($customAttributes['default'] ?? true),
                 ])
                 ->except(['default','default-styling','default-colors'])
         }}
@@ -21,12 +21,11 @@
         <td colspan="{{ $this->getColspanCount }}" class="text-left pt-4 pb-2 px-4">
             <div>
                 @foreach($this->getCollapsedColumnsForContent as $colIndex => $column)
-
                     <p
                         wire:key="{{ $tableName }}-row-{{ $row->{$primaryKey} }}-collapsed-contents-{{ $colIndex }}"
                         @class([
-                            'block mb-2',
-                            'sm:block' => && $column->shouldCollapseAlways(),
+                            'block mb-2 text-sm',
+                            'sm:block' => $column->shouldCollapseAlways(),
                             'sm:block md:hidden' => !$column->shouldCollapseAlways() && !$column->shouldCollapseOnTablet() && $column->shouldCollapseOnMobile(),
                             'sm:block lg:hidden' => !$column->shouldCollapseAlways() && ($column->shouldCollapseOnTablet() || $column->shouldCollapseOnMobile()),
                         ])

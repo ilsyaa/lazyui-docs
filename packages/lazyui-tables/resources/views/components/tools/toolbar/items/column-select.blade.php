@@ -1,6 +1,12 @@
 @aware([ 'tableName', 'localisationPath' ])
 
-<div class="@if ($this->getColumnSelectIsHiddenOnMobile()) hidden sm:block @elseif ($this->getColumnSelectIsHiddenOnTablet()) hidden md:block @endif mb-4 w-full md:w-auto md:mb-0 md:ml-2">
+<div
+    @class([
+        'hidden sm:block' => $this->getColumnSelectIsHiddenOnMobile(),
+        'hidden md:block' => $this->getColumnSelectIsHiddenOnTablet(),
+        'mb-4 w-full md:w-auto md:mb-0 md:ml-2'
+    ])
+>
     <div
         x-data="{ open: false, childElementOpen: false }"
         @keydown.window.escape="if (!childElementOpen) { open = false }"
@@ -16,8 +22,8 @@
                     {{
                         $attributes->merge($this->getColumnSelectButtonAttributes())
                         ->class([
-                            'inline-flex justify-center px-4 py-2 w-full text-sm font-medium rounded-md border shadow-sm focus:ring focus:ring-opacity-50' => $this->getColumnSelectButtonAttributes()['default-styling'],
-                            'text-gray-700 bg-white border-gray-300 hover:bg-gray-50 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600' => $this->getColumnSelectButtonAttributes()['default-colors'],
+                            'relative inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 w-full px-4 py-2' => $this->getColumnSelectButtonAttributes()['default-styling'],
+                            'bg-cat-900 dark:bg-white text-white dark:text-cat-900 shadow hover:bg-cat-800/90 dark:hover:bg-white/90' => $this->getColumnSelectButtonAttributes()['default-colors'],
                         ])
                         ->except(['default-styling', 'default-colors'])
                     }}
@@ -26,8 +32,9 @@
                     aria-expanded="true"
                 >
                     {{ __($localisationPath.'Columns') }}
-
-                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M5 6.25a.75.75 0 0 0-.488 1.32l7 6c.28.24.695.24.976 0l7-6A.75.75 0 0 0 19 6.25z" opacity="0.5"/><path fill="currentColor" fill-rule="evenodd" d="M4.43 10.512a.75.75 0 0 1 1.058-.081L12 16.012l6.512-5.581a.75.75 0 1 1 .976 1.139l-7 6a.75.75 0 0 1-.976 0l-7-6a.75.75 0 0 1-.081-1.058" clip-rule="evenodd"/></svg>
+                    <svg class="-mr-1 ml-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                        <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"></path>
+                    </svg>
                 </button>
             </span>
         </div>
@@ -40,9 +47,9 @@
             x-transition:leave="transition ease-in duration-75"
             x-transition:leave-start="transform opacity-100 scale-100"
             x-transition:leave-end="transform opacity-0 scale-95"
-            class="absolute right-0 z-50 mt-2 w-full rounded-md divide-y divide-gray-100 ring-1 ring-black ring-opacity-5 shadow-lg origin-top-right md:w-48 focus:outline-none"
+            class="absolute right-0 z-50 mt-2 w-full rounded-md shadow-lg origin-top-right md:w-48 focus:outline-none"
         >
-            <div class="bg-white rounded-md shadow-xs dark:bg-gray-700 dark:text-white">
+            <div class="bg-white dark:bg-cat-800 lazy-gradient overflow-hidden">
                 <div class="p-2" role="menu" aria-orientation="vertical"
                         aria-labelledby="column-select-menu"
                 >
@@ -55,8 +62,8 @@
                                 {{
                                     $attributes->merge($this->getColumnSelectMenuOptionCheckboxAttributes())
                                     ->class([
-                                        'transition duration-150 ease-in-out rounded shadow-sm focus:ring focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-wait' => $this->getColumnSelectMenuOptionCheckboxAttributes()['default-styling'],
-                                        'text-indigo-600 border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-900 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:focus:bg-gray-600' => $this->getColumnSelectMenuOptionCheckboxAttributes()['default-colors'],
+                                        'checked:bg-accent-500 checked:border-accent-500 indeterminate:!border-accent-500 indeterminate:bg-accent-500 hover:before:bg-accent-500/10 before:focus-visible:bg-accent-500/10' => $this->getColumnSelectMenuOptionCheckboxAttributes()['default-colors'],
+                                        'peer block relative cursor-pointer size-[1rem] m-0.5 bg-transparent border-cat-400 dark:border-cat-500 rounded !ring-offset-transparent focus:ring-transparent disabled:cursor-not-allowed disabled:opacity-50 before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:size-[1.9rem] disabled:before:bg-transparent' => $this->getColumnSelectMenuOptionCheckboxAttributes()['default-styling'],
                                     ])
                                     ->except(['default-styling', 'default-colors'])
                                 }}
@@ -65,7 +72,7 @@
                                 @checked($this->getSelectableSelectedColumns()->count() === $this->getSelectableColumns()->count())
                                 @if($this->getSelectableSelectedColumns()->count() === $this->getSelectableColumns()->count())  wire:click="deselectAllColumns" @else wire:click="selectAllColumns" @endif
                             >
-                            <span class="ml-2">{{ __($localisationPath.'All Columns') }}</span>
+                            <span class="ml-2 text-sm">{{ __($localisationPath.'All Columns') }}</span>
                         </label>
                     </div>
 
@@ -82,15 +89,15 @@
                                     {{
                                         $attributes->merge($this->getColumnSelectMenuOptionCheckboxAttributes())
                                         ->class([
-                                            'transition duration-150 ease-in-out rounded shadow-sm focus:ring focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-wait' => $this->getColumnSelectMenuOptionCheckboxAttributes()['default-styling'],
-                                            'text-indigo-600 border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-900 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:focus:bg-gray-600' => $this->getColumnSelectMenuOptionCheckboxAttributes()['default-colors'],
+                                            'checked:bg-accent-500 checked:border-accent-500 indeterminate:!border-accent-500 indeterminate:bg-accent-500 hover:before:bg-accent-500/10 before:focus-visible:bg-accent-500/10' => $this->getColumnSelectMenuOptionCheckboxAttributes()['default-colors'],
+                                            'peer block relative cursor-pointer size-[1rem] m-0.5 bg-transparent border-cat-400 dark:border-cat-500 rounded !ring-offset-transparent focus:ring-transparent disabled:cursor-not-allowed disabled:opacity-50 before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:size-[1.9rem] disabled:before:bg-transparent' => $this->getColumnSelectMenuOptionCheckboxAttributes()['default-styling'],
                                         ])
                                         ->except(['default-styling', 'default-colors'])
                                     }}
                                     wire:model.live="selectedColumns" wire:target="selectedColumns"
                                     wire:loading.attr="disabled" type="checkbox"
                                     value="{{ $columnSlug }}" />
-                                <span class="ml-2">{{ $columnTitle }}</span>
+                                <span class="ml-2 text-sm">{{ $columnTitle }}</span>
                             </label>
                         </div>
                     @endforeach

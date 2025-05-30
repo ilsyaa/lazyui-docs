@@ -4,14 +4,21 @@
     <button
         x-on:click="reorderToggle"
         type="button"
-        class="inline-flex justify-center items-center w-full md:w-auto px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600"
+        class="relative inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 w-9 bg-cat-900 dark:bg-white text-white dark:text-cat-900 shadow hover:bg-cat-800/90 dark:hover:bg-white/90"
+        x-show="!currentlyReorderingStatus"
     >
-        <span x-cloak x-show="currentlyReorderingStatus">
-         {{ __($localisationPath.'cancel') }}
-        </span>
-
         <span x-cloak x-show="!currentlyReorderingStatus">
-        {{ __($localisationPath.'Reorder') }}
+            <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M16 18V6m0 0l4 4.125M16 6l-4 4.125" opacity="0.5"/><path d="M8 6v12m0 0l4-4.125M8 18l-4-4.125"/></g></svg>
+        </span>
+    </button>
+    <button
+        x-on:click="reorderToggle"
+        type="button"
+        class="relative inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 px-4 py-2 bg-cat-300 dark:bg-cat-700 text-cat-900 dark:text-white"
+        x-show="currentlyReorderingStatus"
+    >
+        <span x-cloak>
+         {{ __($localisationPath.'cancel') }}
         </span>
     </button>
 
@@ -19,7 +26,7 @@
         <button
             type="button"
             x-on:click="updateOrderedItems"
-            class="inline-flex justify-center items-center w-full md:w-auto px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600"
+            class="relative inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 px-4 py-2 bg-cat-900 dark:bg-white text-white dark:text-cat-900 shadow hover:bg-cat-800/90 dark:hover:bg-white/90"
         >
             <span>
             {{ __($localisationPath.'save') }}

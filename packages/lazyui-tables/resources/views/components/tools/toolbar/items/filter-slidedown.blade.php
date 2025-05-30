@@ -1,7 +1,9 @@
 @aware([ 'tableName' ])
 @props([])
 
-<div x-cloak x-show="filtersOpen"
+<div
+    x-cloak
+    x-show="filtersOpen"
     {{
         $attributes
             ->merge($this->getFilterSlidedownWrapperAttributes)
@@ -24,7 +26,7 @@
                 'row' => $filterRowIndex,
             ])
             ->class([
-                'grid grid-cols-12 gap-6 px-4 py-2 mb-2' => ($defaultAttributes['default-styling'] ?? true),
+                'grid grid-cols-12 gap-6 px-4 md:p-0 mb-6' => ($defaultAttributes['default-styling'] ?? true),
             ])
             ->except(['default','default-colors','default-styling'])
         }}

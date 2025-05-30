@@ -2,15 +2,6 @@
 
 return [
     /**
-     * Options: tailwind | bootstrap-4 | bootstrap-5.
-     */
-    'theme' => 'tailwind',
-
-    /**
-     * Filter Frontend Asset Options
-     */
-
-    /**
      * Cache Rappasoft Frontend Assets
      */
     'cache_assets' => false,

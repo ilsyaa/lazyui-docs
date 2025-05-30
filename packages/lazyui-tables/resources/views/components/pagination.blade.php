@@ -8,10 +8,10 @@
 
 <div {{ $this->getPaginationWrapperAttributesBag() }}>
     @if ($this->paginationVisibilityIsEnabled())
-        <div class="mt-4 px-4 md:p-0 sm:flex justify-between items-center space-y-4 sm:space-y-0">
+        <div class="py-3 p-5 sm:flex justify-between items-center space-y-4 sm:space-y-0">
             <div>
                 @if ($this->paginationIsEnabled && $this->isPaginationMethod('standard') && $currentRows->lastPage() > 1 && $this->showPaginationDetails)
-                    <p class="paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white">
+                    <p class="paged-pagination-results text-sm text-cat-700 leading-5 dark:text-white">
                             <span>{{ __($localisationPath.'Showing') }}</span>
                             <span class="font-medium">{{ $currentRows->firstItem() }}</span>
                             <span>{{ __($localisationPath.'to') }}</span>
@@ -21,7 +21,7 @@
                             <span>{{ __($localisationPath.'results') }}</span>
                     </p>
                 @elseif ($this->paginationIsEnabled && $this->isPaginationMethod('simple') && $this->showPaginationDetails)
-                    <p class="paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white">
+                    <p class="paged-pagination-results text-sm text-cat-700 leading-5 dark:text-white">
                         <span>{{ __($localisationPath.'Showing') }}</span>
                         <span class="font-medium">{{ $currentRows->firstItem() }}</span>
                         <span>{{ __($localisationPath.'to') }}</span>
@@ -30,7 +30,7 @@
                 @elseif ($this->paginationIsEnabled && $this->isPaginationMethod('cursor'))
                 @else
                     @if($this->showPaginationDetails)
-                        <p class="total-pagination-results text-sm text-gray-700 leading-5 dark:text-white">
+                        <p class="total-pagination-results text-sm text-cat-700 leading-5 dark:text-white">
                             <span>{{ __($localisationPath.'Showing') }}</span>
                             <span class="font-medium">{{ $currentRows->count() }}</span>
                             <span>{{ __($localisationPath.'results') }}</span>
@@ -40,7 +40,7 @@
             </div>
 
             @if ($this->paginationIsEnabled)
-                {{ $currentRows->links('livewire-tables::specific.tailwind.'.(!$this->isPaginationMethod('standard') ? 'simple-' : '').'pagination') }}
+                {{ $currentRows->onEachSide(0)->links('livewire-tables::specific.tailwind.'.(!$this->isPaginationMethod('standard') ? 'simple-' : '').'pagination') }}
             @endif
         </div>
     @endif

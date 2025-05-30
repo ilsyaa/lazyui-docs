@@ -4,54 +4,66 @@
     @switch($direction)
         @case('asc')
             <svg
+                data-svg="up"
                 {{
                     $attributes->merge($customIconAttributes)
                         ->class([
-                            'w-3 h-3' => $customIconAttributes['default-styling'] ?? ($customIconAttributes['default'] ?? true),
-                            'absolute opacity-100 group-hover:opacity-0',
+                            'size-3' => $customIconAttributes['default-styling'] ?? ($customIconAttributes['default'] ?? true),
+                            'absolute opacity-100 group-hover:rotate-180 transition-transform ease-in-out duration-300',
                         ])
                         ->except(['default', 'default-colors', 'default-styling', 'wire:key'])
                 }}
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.37 8.165l6.43 6.63c.401.414.158 1.205-.37 1.205H5.57c-.528 0-.771-.79-.37-1.205l6.43-6.63a.5.5 0 0 1 .74 0"/>
-            </svg>
-            <svg
-                {{
-                    $attributes->merge($customIconAttributes)
-                        ->class([
-                            'w-3 h-3' => $customIconAttributes['default-styling'] ?? ($customIconAttributes['default'] ?? true),
-                            'absolute opacity-0 group-hover:opacity-100',
-                        ])
-                        ->except(['default', 'default-colors', 'default-styling', 'wire:key'])
-                }}
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.37 15.835l6.43-6.63C19.201 8.79 18.958 8 18.43 8H5.57c-.528 0-.771.79-.37 1.205l6.43 6.63c.213.22.527.22.74 0"/>
-            </svg>
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            ><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m19 15l-7-6l-7 6"/></svg>
         @break
         @case('desc')
-            {{-- <x-heroicon-o-chevron-down {{ $attributes->merge($customIconAttributes)
-                ->class([
-                    'w-3 h-3' => $customIconAttributes['default-styling'] ?? ($customIconAttributes['default'] ?? true),
-                    'absolute opacity-100 group-hover:opacity-0',
-                ])
-                ->except(['default', 'default-colors', 'default-styling', 'wire:key']) }}   />
-            <x-heroicon-o-x-circle  {{ $attributes->merge($customIconAttributes)
-                ->class([
-                    'w-3 h-3' => $customIconAttributes['default-styling'] ?? ($customIconAttributes['default'] ?? true),
-                    'absolute opacity-0 group-hover:opacity-100',
-                ])
-                ->except(['default', 'default-colors', 'default-styling', 'wire:key']) }}  /> --}}
+            <svg
+                data-svg="down"
+                {{
+                    $attributes->merge($customIconAttributes)
+                        ->class([
+                            'size-3' => $customIconAttributes['default-styling'] ?? ($customIconAttributes['default'] ?? true),
+                            'absolute opacity-100 group-hover:opacity-0 transition-opacity ease-in',
+                        ])
+                        ->except(['default', 'default-colors', 'default-styling', 'wire:key'])
+                }}
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            ><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m19 9l-7 6l-7-6"/></svg>
+            <svg
+                data-svg="-"
+                {{
+                    $attributes->merge($customIconAttributes)
+                        ->class([
+                            'size-3' => $customIconAttributes['default-styling'] ?? ($customIconAttributes['default'] ?? true),
+                            'absolute opacity-0 group-hover:opacity-100 transition-opacity ease-in',
+                        ])
+                        ->except(['default', 'default-colors', 'default-styling', 'wire:key'])
+                }}
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M15 12H9"/></g></svg>
         @break
         @default
-            {{-- <x-heroicon-o-chevron-up-down {{ $attributes->merge($customIconAttributes)
-                ->class([
-                    'w-3 h-3' => $customIconAttributes['default-styling'] ?? ($customIconAttributes['default'] ?? true),
-                    'absolute opacity-100 group-hover:opacity-0',
-                ])
-                ->except(['default', 'default-colors', 'default-styling', 'wire:key'])  }}  />
-            <x-heroicon-o-chevron-up {{ $attributes->merge($customIconAttributes)
-                ->class([
-                    'w-3 h-3' => $customIconAttributes['default-styling'] ?? ($customIconAttributes['default'] ?? true),
-                    'absolute opacity-0 group-hover:opacity-100',
-                ])
-                ->except(['default', 'default-colors', 'default-styling', 'wire:key']) }} /> --}}
+            <svg
+            data-svg="up-down"
+                {{
+                    $attributes->merge($customIconAttributes)
+                        ->class([
+                            'size-3' => $customIconAttributes['default-styling'] ?? ($customIconAttributes['default'] ?? true),
+                            'absolute opacity-100 group-hover:opacity-0 transition-opacity ease-in',
+                        ])
+                        ->except(['default', 'default-colors', 'default-styling', 'wire:key'])
+                }}
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M16 18V6m0 0l4 4.125M16 6l-4 4.125" opacity="0.5"/><path d="M8 6v12m0 0l4-4.125M8 18l-4-4.125"/></g></svg>
+            <svg
+                data-svg="up"
+                {{
+                    $attributes->merge($customIconAttributes)
+                        ->class([
+                            'size-3' => $customIconAttributes['default-styling'] ?? ($customIconAttributes['default'] ?? true),
+                            'absolute opacity-0 group-hover:opacity-100 transition-opacity ease-in',
+                        ])
+                        ->except(['default', 'default-colors', 'default-styling', 'wire:key'])
+                }}
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            ><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m19 15l-7-6l-7 6"/></svg>
         @endswitch
 </span>

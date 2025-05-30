@@ -7,8 +7,10 @@
 
 <td wire:key="{{ $tableName . '-table-td-'.$row->{$primaryKey}.'-'.$column->getSlug() }}"
     @if ($column->isClickable())
-        @if($this->getTableRowUrlTarget($row) === 'navigate') wire:navigate href="{{ $this->getTableRowUrl($row) }}"
-        @else onclick="window.open('{{ $this->getTableRowUrl($row) }}', '{{ $this->getTableRowUrlTarget($row) ?? '_self' }}')"
+        @if($this->getTableRowUrlTarget($row) === 'navigate')
+            wire:navigate href="{{ $this->getTableRowUrl($row) }}"
+        @else
+            onclick="window.open('{{ $this->getTableRowUrl($row) }}', '{{ $this->getTableRowUrlTarget($row) ?? '_self' }}')"
         @endif
     @endif
         {{
@@ -21,6 +23,6 @@
                 ])
                 ->except(['default','default-styling','default-colors'])
         }}
-    >
-        {{ $slot }}
+>
+    {{ $slot }}
 </td>
