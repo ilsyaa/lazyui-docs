@@ -32,6 +32,13 @@ trait BooleanColumnConfiguration
         return $this;
     }
 
+    public function switch(): self
+    {
+        $this->type = 'switch';
+
+        return $this;
+    }
+
     public function toggleable(string $toggleMethod): self
     {
         $this->isToggleable = true;

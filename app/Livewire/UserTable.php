@@ -5,9 +5,14 @@ namespace App\Livewire;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
+use Rappasoft\LaravelLivewireTables\Views\Columns\BooleanColumn;
+use Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn;
+use Rappasoft\LaravelLivewireTables\Views\Columns\ColorColumn;
+use Rappasoft\LaravelLivewireTables\Views\Columns\DateColumn;
+use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
+use Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn;
 use Rappasoft\LaravelLivewireTables\Views\Filters\DateFilter;
-use Rappasoft\LaravelLivewireTables\Views\Filters\DateTimeFilter;
-use Rappasoft\LaravelLivewireTables\Views\Filters\NumberFilter;
 use Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter;
 use Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter;
 
@@ -18,8 +23,7 @@ class UserTable extends DataTableComponent
     public function configure(): void
     {
         $this->setPrimaryKey('id')
-            ->setAdditionalSelects(['id'])
-            ->setDefaultSort('created_at', 'desc')
+            ->setAdditionalSelects(['id', 'image'])
             ->setQueryStringStatus(false)
             ->setQueryStringStatusForFilter(false);
 
@@ -38,6 +42,12 @@ class UserTable extends DataTableComponent
     public function columns(): array
     {
         return [
+            ImageColumn::make('Avatar')
+                ->location(fn($row) => Storage::url($row->image))
+                ->attributes(fn($row) => [
+                    'class' => 'relative h-9 w-9 rounded-full overflow-hidden',
+                    'alt' => $row->name,
+                ]),
             Column::make("Name", "name")
                 ->searchable()
                 ->sortable(),
@@ -47,10 +57,26 @@ class UserTable extends DataTableComponent
             Column::make("Collapse")
                 ->label(fn ($row) => 'lorem ipsum dolor sit amet')
                 ->collapseAlways(),
-            Column::make("Created at", "created_at")
+            BooleanColumn::make("Verified", "email_verified_at"),
+            Column::make("Member Since", "created_at")
+                ->format(fn($value) => $value->diffForHumans())
                 ->sortable(),
-            Column::make("Updated at", "updated_at")
-                ->sortable(),
+            // ButtonGroupColumn::make('Actions')
+            //     ->attributes(function($row) {
+            //         return [
+            //             'class' => 'space-x-2',
+            //         ];
+            //     })
+            //     ->buttons([
+            //         LinkColumn::make('View')
+            //             ->title(fn($row) => 'View')
+            //             ->location(fn($row) => '')
+            //             ->attributes(function($row) {
+            //                 return [
+            //                     'class' => 'underline text-blue-500 hover:no-underline',
+            //                 ];
+            //             }),
+            //     ]),
         ];
     }
 

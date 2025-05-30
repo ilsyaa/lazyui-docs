@@ -80,6 +80,12 @@ BooleanColumn::make('Active')
     ->yesNo()
 ```
 
+If you would like the BooleanColumn to display a switch, you can set:
+```php
+BooleanColumn::make('Active')
+    ->switch()
+```
+
 ### Toggleable
 
 You may call a defined public function, which should live within your Table Component, to allow "toggling" against your database:
