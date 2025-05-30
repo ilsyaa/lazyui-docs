@@ -13,11 +13,11 @@ final class BulkActionsStylingConfigurationTest extends TestCase
         return [
             'fff' => [false, false, false, 'bg-blue-500', 'bg-red-300'],
             'tff' => [true, false, false, 'bg-red-500', 'bg-yellow-300'],
-            'ttf' => [true, true, false, 'bg-green-500', 'bg-gray-300'],
+            'ttf' => [true, true, false, 'bg-green-500', 'bg-cat-300'],
             'ttt' => [true, true, true, 'bg-yellow-500', 'bg-green-300'],
             'tft' => [true, false, true, 'bg-red-500', 'bg-blue-300'],
             'ftf' => [false, true, false, 'bg-green-500', 'bg-amber-300'],
-            'ftt' => [false, true, true, 'bg-gray-500', 'bg-blue-300'],
+            'ftt' => [false, true, true, 'bg-cat-500', 'bg-blue-300'],
             'fff' => [false, false, true, 'bg-blue-500', 'bg-yellow-300'],
         ];
     }

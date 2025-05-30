@@ -8,7 +8,7 @@
         @toggle-row-content.window="($event.detail.tableName === '{{ $tableName }}' && $event.detail.row === {{ $rowIndex }}) ? $el.classList.toggle('hidden') : null"
         {{
             $attributes->merge([
-                    'wire:loading.class.delay' => 'opacity-50 dark:bg-gray-900 dark:opacity-60',
+                    'wire:loading.class.delay' => 'opacity-50 dark:bg-cat-900 dark:opacity-60',
                     'wire:key' => $tableName.'-row-'.$row->{$primaryKey}.'-collapsed-contents',
                 ])
                 ->merge($customAttributes)
