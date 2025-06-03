@@ -45,12 +45,12 @@ If you'd prefer to bundle the included JS and CSS files with your choice of bund
 
 To include only Core functions (Includes JS & CSS):
 ```js
-import '../../vendor/rappasoft/laravel-livewire-tables/resources/imports/laravel-livewire-tables.js';
+import '../../vendor/ilsyaa/lazyui-tables/resources/imports/laravel-livewire-tables.js';
 ```
 
 To include both Core and Third Party (Flatpickr) Libraries (Includes JS & CSS):
 ```js
-import '../../vendor/rappasoft/laravel-livewire-tables/resources/imports/laravel-livewire-tables-all.js';
+import '../../vendor/ilsyaa/lazyui-tables/resources/imports/laravel-livewire-tables-all.js';
 ```
 
 #### Configuration

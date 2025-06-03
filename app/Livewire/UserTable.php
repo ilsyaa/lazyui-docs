@@ -5,12 +5,11 @@ namespace App\Livewire;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Storage;
 use Rappasoft\LaravelLivewireTables\Views\Columns\BooleanColumn;
-use Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn;
-use Rappasoft\LaravelLivewireTables\Views\Columns\ColorColumn;
-use Rappasoft\LaravelLivewireTables\Views\Columns\DateColumn;
-use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
+use Rappasoft\LaravelLivewireTables\Views\Columns\DropdownColumn;
+use Rappasoft\LaravelLivewireTables\Views\Columns\DropdownItemColumn;
 use Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn;
 use Rappasoft\LaravelLivewireTables\Views\Filters\DateFilter;
 use Rappasoft\LaravelLivewireTables\Views\Filters\MultiSelectFilter;
@@ -61,22 +60,20 @@ class UserTable extends DataTableComponent
             Column::make("Member Since", "created_at")
                 ->format(fn($value) => $value->diffForHumans())
                 ->sortable(),
-            // ButtonGroupColumn::make('Actions')
-            //     ->attributes(function($row) {
-            //         return [
-            //             'class' => 'space-x-2',
-            //         ];
-            //     })
-            //     ->buttons([
-            //         LinkColumn::make('View')
-            //             ->title(fn($row) => 'View')
-            //             ->location(fn($row) => '')
-            //             ->attributes(function($row) {
-            //                 return [
-            //                     'class' => 'underline text-blue-500 hover:no-underline',
-            //                 ];
-            //             }),
-            //     ]),
+            DropdownColumn::make('Actions')
+                ->lists([
+                    DropdownItemColumn::make('View')
+                        ->type('a')
+                        ->attributes(function($row) {
+                            return [
+                                'href' => $row->id,
+                            ];
+                        }),
+                    DropdownItemColumn::make('Delete')
+                        ->type('button')
+                        ->confirmMessage('Are you sure you want to delete this user ?')
+                        ->handle('handleDelete'),
+                ]),
         ];
     }
 
@@ -84,19 +81,19 @@ class UserTable extends DataTableComponent
     {
         return [
             SelectFilter::make('E-mail Verified', 'email_verified_at')
-            ->setFilterPillTitle('Verified')
-            ->options([
-                ''    => 'All',
-                'yes' => 'Yes',
-                'no'  => 'No',
-            ])
-            ->filter(function($builder, $value) {
-                if ($value === 'yes') {
-                    $builder->whereNotNull('email_verified_at');
-                } elseif ($value === 'no') {
-                    $builder->whereNull('email_verified_at');
-                }
-            }),
+                ->setFilterPillTitle('Verified')
+                ->options([
+                    ''    => 'All',
+                    'yes' => 'Yes',
+                    'no'  => 'No',
+                ])
+                ->filter(function($builder, $value) {
+                    if ($value === 'yes') {
+                        $builder->whereNotNull('email_verified_at');
+                    } elseif ($value === 'no') {
+                        $builder->whereNull('email_verified_at');
+                    }
+                }),
             DateFilter::make('Verified From')
                 ->filter(function($builder, $value) {
                     $builder->where('email_verified_at', '>=', $value);
@@ -118,11 +115,41 @@ class UserTable extends DataTableComponent
         ];
     }
 
-    public function handleDelete() {
-        if($this->getSelectAllStatus()) {
-            dd('delete all');
-        } else {
-            dd($this->getSelected());
+    public function builder(): Builder
+    {
+        return User::query();
+    }
+
+    public function handleDelete(int|string|null $id = null): void
+    {
+        try {
+            $query = User::query();
+            $message = '';
+
+            if ($id) {
+                $query->whereKey($id);
+                $message = 'Deleted record';
+            } elseif ($this->getSelectAllStatus()) {
+                $message = 'Deleted all records';
+            } else {
+                $selected = $this->getSelected();
+                if (empty($selected)) throw new \Exception('No records selected.');
+                $query->whereIn('id', $selected);
+                $message = 'Deleted ' . count($selected) . ' records';
+            }
+
+            $query->delete();
+
+            $this->dispatch('toast', [
+                'type' => 'success',
+                'title' => $message
+            ]);
+        } catch (\Throwable $e) {
+            report($e);
+            $this->dispatch('toast', [
+                'type' => 'error',
+                'title' => $e->getMessage()
+            ]);
         }
     }
 }

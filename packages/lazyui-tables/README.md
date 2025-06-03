@@ -1,35 +1,16 @@
-![Package Logo](https://banners.beyondco.de/Laravel%20Livewire%20Tables.png?theme=light&packageName=rappasoft%2Flaravel-livewire-tables&pattern=hideout&style=style_1&description=A+dynamic+table+component+for+Laravel+Livewire&md=1&fontSize=100px&images=table)
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/rappasoft/laravel-livewire-tables.svg?style=flat-square)](https://packagist.org/packages/rappasoft/laravel-livewire-tables)
-[![Styling](https://github.com/rappasoft/laravel-livewire-tables/actions/workflows/php-cs-fixer.yml/badge.svg)](https://github.com/rappasoft/laravel-livewire-tables/actions/workflows/php-cs-fixer.yml)
-[![Tests](https://github.com/rappasoft/laravel-livewire-tables/actions/workflows/run-tests.yml/badge.svg)](https://github.com/rappasoft/laravel-livewire-tables/actions/workflows/run-tests.yml)
-[![Total Downloads](https://img.shields.io/packagist/dt/rappasoft/laravel-livewire-tables.svg?style=flat-square)](https://packagist.org/packages/rappasoft/laravel-livewire-tables)
-[![codecov](https://codecov.io/gh/rappasoft/laravel-livewire-tables/graph/badge.svg?token=1B9VKO9KWG)](https://codecov.io/gh/rappasoft/laravel-livewire-tables)
-![PHP Stan Level 6](https://img.shields.io/badge/PHPStan-level%206-brightgreen.svg?style=flat)
-
-### Enjoying this package? [Buy me a beer 🍺](https://www.buymeacoffee.com/rappasoft)
-
-A dynamic Laravel Livewire component for data tables.
-
-![Dark Mode](https://imgur.com/QoEdC7n.png)
-
-![Full Table](https://i.imgur.com/2kfibjR.png)
-
-### [Bootstrap 4 Demo](https://tables.laravel-boilerplate.com/bootstrap-4) | [Bootstrap 5 Demo](https://tables.laravel-boilerplate.com/bootstrap-5) | [Tailwind Demo](https://tables.laravel-boilerplate.com/tailwind) | [Demo Repository](https://github.com/rappasoft/laravel-livewire-tables-demo)
-
 ## Installation
 
 You can install the package via composer:
 
 ``` bash
-composer require rappasoft/laravel-livewire-tables
+composer require ilsyaa/lazyui-tables
 ```
 
-You must also have [Alpine.js](https://alpinejs.dev) version 3 or greater installed and available to the component.
+Use in a [LazyUI](https://github.com/ilsyaa/lazyui) environment for more complete features.
 
 ## Documentation and Usage Instructions
 
-See the [documentation](https://rappasoft.com/docs/laravel-livewire-tables) for detailed installation and usage instructions.
+See the [documentation](https://github.com/ilsyaa/lazyui-tables/blob/master/docs/start/installation.md) for detailed installation and usage instructions.
 
 ## Basic Example
 
@@ -65,8 +46,6 @@ class UsersTable extends DataTableComponent
 
 ```
 
-### [See advanced example](https://rappasoft.com/docs/laravel-livewire-tables/v2/examples/advanced-example)
-
 ## Testing
 
 ```bash
@@ -80,16 +59,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 ## Contributing
 
 Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please e-mail anthony@rappasoft.com to report any security vulnerabilities instead of the issue tracker.
-
-## Credits
-
-- [Anthony Rappa](https://github.com/rappasoft)
-- [Joe McElwee](https://github.com/lrljoe)
-- [All Contributors](./CONTRIBUTORS.md)
 
 ## License
 

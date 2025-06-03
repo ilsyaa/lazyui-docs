@@ -47,7 +47,7 @@ module.exports = {
     mode: 'jit',
     purge: [
         ...
-        './vendor/rappasoft/laravel-livewire-tables/resources/views/**/*.blade.php',
+        './vendor/ilsyaa/lazyui-tables/resources/views/**/*.blade.php',
     ],
     ...
 };
@@ -56,10 +56,13 @@ module.exports = {
 module.exports = {
     content: [
         ...
-        './vendor/rappasoft/laravel-livewire-tables/resources/views/**/*.blade.php',
+        './vendor/ilsyaa/lazyui-tables/resources/views/**/*.blade.php',
     ],
     ...
 };
+
+// V4
+@source './vendor/ilsyaa/lazyui-tables/resources/views/**/*.blade.php';
 ```
 
 ## Tailwind Dark Mode
