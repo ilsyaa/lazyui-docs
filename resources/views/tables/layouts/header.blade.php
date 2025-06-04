@@ -17,7 +17,7 @@
             </div>
             <div class="flex gap-1 items-center">
                 <x-button
-                    href="https://github.com/ilsyaa/lazyui"
+                    href="https://github.com/ilsyaa/lazyui-tables"
                     variant="ghost"
                     size="icon"
                     class="rounded-full"

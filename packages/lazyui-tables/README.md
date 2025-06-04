@@ -6,11 +6,9 @@ You can install the package via composer:
 composer require ilsyaa/lazyui-tables
 ```
 
-Use in a [LazyUI](https://github.com/ilsyaa/lazyui) environment for more complete features.
-
 ## Documentation and Usage Instructions
 
-See the [documentation](https://github.com/ilsyaa/lazyui-tables/blob/master/docs/start/installation.md) for detailed installation and usage instructions.
+See the [documentation](http://lazyui.koding.in/tables) for detailed installation and usage instructions.
 
 ## Basic Example
 
