@@ -1,8 +1,8 @@
 <x-tabs>
     <x-tabs.buttons>
-        <x-tabs.button>Tab1</x-tabs.button>
-        <x-tabs.button>Tab2</x-tabs.button>
-        <x-tabs.button>Tab3</x-tabs.button>
+        <x-tabs.button>Tab One</x-tabs.button>
+        <x-tabs.button :is-active="true">Tab two</x-tabs.button>
+        <x-tabs.button>Tab three</x-tabs.button>
     </x-tabs.buttons>
 
     <x-tabs.contents class="border border-dashed border-cat-300 dark:border-cat-700 rounded-md text-xs text-center">
