@@ -5,27 +5,10 @@ weight: 1
 
 A standard Column has a multitude of different options, making it simple for you to display your data, as documented below:
 
-<ul>
-    <li>
-        <a href="https://rappasoft.com/docs/laravel-livewire-tables/v3/columns/creating-columns">Creating Columns</a>
-    </li>
-    <li>
-        <a href="https://rappasoft.com/docs/laravel-livewire-tables/v3/columns/relationships">Relationships</a>
-    </li>
-    <li>
-        <a href="https://rappasoft.com/docs/laravel-livewire-tables/v3/columns/available-methods">Available Methods</a>
-    </li>
-    <li>
-        <a href="https://rappasoft.com/docs/laravel-livewire-tables/v3/columns/column-selection">Column Selection</a>
-    </li>
-    <li>
-        <a href="https://rappasoft.com/docs/laravel-livewire-tables/v3/columns/secondary-header">Secondary Header</a>
-    </li>
-    <li>
-        <a href="https://rappasoft.com/docs/laravel-livewire-tables/v3/columns/footer">Footer</a>
-    </li>
-        <li>
-        <a href="https://rappasoft.com/docs/laravel-livewire-tables/v3/columns/anonymous_columns">Anonymous Columns</a>
-    </li>
-
-</ul>
+- [Creating Columns](/tables/columns/creating-columns)
+- [Relationships](/tables/columns/relationships)
+- [Available Methods](/tables/columns/available-methods)
+- [Column Selection](/tables/columns/column-selection)
+- [Secondary Header](/tables/columns/secondary-header)
+- [Footer](/tables/columns/footer)
+- [Anonymous Columns](/tables/columns/anonymous_columns)

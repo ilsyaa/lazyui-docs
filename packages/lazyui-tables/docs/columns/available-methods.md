@@ -160,7 +160,7 @@ Column::make('My one off column')
     ),
 ```
 
-Note that any field not used elsewhere in the table, that is required (for example creating an attribute based on two unused fields, these must be added to the query with setAdditionalSelects() in the configure() method (See Here)[https://rappasoft.com/docs/laravel-livewire-tables/v3/datatable/available-methods#content-builder])
+Note that any field not used elsewhere in the table, that is required (for example creating an attribute based on two unused fields, these must be added to the query with setAdditionalSelects() in the configure() method [See Here](/tables/datatable/available-methods#content-builder)
 ```php
     public function configure(): void
     {

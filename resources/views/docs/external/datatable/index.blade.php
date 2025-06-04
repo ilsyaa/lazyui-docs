@@ -3,11 +3,11 @@
 @section('content')
     <div class="lazy-container-sm">
 
-        <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-5">
             <section>
                 <div class="mb-5">
                     <div class="text-3xl font-bold">Datatables</div>
-                    <div class="text-cat-500 text-sm">A dynamic table component</div>
+                    <div class="text-cat-500 text-sm">Read the documentation <a href="{{ route('docs.section', ['section' => 'start', 'page' => 'recommended']) }}" class="underline">LazyUI Tables</a></div>
                 </div>
             </section>
 
@@ -21,6 +21,10 @@
 
 @push('head')
     <link rel="stylesheet" href="{{ asset('assets/lazy/vendor/highlight/lazy.css') }}">
+    @LazyUITableStyles
+    @LazyUITableThirdPartyStyles
+    @LazyUITableScripts
+    @LazyUITableThirdPartyScripts
 @endpush
 
 @push('body')

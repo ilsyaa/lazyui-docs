@@ -13,15 +13,6 @@ Your component at `App\Livewire\UsersTable.php`
 <livewire:users-table />
 ```
 
-## Theme
-
-By default, all components will use the theme in the config file. But if for some reason you have different parts of your application using different frameworks, you can set the theme on a per-table basis:
-
-
-```html
-<livewire:users-table theme="bootstrap-4" />
-```
-
 ## Using sub-folders
 
 If your component does not live in `App\Livewire`, you can specify a different sub-folder. For example if your component lives in `App\Livewire\Backend\Users` you would use the following:

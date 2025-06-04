@@ -11,7 +11,7 @@
                     @foreach ($menu['pages'] as $_page)
                         <x-nav.sub-item
                             href="{{ $_page['url'] }}"
-                            is-active="{{ $_page['slug'] == $page }}"
+                            is-active="{{ $menu['slug'] . $_page['slug'] == $section . $page }}"
                         >
                             <x-slot:title>{{ $_page['title'] }}</x-slot:title>
                         </x-nav.sub-item>

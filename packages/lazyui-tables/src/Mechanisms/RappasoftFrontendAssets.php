@@ -58,10 +58,10 @@ class RappasoftFrontendAssets
 
     protected function registerBladeDirectives(): void
     {
-        Blade::directive('rappasoftTableScripts', [static::class, 'rappasoftTableScripts']);
-        Blade::directive('rappasoftTableStyles', [static::class, 'rappasoftTableStyles']);
-        Blade::directive('rappasoftTableThirdPartyScripts', [static::class, 'rappasoftTableThirdPartyScripts']);
-        Blade::directive('rappasoftTableThirdPartyStyles', [static::class, 'rappasoftTableThirdPartyStyles']);
+        Blade::directive('LazyUITableScripts', [static::class, 'rappasoftTableScripts']);
+        Blade::directive('LazyUITableStyles', [static::class, 'rappasoftTableStyles']);
+        Blade::directive('LazyUITableThirdPartyScripts', [static::class, 'rappasoftTableThirdPartyScripts']);
+        Blade::directive('LazyUITableThirdPartyStyles', [static::class, 'rappasoftTableThirdPartyStyles']);
     }
 
     protected function pretendResponseIsJs(string $file): \Symfony\Component\HttpFoundation\Response
