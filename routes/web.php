@@ -177,3 +177,7 @@ Route::post('form-example-update/{id}', function (Request $request, $id) {
         ], 500);
     }
 })->name('form-example-update');
+
+if (file_exists(base_path('routes/tables.php'))) {
+    require base_path('routes/tables.php');
+}
