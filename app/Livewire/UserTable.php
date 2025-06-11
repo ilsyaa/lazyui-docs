@@ -139,6 +139,7 @@ class UserTable extends DataTableComponent
             }
 
             $query->delete();
+            $this->clearSelected();
 
             $this->dispatch('toast', [
                 'type' => 'success',
