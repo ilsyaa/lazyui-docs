@@ -1,5 +1,10 @@
 # Changelog
 
+## [v1.0.7]
+
+### Bug Fixes
+- **Form Component**: Show detailed errors only when they exist.
+
 ## [v1.0.6]
 
 ### Bug Fixes

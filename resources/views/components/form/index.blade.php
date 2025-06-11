@@ -38,7 +38,7 @@
                 document.dispatchEvent(new CustomEvent('form', { detail: { id: $id, ok: response.ok, data, element: $event } }));
 
                 if (!response.ok) {
-                    if(xdata.toastErrors == 'detailed') {
+                    if(xdata.toastErrors == 'detailed' && data.errors) {
                         toastl.remove();
                         Object.values(data.errors).forEach((value, index) => {
                             setTimeout(() => {
