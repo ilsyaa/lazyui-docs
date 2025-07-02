@@ -25,6 +25,7 @@ return [
     'rows, do you want to select all' => 'baris, apakah Anda ingin memilih semua?',
     'Search' => 'Cari',
     'Select All' => 'Pilih Semua',
+    'Select All On Page' => 'Pilih Semua di halaman ini',
     'Showing' => 'Menampilkan',
     'to' => 'ke',
     'Yes' => 'Ya',
