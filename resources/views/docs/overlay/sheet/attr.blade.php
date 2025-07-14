@@ -23,7 +23,5 @@
     })
 
     // open sheet on javascript
-    document.addEventListener('alpine:initialized', () => {
-        Alpine.store('sheet').open('idSheet');
-    })
+    Alpine.store('sheet').open('idSheet');
 </script>

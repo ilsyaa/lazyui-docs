@@ -5,7 +5,7 @@
         href="{{ route('installation') }}"
     >
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M313 7c-9.4-9.4-24.6-9.4-33.9 0L231 55c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l48-48c9.4-9.4 9.4-24.6 0-33.9zM505 199c-9.4-9.4-24.6-9.4-33.9 0l-48 48c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l48-48c9.4-9.4 9.4-24.6 0-33.9zM505 41c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L327 151c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L505 41z"/><path fill="currentColor" class="fa-primary" d="M213.4 157.4c-8.8-17.9-34.3-17.9-43.1 0l-46.3 94L20.5 266.5C.9 269.3-7 293.5 7.2 307.4l74.9 73.2L64.5 483.9c-3.4 19.6 17.2 34.6 34.8 25.3l92.6-48.8 92.6 48.8c17.6 9.3 38.2-5.7 34.8-25.3L301.6 380.6l74.9-73.2c14.2-13.9 6.4-38.1-13.3-40.9L259.7 251.4l-46.3-94z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.252 10.689c-.987-1.18-1.48-1.77-2.048-1.68c-.567.091-.832.803-1.362 2.227l-.138.368c-.15.405-.226.607-.373.756c-.146.149-.348.228-.75.386l-.367.143c-1.417.555-2.126.833-2.207 1.4s.52 1.049 1.721 2.011l.31.25c.342.273.513.41.611.597c.1.187.115.404.146.837l.029.394c.11 1.523.166 2.285.683 2.545s1.154-.155 2.427-.983l.329-.215c.362-.235.543-.353.75-.387c.208-.033.42.022.841.132l.385.1c1.485.386 2.228.58 2.629.173s.193-1.144-.221-2.62l-.108-.38c-.117-.42-.176-.63-.147-.837c.03-.208.145-.39.374-.756l.21-.332c.807-1.285 1.21-1.927.94-2.438c-.269-.511-1.033-.553-2.562-.635l-.396-.022c-.434-.023-.652-.035-.841-.13c-.19-.095-.33-.263-.61-.599z"/><path fill="currentColor" d="M10.331 4.252c1.316-1.574 1.974-2.361 2.73-2.24s1.11 1.07 1.817 2.969l.183.491c.201.54.302.81.497 1.008c.196.199.464.304 1.001.514l.489.192c1.89.74 2.835 1.11 2.942 1.866c.108.757-.693 1.398-2.294 2.682l-.414.332c-.455.365-.683.547-.815.797s-.152.538-.194 1.115l-.038.526c-.148 2.031-.222 3.047-.911 3.393c-.69.347-1.538-.206-3.236-1.311l-.439-.286c-.482-.314-.723-.47-1-.515s-.558.028-1.121.175l-.513.133c-1.98.516-2.971.773-3.505.231s-.258-1.526.295-3.492l.142-.509c.157-.559.236-.838.197-1.115c-.04-.277-.193-.52-.499-1.008l-.278-.443C4.29 8.044 3.752 7.187 4.11 6.507c.36-.682 1.379-.737 3.418-.848l.527-.028c.58-.031.869-.047 1.122-.174c.252-.127.439-.35.813-.798z" opacity="0.5"/></svg>
         </x-slot:icon>
         <x-slot:title>Installation</x-slot:title>
     </x-nav.item>
@@ -15,7 +15,7 @@
         href="{{ route('panel') }}"
     >
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M96 96a32 32 0 1 0 0 64 32 32 0 1 0 0-64zM448 480c35.3 0 64-28.7 64-64V224L0 224V416c0 35.3 28.7 64 64 64l384 0z"/><path fill="currentColor" class="fa-primary" d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V224H0V96zm64 32a32 32 0 1 0 64 0 32 32 0 1 0 -64 0zm120-24c-13.3 0-24 10.7-24 24s10.7 24 24 24H424c13.3 0 24-10.7 24-24s-10.7-24-24-24H184z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M3.172 4.172C2 5.343 2 7.229 2 11v2c0 3.771 0 5.657 1.172 6.828S6.229 21 10 21h5V3h-5C6.229 3 4.343 3 3.172 4.172" clip-rule="evenodd" opacity="0.5"/><path fill="currentColor" d="M5.5 9.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zm1 4a.75.75 0 0 0 0 1.5h4a.75.75 0 0 0 0-1.5zM22 13v-2c0-3.771 0-5.657-1.172-6.828c-.974-.975-3.192-1.139-5.828-1.166v17.988c2.636-.027 4.854-.191 5.828-1.166C22 18.657 22 16.771 22 13"/></svg>
         </x-slot:icon>
         <x-slot:title>Dashboard Layout</x-slot:title>
     </x-nav.item>
@@ -26,7 +26,7 @@
         disabled
     >
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384v38.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7H64c-35.3 0-64-28.7-64-64V64z"/><path fill="currentColor" class="fa-primary" d="M384 160L224 0V128c0 17.7 14.3 32 32 32H384zm48 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288zm16-208v48h48c8.8 0 16 7.2 16 16s-7.2 16-16 16H448v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V384H368c-8.8 0-16-7.2-16-16s7.2-16 16-16h48V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 11.397c0-2.726 0-4.089.843-4.936c.844-.847 2.201-.847 4.917-.847h2.88c2.715 0 4.073 0 4.916.847c.844.847.844 2.21.844 4.936v4.82c0 2.726 0 4.089-.844 4.936c-.843.847-2.201.847-4.916.847h-2.88c-2.716 0-4.073 0-4.917-.847s-.843-2.21-.843-4.936z"/><path fill="currentColor" d="M4.172 3.172C3 4.343 3 6.229 3 10v2c0 3.771 0 5.657 1.172 6.828c.617.618 1.433.91 2.62 1.048c-.192-.84-.192-1.996-.192-3.66v-4.819c0-2.726 0-4.089.843-4.936c.844-.847 2.201-.847 4.917-.847h2.88c1.652 0 2.8 0 3.638.19c-.138-1.193-.43-2.012-1.05-2.632C16.657 2 14.771 2 11 2S5.343 2 4.172 3.172" opacity="0.5"/></svg>
         </x-slot:icon>
         <x-slot:title>Page Template</x-slot:title>
     </x-nav.item>
@@ -39,10 +39,28 @@
         is-active="{{ request()->routeIs('display*') }}"
     >
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M64 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 288H64L64 64zm0 384V416h64l0 32c0 17.7-14.3 32-32 32s-32-14.3-32-32zm320 0c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-288 64 0 0 288zm0-384V96l-64 0V64c0-17.7 14.3-32 32-32s32 14.3 32 32z"/><path fill="currentColor" class="fa-primary" d="M416 96c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0V96H416zM32 96H64v64l-32 0c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 320c-17.7 0-32-14.3-32-32s14.3-32 32-32l288 0v64L32 416zm384 0H384V352h32c17.7 0 32 14.3 32 32s-14.3 32-32 32z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M14 3h-4C6.229 3 4.343 3 3.172 4.172S2 7.229 2 11s0 5.657 1.172 6.828S6.229 19 10 19h4c3.771 0 5.657 0 6.828-1.172S22 14.771 22 11s0-5.657-1.172-6.828S17.771 3 14 3" opacity="0.5"/><path fill="currentColor" d="M9.95 16.05c.93-.93 1.396-1.396 1.97-1.427q.08-.003.159 0c.574.03 1.04.496 1.971 1.427c2.026 2.026 3.039 3.039 2.755 3.913a1.5 1.5 0 0 1-.09.218C16.297 21 14.865 21 12 21s-4.298 0-4.715-.819a1.5 1.5 0 0 1-.09-.218c-.284-.874.729-1.887 2.755-3.913"/></svg>
         </x-slot:icon>
         <x-slot:title>Display</x-slot:title>
         <x-slot:sub>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.accordion') }}"
+                href="{{ route('display.accordion') }}"
+            >
+                <x-slot:title>Accordion</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.avatar') }}"
+                href="{{ route('display.avatar') }}"
+            >
+                <x-slot:title>Avatar</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.badge') }}"
+                href="{{ route('display.badge') }}"
+            >
+                <x-slot:title>Badge</x-slot:title>
+            </x-nav.sub-item>
             <x-nav.sub-item
                 is-active="{{ request()->routeIs('display.breadcrumb') }}"
                 href="{{ route('display.breadcrumb') }}"
@@ -62,10 +80,22 @@
                 <x-slot:title>Card</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.tabs') }}"
+                href="{{ route('display.tabs') }}"
+            >
+                <x-slot:title>Tabs</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('display.nav') }}"
                 href="{{ route('display.nav') }}"
             >
                 <x-slot:title>Nav Item</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('display.widget') }}"
+                href="{{ route('display.widget') }}"
+            >
+                <x-slot:title>Widget</x-slot:title>
             </x-nav.sub-item>
         </x-slot:sub>
     </x-nav.item-collapse>
@@ -74,7 +104,7 @@
         is-active="{{ request()->routeIs('input*') }}"
     >
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M576 128V384H64V128H576zM64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H576c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64z"/><path fill="currentColor" class="fa-primary" d="M205.9 174.3c-3.9-8.7-12.4-14.3-21.9-14.3s-18.1 5.6-21.9 14.3l-64 144c-5.4 12.1 .1 26.3 12.2 31.7s26.3-.1 31.7-12.2l4.3-9.7h75.5l4.3 9.7c5.4 12.1 19.6 17.6 31.7 12.2s17.6-19.6 12.2-31.7l-64-144zM200.4 280H167.6L184 243.1 200.4 280zM304 184v8 64 64 8c0 13.3 10.7 24 24 24h68c33.1 0 60-26.9 60-60c0-18.6-8.5-35.3-21.8-46.3c3.7-7.8 5.8-16.5 5.8-25.7c0-33.1-26.9-60-60-60H328c-13.3 0-24 10.7-24 24zm48 24h28c6.6 0 12 5.4 12 12s-5.4 12-12 12H352V208zm0 96V280h28 16c6.6 0 12 5.4 12 12s-5.4 12-12 12H352z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M3.172 18.828C4.343 20 6.229 20 10 20l5.75-.006c2.636-.027 4.104-.191 5.078-1.166C22 17.658 22 15.771 22 12s0-5.657-1.172-6.828c-.974-.975-2.454-1.144-5.09-1.172H10C6.229 4 4.343 4 3.172 5.172S2 8.229 2 12s0 5.657 1.172 6.828" opacity="0.5"/><path fill="currentColor" d="M13 12a1 1 0 1 0-2 0a1 1 0 0 0 2 0m-5 1a1 1 0 1 0 0-2a1 1 0 0 0 0 2"/><path fill="currentColor" fill-rule="evenodd" d="M15 1.25a.75.75 0 0 1 .75.75v20a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75" clip-rule="evenodd"/></svg>
         </x-slot:icon>
         <x-slot:title>Input</x-slot:title>
         <x-slot:sub>
@@ -101,6 +131,12 @@
                 href="{{ route('input.form') }}"
             >
                 <x-slot:title>Form</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.form-group') }}"
+                href="{{ route('input.form-group') }}"
+            >
+                <x-slot:title>Form Group</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
                 is-active="{{ request()->routeIs('input.input') }}"
@@ -133,6 +169,12 @@
                 <x-slot:title>Select Multiple</x-slot:title>
             </x-nav.sub-item>
             <x-nav.sub-item
+                is-active="{{ request()->routeIs('input.slider') }}"
+                href="{{ route('input.slider') }}"
+            >
+                <x-slot:title>Slider</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
                 is-active="{{ request()->routeIs('input.switch') }}"
                 href="{{ route('input.switch') }}"
             >
@@ -151,7 +193,7 @@
         is-active="{{ request()->routeIs('overlay*') }}"
     >
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M0 64C0 28.7 28.7 0 64 0H448c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H309.3L185.6 508.8c-4.8 3.6-11.3 4.2-16.8 1.5s-8.8-8.2-8.8-14.3V416H64c-35.3 0-64-28.7-64-64V64zm152 80c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H152zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H152z"/><path fill="currentColor" class="fa-primary" d="M128 168c0-13.3 10.7-24 24-24H360c13.3 0 24 10.7 24 24s-10.7 24-24 24H152c-13.3 0-24-10.7-24-24zm0 96c0-13.3 10.7-24 24-24H264c13.3 0 24 10.7 24 24s-10.7 24-24 24H152c-13.3 0-24-10.7-24-24z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity="0.5"/><path fill="currentColor" d="M7.25 9A.75.75 0 0 1 8 8.25h8a.75.75 0 0 1 0 1.5H8A.75.75 0 0 1 7.25 9m0 3.5a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5H8a.75.75 0 0 1-.75-.75"/></svg>
         </x-slot:icon>
         <x-slot:title>Overlay</x-slot:title>
         <x-slot:sub>
@@ -200,43 +242,82 @@
         </x-slot:sub>
     </x-nav.item-collapse>
 
+    <x-nav.item-collapse
+        is-active="{{ request()->routeIs('external*') }}"
+    >
+        <x-slot:icon>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2s7.071 0 8.535 1.464C22 4.93 22 7.286 22 12s0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12" opacity="0.5"/><path fill="currentColor" d="M13.488 6.446a.75.75 0 0 1 .53.918l-2.588 9.66a.75.75 0 0 1-1.449-.389l2.589-9.659a.75.75 0 0 1 .918-.53M14.97 8.47a.75.75 0 0 1 1.06 0l.209.208c.635.635 1.165 1.165 1.529 1.642c.384.504.654 1.036.654 1.68s-.27 1.176-.654 1.68c-.364.477-.894 1.007-1.53 1.642l-.208.208a.75.75 0 1 1-1.06-1.06l.171-.172c.682-.682 1.139-1.14 1.434-1.528c.283-.37.347-.586.347-.77s-.064-.4-.347-.77c-.295-.387-.752-.846-1.434-1.528l-.171-.172a.75.75 0 0 1 0-1.06m-7 0a.75.75 0 0 1 1.06 1.06l-.171.172c-.682.682-1.138 1.14-1.434 1.528c-.283.37-.346.586-.346.77s.063.4.346.77c.296.387.752.846 1.434 1.528l.172.172a.75.75 0 1 1-1.061 1.06l-.208-.208c-.636-.635-1.166-1.165-1.53-1.642c-.384-.504-.653-1.036-.653-1.68s.27-1.176.653-1.68c.364-.477.894-1.007 1.53-1.642z"/></svg>
+        </x-slot:icon>
+        <x-slot:title>External</x-slot:title>
+        <x-slot:sub>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('external.apexcharts') }}"
+                href="{{ route('external.apexcharts') }}"
+            >
+                <x-slot:title>Apexcharts</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('external.datatable') }}"
+                href="{{ route('external.datatable') }}"
+            >
+                <x-slot:title>Datatables</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('external.filepond') }}"
+                href="{{ route('external.filepond') }}"
+            >
+                <x-slot:title>Filepond</x-slot:title>
+            </x-nav.sub-item>
+            <x-nav.sub-item
+                is-active="{{ request()->routeIs('external.tinymce') }}"
+                href="{{ route('external.tinymce') }}"
+            >
+                <x-slot:title>TinyMCE</x-slot:title>
+            </x-nav.sub-item>
+        </x-slot:sub>
+    </x-nav.item-collapse>
+
+</x-nav.section>
+
+<x-nav.section label="STYLE">
+    <x-nav.item
+        is-active="{{ request()->routeIs('style.dashboard') }}"
+        href="{{ route('style.dashboard') }}"
+    >
+        <x-slot:icon>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18 8A6 6 0 1 1 6 8a6 6 0 0 1 12 0"/><path fill="currentColor" d="M13.58 13.79a6 6 0 0 1-7.16-3.58a6 6 0 1 0 7.16 3.58" opacity="0.7"/><path fill="currentColor" d="M13.58 13.79c.271.684.42 1.43.42 2.21a6 6 0 0 1-2 4.472a6 6 0 1 0 5.58-10.262a6.01 6.01 0 0 1-4 3.58" opacity="0.4"/></svg>
+        </x-slot:icon>
+        <x-slot:title>Color Dashboard</x-slot:title>
+    </x-nav.item>
 </x-nav.section>
 
 <x-nav.section label="OTHER">
 
-    <x-nav.item disabled >
+    <x-nav.item >
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M99.5 144.8L367.2 412.5c17.5-12.5 32.8-27.8 45.3-45.3L144.8 99.5C127.3 112 112 127.3 99.5 144.8z"/><path fill="currentColor" class="fa-primary" d="M256 64a192 192 0 1 1 0 384 192 192 0 1 1 0-384zm0 448A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6.95c0-.883 0-1.324.07-1.692A4 4 0 0 1 5.257 2.07C5.626 2 6.068 2 6.95 2c.386 0 .58 0 .766.017a4 4 0 0 1 2.18.904c.144.119.28.255.554.529L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .848.352C14.098 6 14.675 6 15.828 6h.374c2.632 0 3.949 0 4.804.77q.119.105.224.224c.77.855.77 2.172.77 4.804V14c0 3.771 0 5.657-1.172 6.828S17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172S2 17.771 2 14z" opacity="0.5"/><path fill="currentColor" d="M20 6.238c0-.298-.005-.475-.025-.63a3 3 0 0 0-2.583-2.582C17.197 3 16.965 3 16.5 3H9.988c.116.104.247.234.462.45L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .849.352C14.098 6 14.675 6 15.829 6h.373c1.78 0 2.957 0 3.798.238"/><path fill="currentColor" fill-rule="evenodd" d="M12.25 10a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/></svg>
         </x-slot:icon>
-        <x-slot:title>Disabled</x-slot:title>
-    </x-nav.item>
-
-    <x-nav.item>
-        <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M50.7 58.5C58.9 42.3 75.5 32 93.7 32H192L160 160H0L50.7 58.5zM288 160v96c0 17.7-14.3 32-32 32H192c-17.7 0-32-14.3-32-32V160H288zm0 0L256 32h98.3c18.2 0 34.8 10.3 42.9 26.5L448 160H288z"/><path fill="currentColor" class="fa-primary" d="M160 160H0V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V160H288v96c0 17.7-14.3 32-32 32H192c-17.7 0-32-14.3-32-32V160z"/></svg>
-        </x-slot:icon>
-        <x-slot:title>Item Caption</x-slot:title>
-        <x-slot:description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, cupiditate!</x-slot:description>
+        <x-slot:title>Package suggestions</x-slot:title>
     </x-nav.item>
 
     <x-nav.item
-        href="https://awesomesvg.vercel.app/"
+        is-active="{{ request()->routeIs('other.packages-installed') }}"
+        href="{{ route('other.packages-installed') }}"
+    >
+        <x-slot:icon>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M22 14v-2.202c0-2.632 0-3.949-.77-4.804a3 3 0 0 0-.224-.225C20.151 6 18.834 6 16.202 6h-.374c-1.153 0-1.73 0-2.268-.153a4 4 0 0 1-.848-.352C12.224 5.224 11.816 4.815 11 4l-.55-.55c-.274-.274-.41-.41-.554-.53a4 4 0 0 0-2.18-.903C7.53 2 7.336 2 6.95 2c-.883 0-1.324 0-1.692.07A4 4 0 0 0 2.07 5.257C2 5.626 2 6.068 2 6.95V14c0 3.771 0 5.657 1.172 6.828S6.229 22 10 22h4c3.771 0 5.657 0 6.828-1.172S22 17.771 22 14" opacity="0.5"/><path fill="currentColor" d="M14.498 11.44a.75.75 0 0 1 .063 1.058l-2.667 3a.75.75 0 0 1-1.121 0l-1.334-1.5a.75.75 0 1 1 1.122-.996l.772.87l2.107-2.37a.75.75 0 0 1 1.058-.062"/></svg>
+        </x-slot:icon>
+        <x-slot:title>Packages</x-slot:title>
+        <x-slot:description>Default packages installed in lazyui</x-slot:description>
+    </x-nav.item>
+
+    <x-nav.item
+        href="https://icon-sets.iconify.design/solar"
         target="_blank"
     >
         <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path fill="currentColor" class="fa-secondary" d="M64 140.7c15.3-3 28.2-7.9 41.2-12.8c21.2-8 42.5-15.9 74-15.9c31.4 0 53 8 74.6 16c21.6 8 43.3 16 74.7 16c20.4 0 35.6-3 55.5-9.3v208c-19.9 6.3-35.1 9.3-55.5 9.3c-31.4 0-53.1-8-74.7-16c-21.6-8-43.3-16-74.6-16c-20.6 0-36.6 3.6-51.2 8.2v64c14.6-4.6 30.6-8.2 51.2-8.2c31.4 0 53 8 74.6 16c21.6 8 43.3 16 74.7 16s50-6.8 93.3-22.5c7.8-2.9 16.5-6 26.2-9.5V48c-9.7 3.5-18.4 6.6-26.2 9.5C378.6 73.2 360 80 328.5 80s-53.1-8-74.7-16c-21.6-8-43.3-16-74.6-16c-31.5 0-52.8 8-74 15.9c-13 4.9-25.9 9.7-41.2 12.8v64z"/><path fill="currentColor" class="fa-primary" d="M64 76.7V64c0-17.7-14.3-32-32-32S0 46.3 0 64V448c0 17.7 14.3 32 32 32s32-14.3 32-32V140.7v-64z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 22c-4.714 0-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2s7.071 0 8.535 1.464C22 4.93 22 7.286 22 12s0 7.071-1.465 8.535C19.072 22 16.714 22 12 22" opacity="0.5"/><path fill="currentColor" d="M10.683 18.62A6.75 6.75 0 0 0 18.75 12a.75.75 0 0 0-1.5 0A5.25 5.25 0 1 1 12 6.75a.75.75 0 0 0 0-1.5a6.75 6.75 0 0 0-1.317 13.37"/><path fill="currentColor" d="M13.31 6.045a.75.75 0 0 1 .986-.393a7.73 7.73 0 0 1 4.052 4.052a.75.75 0 0 1-1.378.591a6.23 6.23 0 0 0-3.265-3.265a.75.75 0 0 1-.394-.985"/></svg>
         </x-slot:icon>
         <x-slot:title>Font Svgs</x-slot:title>
     </x-nav.item>
-
-    <x-nav.item
-        href="https://github.com/lazyexe/lazyui"
-        target="_blank"
-    >
-        <x-slot:icon>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-        </x-slot:icon>
-        <x-slot:title>Github</x-slot:title>
-    </x-nav.item>
-
 </x-nav.section>

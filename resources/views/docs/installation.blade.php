@@ -16,7 +16,7 @@
             </div>
             <div class="mb-5">
                 <div class="text-sm mb-3">You can install this package via composer:</div>
-                <pre class="text-[0.9rem]"><code class="language-">composer require ilsyaa/lazyui</code></pre>
+                <pre class="text-[0.9rem]"><code class="language-">composer require ilsyaa/lazyui --dev</code></pre>
             </div>
             <div>
                 <div class="text-sm mb-3">Once installed, you need to add the necessary css, js and assets for the panels and components by running:</div>
@@ -63,14 +63,10 @@
 @endsection
 
 @push('head')
-    <link rel="stylesheet" href="{{ asset('assets/lazy/highlight/lazy.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/lazy/vendor/highlight/lazy.css') }}">
 @endpush
 
 @push('body')
-    <script src="{{ asset('assets/lazy/highlight/highlight.min.js') }}"></script>
-    <script src="{{ asset('assets/lazy/highlight/lazy.plugin.js') }}"></script>
-    <script>
-        hljs.addPlugin(new HljsLazyPlugin());
-        hljs.highlightAll();
-    </script>
+    <script src="{{ asset('assets/lazy/vendor/highlight/highlight.min.js') }}"></script>
+    <script src="{{ asset('assets/lazy/vendor/highlight/lazy.js') }}"></script>
 @endpush

@@ -104,6 +104,10 @@
             :class="{ 'ring-[1.7px] ring-cat-700 dark:ring-cat-200': _isOpen }"
             x-on:click="open(); $refs.input.focus()"
             x-ref="toggle"
+            x-on:keydown.down.prevent="focusNextOption"
+            x-on:keydown.up.prevent="focusPreviousOption"
+            x-on:keydown.enter.stop.prevent="_focus ? toggleSelected(_focus) : setSelected(_input) ; close();"
+            x-on:keydown.comma.prevent="_focus ? toggleSelected(_focus) : setSelected(_input) ; close();"
             {{ $attributes->except(['x-model', 'wire:model', 'name', 'value']) }}
         >
             <template x-for="value in _selected" :key="value">

@@ -28,7 +28,5 @@
     })
 
     // open dialog on javascript
-    document.addEventListener('alpine:initialized', () => {
-        Alpine.store('dialog').open('idDialog');
-    })
+    Alpine.store('dialog').open('idDialog');
 </script>

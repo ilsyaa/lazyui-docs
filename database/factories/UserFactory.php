@@ -25,8 +25,9 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'image' => rand(0, 1) ? 'example/avatar.webp' : null,
             'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
+            'email_verified_at' => rand(0, 1) ? now() : null,
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];

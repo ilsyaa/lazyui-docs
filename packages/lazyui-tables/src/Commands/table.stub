@@ -1,0 +1,69 @@
+<?php
+
+namespace [namespace];
+
+use Rappasoft\LaravelLivewireTables\DataTableComponent;
+use Rappasoft\LaravelLivewireTables\Views\Column;
+use [model_import];
+
+class [class] extends DataTableComponent
+{
+    protected $model = [model]::class;
+
+    public function configure(): void
+    {
+        $this->setPrimaryKey('id')
+            ->setAdditionalSelects(['id'])
+            ->setQueryStringStatus(false)
+            ->setQueryStringStatusForFilter(false);
+
+        $this->setBulkActionsEnabled()
+            ->setHideBulkActionsWhenEmptyEnabled()
+            ->setBulkActions([
+                'handleDelete' => 'Delete',
+            ])
+            ->setBulkActionConfirmMessages([
+                'handleDelete' => 'Are you sure you want to delete selected records?',
+            ]);
+
+        $this->setFilterLayoutPopover();
+    }
+
+    public function columns(): array
+    {
+        return [columns];
+    }
+
+    public function handleDelete(int|string|null $id = null): void
+    {
+        try {
+            $query = [model]::query();
+            $message = '';
+
+            if ($id) {
+                $query->whereKey($id);
+                $message = 'Deleted record';
+            } elseif ($this->getSelectAllStatus()) {
+                $message = 'Deleted all records';
+            } else {
+                $selected = $this->getSelected();
+                if (empty($selected)) throw new \Exception('No records selected.');
+                $query->whereIn('id', $selected);
+                $message = 'Deleted ' . count($selected) . ' records';
+            }
+
+            $query->delete();
+            $this->clearSelected();
+
+            $this->dispatch('toast', [
+                'type' => 'success',
+                'title' => $message
+            ]);
+        } catch (\Throwable $e) {
+            $this->dispatch('toast', [
+                'type' => 'error',
+                'title' => $e->getMessage()
+            ]);
+        }
+    }
+}
