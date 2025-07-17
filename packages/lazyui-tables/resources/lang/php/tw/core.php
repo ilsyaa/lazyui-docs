@@ -33,4 +33,6 @@ return [
     'You are currently selecting all' => '您目前已選擇全部資料',
     'You are not connected to the internet' => '目前為離線模式',
     'You have selected' => '您已選擇',
+    'Cancel' => '取消',
+    'Confirm' => '確認',
 ];

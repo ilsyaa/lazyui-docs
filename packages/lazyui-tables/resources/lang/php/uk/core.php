@@ -34,4 +34,6 @@ return [
     'You are currently selecting all' => 'Наразі ви вибираєте всі',
     'You are not connected to the internet' => 'Ви не підключені до Інтернету',
     'You have selected' => 'Ви вибрали',
+    'Cancel' => 'Скасувати',
+    'Confirm' => 'Підтвердити',
 ];

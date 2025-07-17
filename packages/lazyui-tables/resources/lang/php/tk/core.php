@@ -31,4 +31,6 @@ return [
     'You are currently selecting all' => 'Häzirki wagtda hemmesini saýlap alýarsyňyz',
     'You are not connected to the internet' => 'Siz internete birikmediksiňiz',
     'You have selected' => 'Saýladyňyz',
+    'Cancel' => 'Ýatyrmak',
+    'Confirm' => 'Tassykla',
 ];

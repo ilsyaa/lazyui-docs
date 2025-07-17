@@ -38,4 +38,6 @@ return [
     'You are currently selecting all' => 'You are currently selecting all',
     'You are not connected to the internet' => 'You are not connected to the internet',
     'You have selected' => 'You have selected',
+    'Cancel' => 'Cancel',
+    'Confirm' => 'Confirm',
 ];

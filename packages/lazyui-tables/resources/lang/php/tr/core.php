@@ -31,4 +31,6 @@ return [
     'You are currently selecting all' => 'Hepsini seçtiniz.',
     'You are not connected to the internet' => 'İnternet bağlantınız kesildi',
     'You have selected' => 'Siz seçildiniz',
+    'Cancel' => 'İptal',
+    'Confirm' => 'Onayla',
 ];

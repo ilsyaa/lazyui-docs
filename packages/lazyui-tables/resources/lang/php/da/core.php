@@ -31,4 +31,6 @@ return [
     'You are currently selecting all' => 'Du vælger i øjeblikket alle',
     'You are not connected to the internet' => 'Du er ikke forbundet til internettet',
     'You have selected' => 'Du har valgt',
+    'Cancel' => 'Annuller',
+    'Confirm' => 'Bekræft',
 ];
