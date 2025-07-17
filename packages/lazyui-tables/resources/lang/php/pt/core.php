@@ -32,4 +32,6 @@ return [
     'You are currently selecting all' => 'Atualmente está a selecionar tudo',
     'You are not connected to the internet' => 'Não está ligado à internet',
     'You have selected' => 'Selecionou',
+    'Cancel' => 'Cancelar',
+    'Confirm' => 'Confirmar',
 ];

@@ -31,4 +31,6 @@ return [
     'You are currently selecting all' => 'أنت الآن تختار الكل',
     'You are not connected to the internet' => 'أنت غير متصل بالإنترنت',
     'You have selected' => 'قمت بتحديدها',
+    'Cancel' => 'إلغاء',
+    'Confirm' => 'تأكيد',
 ];

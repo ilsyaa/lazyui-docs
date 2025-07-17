@@ -38,4 +38,6 @@ return [
     'You are currently selecting all' => 'شما در حال حاضر همه را انتخاب کرده‌اید',
     'You are not connected to the internet' => 'شما به اینترنت متصل نیستید',
     'You have selected' => 'شما انتخاب کرده‌اید',
+    'Cancel' => 'لغو',
+    'Confirm' => 'تأیید',
 ];

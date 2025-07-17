@@ -32,4 +32,6 @@ return [
     'You are currently selecting all' => 'Anda sedang memilih semua',
     'You are not connected to the internet' => 'Anda sedang tidak terhubung ke internet',
     'You have selected' => 'Anda telah memilih',
+    'Cancel' => 'Batalkan',
+    'Confirm' => 'Konfirmasi',
 ];

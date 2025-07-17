@@ -17,8 +17,8 @@
             onclick="window.zalert ? zalert({
                 type: 'info',
                 text: '{{ $confirmMessage }}',
-                confirmText: 'Confirm',
-                cancelText: 'Cancel',
+                confirmText: '{{__('livewire-tables::core.Confirm')}}',
+                cancelText: '{{__('livewire-tables::core.Cancel')}}',
             }).then((res) => {
                 if (res?.confirmed) {
                     @this.call('{{ $handleFunction }}', '{{ $row->getKey() }}')
