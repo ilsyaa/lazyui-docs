@@ -2,13 +2,15 @@
 
 namespace Rappasoft\LaravelLivewireTables\Views\Columns;
 
+use Closure;
 use Illuminate\Database\Eloquent\Model;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 
 class DropdownItemColumn extends Column
 {
     protected string $type = 'button'; // a or button
-    protected ?string $confirmMessage = null;
+    protected string|Closure|null $confirmMessage = null;
+
     protected ?string $handleFunction = null;
     protected string $view = 'livewire-tables::includes.columns.dropdown-item';
 
@@ -23,12 +25,21 @@ class DropdownItemColumn extends Column
 
     public function getContents(Model $row): null|string|\Illuminate\Support\HtmlString|\Rappasoft\LaravelLivewireTables\Exceptions\DataTableConfigurationException|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
+        $confirmMessage = null;
+        if ($this->confirmMessage) {
+            if (is_callable($this->confirmMessage)) {
+                $confirmMessage = app()->call($this->confirmMessage, ['row' => $row]);
+            } else {
+                $confirmMessage = $this->confirmMessage;
+            }
+        }
+
         return view($this->getView())
             ->withColumn($this)
             ->withRow($row)
             ->withType($this->type)
             ->withTitle($this->getTitle($row))
-            ->withConfirmMessage($this->confirmMessage)
+            ->withConfirmMessage($confirmMessage)
             ->withHandleFunction($this->handleFunction)
             ->withAttributes($this->hasAttributesCallback() ? app()->call($this->getAttributesCallback(), ['row' => $row]) : []);
     }
@@ -39,7 +50,7 @@ class DropdownItemColumn extends Column
         return $this;
     }
 
-    public function confirmMessage(string $message): static
+    public function confirmMessage(string|Closure $message): static
     {
         $this->confirmMessage = $message;
         return $this;
