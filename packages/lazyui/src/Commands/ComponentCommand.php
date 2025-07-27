@@ -30,6 +30,7 @@ class ComponentCommand extends Command implements PromptsForMissingInput
         'breadcrumb',
         'button',
         'card',
+        'corausel',
         'checkbox',
         'dialog',
         'dropdown',
@@ -47,6 +48,7 @@ class ComponentCommand extends Command implements PromptsForMissingInput
         'tinymce',
         'toast',
         'tooltip',
+        'thousand-separator'
     ];
 
     /**
