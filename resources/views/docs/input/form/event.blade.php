@@ -11,7 +11,7 @@
 </x-form>
 
 <script>
-    document.addEventListener('form', ({ detail }) => {
+    window.addEventListener('form', ({ detail }) => {
         // ignore other forms
         if(detail.id != 'form-lazy') return;
 
