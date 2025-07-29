@@ -71,7 +71,8 @@ class UserTable extends DataTableComponent
                         }),
                     DropdownItemColumn::make('Delete')
                         ->type('button')
-                        ->confirmMessage('Are you sure you want to delete this user ?')
+                        // ->confirmMessage('Are you sure you want to delete this user ?')
+                        ->confirmMessage(fn($row) => 'Are you sure you want to delete ' . $row->name . ' ?')
                         ->handle('handleDelete'),
                 ]),
         ];

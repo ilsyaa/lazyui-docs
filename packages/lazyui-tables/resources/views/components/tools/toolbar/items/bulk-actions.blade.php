@@ -18,14 +18,14 @@
                     @foreach ($this->getBulkActions() as $action => $title)
                         <button @if ($this->hasConfirmationMessage($action)) onclick="window.zalert ? zalert({
                                 type: 'info',
-                                text: '{{ $this->getBulkActionConfirmMessage($action) }}',
+                                text: @js($this->getBulkActionConfirmMessage($action)),
                                 confirmText: '{{ __($localisationPath . 'Confirm') }}',
                                 cancelText: '{{ __($localisationPath . 'Cancel') }}',
                             }).then((res) => {
                                 if (res?.confirmed) {
                                     @this.call('{{ $action }}')
                                 }
-                            }) : confirm('{{ $this->getBulkActionConfirmMessage($action) }}') && @this.call('{{ $action }}')"
+                            }) : confirm(@js($this->getBulkActionConfirmMessage($action))) && @this.call('{{ $action }}')"
                             @else
                             wire:click="{{ $action }}" @endif wire:key="{{ $tableName }}-bulk-action-{{ $action }}" type="button" role="menuitem"
                             {{ $attributes->merge($this->getBulkActionsMenuItemAttributes)->class([

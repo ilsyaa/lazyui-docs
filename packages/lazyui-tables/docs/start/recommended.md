@@ -21,6 +21,12 @@ You need to push the assets to the head in every view that uses the tables.
 @endpush
 ```
 
+## Tailwindcss 4
+Add the following to `resources/css/app.css`
+```css
+@source '../../vendor/ilsyaa/lazyui-tables/resources/views/**/*.blade.php';
+```
+
 ## Usage
 ```
 php artisan make:datatables UsersTable User

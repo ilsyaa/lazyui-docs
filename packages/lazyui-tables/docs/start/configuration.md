@@ -28,7 +28,7 @@ module.exports = {
 };
 
 // V4 app.css
-@source './vendor/ilsyaa/lazyui-tables/resources/views/**/*.blade.php';
+@source '../../vendor/ilsyaa/lazyui-tables/resources/views/**/*.blade.php';
 ```
 
 ## Bypassing Laravel's Auth Service

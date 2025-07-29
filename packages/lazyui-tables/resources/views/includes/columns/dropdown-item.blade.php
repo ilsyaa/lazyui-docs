@@ -13,17 +13,21 @@
         type="button"
         role="menuitem"
         tabindex="-1"
-        @if ($confirmMessage && $handleFunction)
+        @if ($handleFunction)
+            @if ($confirmMessage)
             onclick="window.zalert ? zalert({
                 type: 'info',
-                text: '{{ $confirmMessage }}',
+                text: @js($confirmMessage),
                 confirmText: '{{__('livewire-tables::core.Confirm')}}',
                 cancelText: '{{__('livewire-tables::core.Cancel')}}',
             }).then((res) => {
                 if (res?.confirmed) {
                     @this.call('{{ $handleFunction }}', '{{ $row->getKey() }}')
                 }
-            }) : confirm('{{ $confirmMessage }}') && @this.call('{{ $handleFunction }}', '{{ $row->getKey() }}')"
+            }) : confirm(@js($confirmMessage)) && @this.call('{{ $handleFunction }}', '{{ $row->getKey() }}')"
+            @else
+            onclick="@this.call('{{ $handleFunction }}', '{{ $row->getKey() }}')"
+            @endif
         @endif
         @class([
             'flex items-center gap-2 py-1.5 px-2.5 rounded-lg hover:bg-cat-300/50 dark:hover:bg-cat-700/50 text-sm focus-visible:outline-none focus-visible:ring-0 focus-visible:bg-cat-300/50 dark:focus-visible:bg-cat-700/50 w-full cursor-pointer',
