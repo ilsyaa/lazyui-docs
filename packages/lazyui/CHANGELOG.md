@@ -3,7 +3,8 @@
 ## [v1.0.7]
 
 ### Bug Fixes
-- **Form Component**: Show detailed errors only when they exist.
+- **Form Component**: Show detailed errors only when they exist and fix toast issue.
+- **Dropdown Component**: Minor UI changes.
 
 ## [v1.0.6]
 
