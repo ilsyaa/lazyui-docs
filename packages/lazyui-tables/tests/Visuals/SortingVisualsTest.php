@@ -37,7 +37,7 @@ final class SortingVisualsTest extends TestCase
         Livewire::test(PetsTable::class)
             ->assertSeeHtmlInOrder([
                 'wire:click="sortBy(\'id\')"',
-                'class="text-gray-500 dark:text-gray-400 flex items-center space-x-1 text-left text-xs leading-4 font-medium uppercase tracking-wider group focus:outline-none"',
+                'class="text-cat-500 dark:text-cat-400 flex items-center space-x-1 text-left text-xs leading-4 font-medium uppercase tracking-wider group focus:outline-none"',
             ]);
     }
 
@@ -47,7 +47,7 @@ final class SortingVisualsTest extends TestCase
             ->call('setSortingDisabled')
             ->assertDontSeeHtml('<button
                 wire:click="sortBy(\'id\')"
-                class="flex items-center space-x-1 text-left text-xs leading-4 font-medium uppercase tracking-wider group focus:outline-none text-gray-500 dark:text-gray-400"
+                class="flex items-center space-x-1 text-left text-xs leading-4 font-medium uppercase tracking-wider group focus:outline-none text-cat-500 dark:text-cat-400"
             >');
 
     }
@@ -58,12 +58,12 @@ final class SortingVisualsTest extends TestCase
             ->call('setSortingDisabled')
             ->assertDontSeeHtml('<button
                 wire:click="sortBy(\'id\')"
-                class="text-gray-500 dark:text-gray-400 flex items-center space-x-1 text-left text-xs leading-4 font-medium uppercase tracking-wider group focus:outline-none"
+                class="text-cat-500 dark:text-cat-400 flex items-center space-x-1 text-left text-xs leading-4 font-medium uppercase tracking-wider group focus:outline-none"
             >')
             ->call('setSortingEnabled')
             ->assertSeeHtmlInOrder([
                 'wire:click="sortBy(\'id\')"',
-                'class="text-gray-500 dark:text-gray-400 flex items-center space-x-1 text-left text-xs leading-4 font-medium uppercase tracking-wider group focus:outline-none"',
+                'class="text-cat-500 dark:text-cat-400 flex items-center space-x-1 text-left text-xs leading-4 font-medium uppercase tracking-wider group focus:outline-none"',
             ]);
 
     }
@@ -73,7 +73,7 @@ final class SortingVisualsTest extends TestCase
         Livewire::test(PetsTable::class)
             ->assertDontSeeHtml('<button
                 wire:click="sortBy(\'other\')"
-                class="flex items-center space-x-1 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider group focus:outline-none dark:text-gray-400"
+                class="flex items-center space-x-1 text-left text-xs leading-4 font-medium text-cat-500 uppercase tracking-wider group focus:outline-none dark:text-cat-400"
             >');
     }
 

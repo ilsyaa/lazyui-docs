@@ -63,40 +63,40 @@ final class PaginationVisualsTest extends TestCase
         Livewire::test(PetsTable::class)
             ->call('setPerPageAccepted', [1])
             ->call('setPerPage', 1)
-            ->assertSeeHtml('<p class="paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white">');
+            ->assertSeeHtml('<p class="paged-pagination-results text-sm text-cat-700 leading-5 dark:text-white">');
     }
 
     public function test_paged_results_label_doesnt_show_with_pagination_enabled_and_less_than_one_page(): void
     {
         Livewire::test(PetsTable::class)
-            ->assertDontSeeHtml('<p class="paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white">');
+            ->assertDontSeeHtml('<p class="paged-pagination-results text-sm text-cat-700 leading-5 dark:text-white">');
     }
 
     public function test_total_results_label_shows_with_one_page_and_pagination_enabled(): void
     {
         Livewire::test(PetsTable::class)
-            ->assertSeeHtml('<p class="total-pagination-results text-sm text-gray-700 leading-5 dark:text-white">');
+            ->assertSeeHtml('<p class="total-pagination-results text-sm text-cat-700 leading-5 dark:text-white">');
     }
 
     public function test_total_results_label_shows_with_pagination_disabled(): void
     {
         Livewire::test(PetsTable::class)
             ->call('setPaginationDisabled')
-            ->assertSeeHtml('<p class="total-pagination-results text-sm text-gray-700 leading-5 dark:text-white">');
+            ->assertSeeHtml('<p class="total-pagination-results text-sm text-cat-700 leading-5 dark:text-white">');
     }
 
     public function test_paged_results_label_doesnt_show_with_pagination_hidden(): void
     {
         Livewire::test(PetsTable::class)
             ->call('setPaginationVisibilityDisabled')
-            ->assertDontSeeHtml('<p class="paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white">');
+            ->assertDontSeeHtml('<p class="paged-pagination-results text-sm text-cat-700 leading-5 dark:text-white">');
     }
 
     public function test_total_results_label_doesnt_show_with_pagination_hidden(): void
     {
         Livewire::test(PetsTable::class)
             ->call('setPaginationVisibilityDisabled')
-            ->assertDontSeeHtml('<p class="total-pagination-results text-sm text-gray-700 leading-5 dark:text-white">');
+            ->assertDontSeeHtml('<p class="total-pagination-results text-sm text-cat-700 leading-5 dark:text-white">');
     }
 
     /* Broken Test - HtmlInOrder does not work cleanly */
@@ -143,7 +143,7 @@ final class PaginationVisualsTest extends TestCase
     {
         Livewire::test(PetsTable::class)
             ->call('enableDetailedPagination', 'standard')
-            ->assertSeeHtmlInOrder(['<p class="paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white">',
+            ->assertSeeHtmlInOrder(['<p class="paged-pagination-results text-sm text-cat-700 leading-5 dark:text-white">',
                 '<span>Showing</span>',
                 '<span class="font-medium">1</span>',
                 '<span>to</span>',
@@ -155,7 +155,7 @@ final class PaginationVisualsTest extends TestCase
     {
         Livewire::test(PetsTable::class)
             ->call('enableDetailedPagination', 'simple')
-            ->assertSeeHtmlInOrder(['<p class="paged-pagination-results text-sm text-gray-700 leading-5 dark:text-white">',
+            ->assertSeeHtmlInOrder(['<p class="paged-pagination-results text-sm text-cat-700 leading-5 dark:text-white">',
                 '<span>Showing</span>',
                 '<span class="font-medium">1</span>',
                 '<span>to</span>',
@@ -278,21 +278,21 @@ final class PaginationVisualsTest extends TestCase
         Livewire::test(PetsTable::class)
             ->assertSeeHtmlInOrder([
                 '<select wire:model.live="perPage" id="table-perPage"',
-                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-700 dark:text-white dark:border-gray-600"',
+                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-cat-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-cat-700 dark:text-white dark:border-cat-600"',
             ])
             ->call('setPerPageFieldAttributes', [
                 'default-colors' => true,
             ])
             ->assertSeeHtmlInOrder([
                 '<select wire:model.live="perPage" id="table-perPage"',
-                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-700 dark:text-white dark:border-gray-600"',
+                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-cat-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-cat-700 dark:text-white dark:border-cat-600"',
             ])
             ->call('setPerPageFieldAttributes', [
                 'class' => 'testclass1',
             ])
             ->assertSeeHtmlInOrder([
                 '<select wire:model.live="perPage" id="table-perPage"',
-                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-700 dark:text-white dark:border-gray-600 testclass1"',
+                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-cat-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-cat-700 dark:text-white dark:border-cat-600 testclass1"',
             ])
             ->call('setPerPageFieldAttributes', [
                 'class' => 'bg-gre-500 dark:bg-ba-500',
@@ -309,28 +309,28 @@ final class PaginationVisualsTest extends TestCase
         Livewire::test(PetsTable::class)
             ->assertSeeHtmlInOrder([
                 '<select wire:model.live="perPage" id="table-perPage"',
-                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-700 dark:text-white dark:border-gray-600"',
+                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-cat-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-cat-700 dark:text-white dark:border-cat-600"',
             ])
             ->call('setPerPageFieldAttributes', [
                 'default-styling' => true,
             ])
             ->assertSeeHtmlInOrder([
                 '<select wire:model.live="perPage" id="table-perPage"',
-                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-700 dark:text-white dark:border-gray-600"',
+                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-cat-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-cat-700 dark:text-white dark:border-cat-600"',
             ])
             ->call('setPerPageFieldAttributes', [
                 'default-styling' => false,
             ])
             ->assertSeeHtmlInOrder([
                 '<select wire:model.live="perPage" id="table-perPage"',
-                'class="border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-700 dark:text-white dark:border-gray-600"',
+                'class="border-cat-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-cat-700 dark:text-white dark:border-cat-600"',
             ])
             ->call('setPerPageFieldAttributes', [
                 'class' => 'testclass1',
             ])
             ->assertSeeHtmlInOrder([
                 '<select wire:model.live="perPage" id="table-perPage"',
-                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-700 dark:text-white dark:border-gray-600 testclass1"',
+                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-cat-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-cat-700 dark:text-white dark:border-cat-600 testclass1"',
             ])
             ->call('setPerPageFieldAttributes', [
                 'class' => 'bg-gre-500 dark:bg-ba-500',
@@ -338,7 +338,7 @@ final class PaginationVisualsTest extends TestCase
             ])
             ->assertSeeHtmlInOrder([
                 '<select wire:model.live="perPage" id="table-perPage"',
-                'class="border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-700 dark:text-white dark:border-gray-600 bg-gre-500 dark:bg-ba-500"',
+                'class="border-cat-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-cat-700 dark:text-white dark:border-cat-600 bg-gre-500 dark:bg-ba-500"',
             ]);
     }
 
@@ -347,7 +347,7 @@ final class PaginationVisualsTest extends TestCase
         Livewire::test(PetsTable::class)
             ->assertSeeHtmlInOrder([
                 '<select wire:model.live="perPage" id="table-perPage"',
-                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-gray-700 dark:text-white dark:border-gray-600"',
+                'class="block w-full rounded-md shadow-sm transition duration-150 ease-in-out sm:text-sm sm:leading-5 focus:ring focus:ring-opacity-50 border-cat-300 focus:border-indigo-300 focus:ring-indigo-200 dark:bg-cat-700 dark:text-white dark:border-cat-600"',
             ])
             ->call('setPerPageFieldAttributes', [
                 'class' => 'bg-gre-500 dark:bg-ba-500',

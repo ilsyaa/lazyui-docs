@@ -286,7 +286,7 @@ final class BulkActionsVisualsTest extends TestCase
         })->assertSee('Bulk Actions')
             ->assertSeeHtmlInOrder([
                 'scope="col"',
-                'class="bg-gray-50 dark:bg-gray-800 text-lg"',
+                'class="bg-cat-50 dark:bg-cat-800 text-lg"',
                 'wire:key="table-thead-bulk-actions"',
             ]);
     }
@@ -319,7 +319,7 @@ final class BulkActionsVisualsTest extends TestCase
         })->assertSee('Bulk Actions')
             ->assertSeeHtmlInOrder([
                 'scope="col"',
-                'class="table-cell px-3 py-2 md:px-6 md:py-3 text-center md:text-left laravel-livewire-tables-reorderingMinimised bg-gray-50 dark:bg-gray-800 text-lg"',
+                'class="table-cell px-3 py-2 md:px-6 md:py-3 text-center md:text-left laravel-livewire-tables-reorderingMinimised bg-cat-50 dark:bg-cat-800 text-lg"',
                 'wire:key="table-thead-bulk-actions"',
             ]);
     }
