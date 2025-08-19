@@ -1,10 +1,12 @@
-@props(['name', 'value', 'label', 'id' => null])
+@props(['name', 'value', 'label', 'id' => null, 'selected' => false])
 
 @php
     $id = $id ?? 'radio_' . str_replace(['[', ']'], '', $name) . '_' . $value;
+    $isSelected = filter_var($selected, FILTER_VALIDATE_BOOLEAN);
 @endphp
 
-<label for="{{ $id }}" class="relative flex h-full w-full items-center justify-between gap-4 p-4 bg-cat-100 border border-transparent cursor-pointer dark:bg-cat-750 rounded-lg hover:bg-cat-200 dark:hover:bg-cat-700 transition-all" :class="{ 'ring-2 ring-black dark:ring-white dark:bg-cat-700': selected === '{{ $value }}' }">
+<label x-init="@if ($isSelected) selected = '{{ $value }}' @endif" for="{{ $id }}" class="relative flex h-full w-full items-center justify-between gap-4 p-4 bg-cat-100 border border-transparent cursor-pointer dark:bg-cat-750 rounded-lg hover:bg-cat-200 dark:hover:bg-cat-700 transition-all" :class="{ 'ring-2 ring-black dark:ring-white dark:bg-cat-700': selected === '{{ $value }}' }">
+
     <input type="radio" name="{{ $name }}" value="{{ $value }}" id="{{ $id }}" x-model="selected" class="sr-only">
 
     <div class="flex items-center gap-4">
